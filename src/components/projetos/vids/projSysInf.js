@@ -8,6 +8,7 @@ import Image from "next/image";
 
 import vidBut from "../../../../public/vidButo.svg";
 import { projetos } from "./projs";
+import VidPlay from "./youPlayer";
 
 
 
@@ -42,13 +43,7 @@ const SysInf = ({nun}) =>{
                 </div>
             ),
             (
-                <ReactPlayer
-                    key={1}
-                    url={VideUrl} 
-                    controls 
-                    width="100%" 
-                    height="80vh" 
-                />
+                <VidPlay IDVid={VideUrl} />
              
             )
         ]    
@@ -88,7 +83,7 @@ const SysInf = ({nun}) =>{
                         <button onClick={
                             ()=>{setIsPlay(false)}
                         }
-                        >fechar</button>
+                        >FECHAR</button>
                     </div>)
                 }
                 <div style={{paddingBottom:'6rem'}}>{vid}</div>

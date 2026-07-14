@@ -5,6 +5,9 @@ export const TecSty = styled("section",{
     background:`url(${backTec.src}) no-repeat center center`,
     padding:"1rem 2rem 1rem 2rem",
     height:"60rem",
+    display:"flex",
+    justifyContent:'center',
+    alignItems:"center",
     
     ".tecDesc":{
       overflow:'auto',
@@ -21,14 +24,15 @@ export const TecSty = styled("section",{
       justifyContent:'start',
       flexDirection:'column',
       ".imagemM":{
-        padding:'1rem 0rem',
-        width:'100%',
+        padding:'2rem 0rem',
+        width:'100vw',
         height:'auto',
         display:'flex', 
         alignItems:'center', 
         justifyContent:'center',
         ".mathIma":{
-          width:'40rem'
+          width:'60%',
+          height:'auto',
         }
       },
       ".butSair":{
@@ -114,6 +118,7 @@ export const TecSty = styled("section",{
         marginTop: '1.4rem',
       }
     },
+    
     ".right-container": {
       paddingBottom:'4rem',
       flex: 1,
@@ -122,12 +127,15 @@ export const TecSty = styled("section",{
       alignItems: 'flex-start',
       justifyContent: 'space-between',
       height:'100%',
-      width:'80%',
+      width:'70%',
       backgroundColor:'rgba(0,250,255,0.2)',
+      ".swiper-wrapper":{
+        position: 'relative'
+      },
       ".swiper-slide":{
         display:'flex',
         alignItems:'center',
-        justifyContent:"center"
+        justifyContent:"center",
       },
       ".item-playlist": {
         height:'100%',
@@ -135,16 +143,20 @@ export const TecSty = styled("section",{
         alignItems:"center",
         justifyContent:"center",
         flexDirection:'column',
+        paddingTop: '1rem',
         "&:hover": {
+          
           h5:{
             opacity: 1,
           },
           ".icon": {
             ".img":{
-                scale:'1.1'
+                
+                scale:1.1
             }
           }
         },
+        
         ".icon": {
           display: 'flex',
           alignItems: 'center',
@@ -179,14 +191,24 @@ export const TecSty = styled("section",{
       },
     },
     "@tablet": {
+      ".tecDesc":{
+        ".textDesc":{
+            p:{
+              maxWidth:"96%",
+              lineHeight:"2.5rem"
+            }
+        }
+      },
       ".right-container": {
         maxWidth: '65rem'
       }
     },
     "@tablet1": {
+      
       ".container": {
         flexDirection: 'column',
         alignItems: 'center',
+        maxWidth:'98vw'
       },
       ".text-left": {
         maxWidth: '100%',
@@ -195,6 +217,10 @@ export const TecSty = styled("section",{
         alignItems: 'center',
         marginBottom: '0rem',
         background: 'linear-gradient(180deg, rgba(0, 230, 230, 0.6) 40%, rgba(0, 250, 255, 0.2) 100%)',
+        h4:{
+          maxWidth:'95%',
+          textAlign:'center'
+        },
         ".imagemn":{
           transform:'rotate(88deg)'
         }

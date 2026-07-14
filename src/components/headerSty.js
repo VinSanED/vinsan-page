@@ -1,25 +1,63 @@
 import { styled } from "@/styles/Styindex"
 
+export const BtnSeta =  styled('button',{
+    position:'fixed',
+    top: '15px',
+    left: '2px',
+    cursor:"pointer",
+    width:30,
+    height:'auto',
+    opacity:0.5,
+    display:'block',
+    zIndex:2000,
+    transition:'ease .5s all',
+    "&.rodar":{
+      transform:'rotate(-88deg)'  
+    },
+    "&.deactiveDisplay":{
+        display:"none"
+    },
+    "&:hover":{
+        opacity:1
+    },
+});
 
-export const Hed = styled('header',{
+
+export const HedCont = styled('div',{
     
-    width: "100%",
-    height: "5rem",
+    width: "100vw",
+    height: "6rem",
+    padding:"0 2rem",
     display: "flex",
-    alignItems: "center",
-    background: "linear-gradient(180deg,rgba(0, 250, 255,0.2) 68.69%, rgba(0, 250, 255,0.5) 100%)",
+    alignItems: "space-betwen",
+    background: "linear-gradient(180deg,rgba(0, 250, 255,0.4) 68.69%, rgba(0, 250, 255,0.8) 100%)",
     borderBottom:'solid 4px transparent',
-    borderImage:"linear-gradient(90deg,rgba(0, 250, 255,0.6) 60%, rgba(0, 250, 255,0.4) 100%)",
+    borderImage:"linear-gradient(90deg,rgba(0, 250, 255,0.4) 60%, rgba(0, 250, 255,0.8) 100%)",
     borderImageSlice:1,
-    transition:'all .2s ease',
+    transition:'all .5s ease',
     backdropFilter: "blur(40px)",
-    zIndex: 20,
+    zIndex:20,
     "&.ativar":{
         backdropFilter: "none",
         border:'none',
         background: "linear-gradient(180deg,rgba(0, 200, 200,0.2) 20%, rgba(0, 250, 255,0.4) 100%)",
-        position: "fixed",
-        top: 0,
+        position:'sticky',
+        top: -500,
+        ".container": {
+            transition:'all 1s ease',
+            position:'relative',
+            left:-1000,
+            top:0,
+            "&.ativar2": {
+                left:0
+            },
+        }
+    },
+    "&.ativar2":{
+        top:0,
+    },
+    ".logsvg":{
+        scale:2
     },
     ".viewPesContains":{
         backgroundColor:'rgba(0,0,0,0.8)',
@@ -43,8 +81,16 @@ export const Hed = styled('header',{
         display: "flex",
         alignItems: "center",
         justifyContent: "space-between",
-        ".img":{
-            padding:'0.2rem'
+        ".logo":{
+            width:"40%"
+        },
+        nav:{
+            ul:{
+                width:"80%",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "space-between",
+            }
         }
     },
     ".hamburger":{
@@ -73,11 +119,12 @@ export const Hed = styled('header',{
     },
     //menuMob
     ".menu-mobile":{
+        zIndex:1000,
         position: "fixed",
         top: "5rem",
         width: "100%",
         height: "calc(100vh - 5rem)",
-        backgroundColor: "#0a0615",
+        backgroundColor: "rgba(0,20,50,0.9)",
         padding: "4rem 1.5rem",
         display:'none',
         transition: "all .3s ease",
@@ -90,7 +137,8 @@ export const Hed = styled('header',{
                 ".item-categorie":{
                     padding: "2rem 0rem",
                     ".img": {
-                        width: "3.2rem",
+                        width: "6rem",
+                        height:"auto"
                     },
                     span: {
                         fontSize: "20px",
@@ -194,6 +242,7 @@ export const Hed = styled('header',{
 
 
     "@lgScreen1" :{
+        height:'8rem',
         nav: {
             maxWidth: "100%",
             ".item-categorie" :{
@@ -205,6 +254,11 @@ export const Hed = styled('header',{
         },
     },
     "@tablet": {
+        height:"10rem",
+        padding:"0 5rem",
+        ".item-categorie" :{
+            display:'none'
+        },
         ".hamburger":{
             display: "block",
             marginRight:"2rem"
@@ -214,12 +268,15 @@ export const Hed = styled('header',{
             justifyContent: "flex-end",
             ul:{
                 display: "none",
-            }
+            },
+            
         }
     },
-    "@mobile": {
+    "@mobile": {       
+        padding:"0 2rem",
         ".logo":{         
-            maxWidth: "30rem",
+            maxWidth: "50%",
+            scale:'0.8',
             transform:"translateX(-25px)"
             
         },
@@ -234,4 +291,3 @@ export const Hed = styled('header',{
         }
     },
 })
-

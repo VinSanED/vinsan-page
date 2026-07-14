@@ -28,7 +28,7 @@ const Dev1 = ({sair, setSair, setViewMod })=>{
                     <span>5 a 10 dias</span>
                     </li>
                     <li>
-                    <span>250 a 500$R</span>
+                    <span>250 a 500R$</span>
                     </li>
                 </ul>
             </div>

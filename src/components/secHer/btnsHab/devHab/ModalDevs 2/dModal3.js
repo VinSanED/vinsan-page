@@ -81,31 +81,33 @@ const ModalDev3 = ({setSair})=>{
                             placeholder="com relação ao desenvolvimento de web-aplicações, como posso lhe ajudar...?"
                             className="campoTexto"
                             spellCheck="false" 
-                            onChange={(e)=>{setOpinion(`tratando-se de web-sites:\n ${e.target.value}`);}}
+                            onChange={(e)=>{setOpinion("tratado-se de web-app",e.target.value);}}
                             rows={4}
                             cols={50}                     
                             />
                         </label>
                     </div>
-                    <form onSubmit={handleSubmit}>
-                        <label > 
-                          <input
-                            className="campoTexto"
-                            placeholder="Seu nome..."
-                            onChange={(e) =>{setUserName(e.target.value)}}
-                            type="name"
-                          />
-                        </label>
+                    <form className="formNE" onSubmit={handleSubmit}>
+                        <div className="divTxt">
+                          <label > 
+                            <input
+                              className="campoTexto"
+                              placeholder="Seu nome..."
+                              onChange={(e) =>{setUserName(e.target.value)}}
+                              type="name"
+                            />
+                          </label>
 
-                        <label>
-                          <input 
-                            className="campoTexto"
-                            type="Email" 
-                            placeholder="Seu Email..."
-                            onChange={(e) => {setUserEmail(e.target.value)}}
-                          />
-                        </label>
-                        
+                          <label>
+                            <input 
+                              className="campoTexto"
+                              type="Email" 
+                              placeholder="Seu Email..."
+                              onChange={(e) => {setUserEmail(e.target.value)}}
+                            />
+                          </label>
+                        </div>
+                    
                         <button  type="submit">Enviar</button>
                     </form>
                 </div>  

@@ -1,5 +1,5 @@
 import { styled ,frames,keyframes} from "@/styles/Styindex";
-import lineFot from "../../../public/assets/UT/line-footer.svg"
+import lineFot from "../../../public/assets/UT/line-footer1.svg"
 import log from "../../../public/fotLogNav.png"
 
 const rodando = keyframes(frames.roda)
@@ -19,6 +19,12 @@ export const FootSty = styled('footer', {
     top: 0,
     left: '50%',
     marginLeft: '-60.8rem',
+  },
+  "#LOGOf":{
+    transition:'scale .1s ease',
+    "&:hover":{
+      scale: 1.05
+    }
   },
   ".container": {
     opacity:0,
@@ -126,7 +132,6 @@ export const FootSty = styled('footer', {
     }
   },
   ".contato":{
-    width:'100%',
     padding:'2rem',
     ul:{
       display: 'grid',
@@ -171,26 +176,49 @@ export const FootSty = styled('footer', {
     },
     ".C1":{
       transition:'all 0.5s ease',
-      transform:'translateX(-400px)'
+      transitionDelay: '0.2s',
+      transform:'translateX(-800px)'
     },
     ".C2":{
       transition:'all 0.5s ease',
-      transform:'translateX(1000px)'
+      transitionDelay: '0.2s',
+      transform:'translateX(800px)'
     },
     ".C3":{
       transition:'all 0.5s ease',
-      transitionDelay: '0.5s',
-      transform:'translateX(-400px)'
+      transitionDelay: '0.6s',
+      transform:'translateX(-1200px)'
     },
     ".C4":{
       transition:'all 0.5s ease',
-      transitionDelay: '0.5s',
-      transform:'translateX(1000px)'
+      transitionDelay: '0.6s',
+      transform:'translateX(1200px)'
     },
     ".C5":{
       transition:'all 0.5s ease',
       transitionDelay: '1s',
-      transform:'translateX(-400px)'
+      transform:'translateX(-1600px)'
+    },
+    ".C6":{
+      backgroundColor:'black', 
+      transition:'all 0.5s ease',
+      transitionDelay: '1s',
+      transform:'translateX(1600px)',
+      strong:{
+        width:"100%",  
+        display:"flex", 
+        alignItems:"center", 
+        justifyContent:"center",
+        a:{
+            color:'rgba(250,30,90,1)',
+            fontWight:'bold',
+            fontSize:'14pt',
+            trasition:'scale .5s ease',
+            "&:hover":{
+                scale:1.1
+            }
+        },
+      }
     },
     ".C1.ativo":{
       transform:'translateX(0px)'
@@ -205,6 +233,9 @@ export const FootSty = styled('footer', {
       transform:'translateX(0px)'
     },
     ".C5.ativo":{
+      transform:'translateX(0px)'
+    },
+    ".C6.ativo":{
       transform:'translateX(0px)'
     },
     

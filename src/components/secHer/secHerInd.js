@@ -1,17 +1,16 @@
 import { Conteiner } from "@/styles/globalSty";
-import { SecHe } from "./secHerSty"
+import { SecHe, Wi, De  } from "./secHerSty"
 import Image from "next/image";
 
 
 import post01 from "../../../public/assets/UT/card_habilit/paint.jpg"
 import post02 from "../../../public/assets/UT/card_habilit/WRITE.png"
-import post03 from "../../../public/assets/UT/card_habilit/DEV.jpg"
+import post03 from "../../../public/assets/UT/card_habilit/DEVout.jpg"
 
-import desi from "../../../public/assets/design.svg";
-import dev from "../../../public/assets/developer.svg";
-import wit from "../../../public/assets/write.png"
 
 import { React , useEffect, useState } from "react";
+import Aos from "aos";
+import 'aos/dist/aos.css'
 
 import CardHab0 from "./CardHab/CardHab0";
 import CardHab1 from "./CardHab/CardHab1";
@@ -34,7 +33,7 @@ import Paint3 from "./btnsHab/paintHab/paint3";
 const SecHer = ()=>{
     const [sair,setSair]= useState('sair');
 
-    const ArrHab = [(<CardHab0 key={0}/>), (<CardHab1 key={1}/>), (<CardHab2 key={2}/>), (<CardHab3 key={3}/>)]
+    const ArrHab = [(<CardHab0 data-aos="zoom-in-down"  key={0}/>), (<CardHab1 key={1}/>), (<CardHab2 key={2}/>), (<CardHab3 key={3}/>)]
 
     const [leftCont, setLeftCont] = useState(ArrHab[0]) 
 
@@ -73,6 +72,7 @@ const SecHer = ()=>{
                 console.log('não indis', i, "!=", indis)
         }
     }
+    
     const HandFunc = (indis) => {
         ArrHab.forEach(function( e,i) {
             setPisk(true);
@@ -91,7 +91,7 @@ const SecHer = ()=>{
                 className="card-post-xs" 
             >
                         <div className="image">
-                            <Image className="img" src={post01} alt="Image do primeiro post pequeno"/>
+                            <Image className="img" src={post01} alt="imagem manipulação gráfica, design"/>
                         </div>
                         <div className="info">
                             <span className="categorie">Manipulação Gráfica</span>
@@ -114,7 +114,7 @@ const SecHer = ()=>{
                 className="card-post-xs" 
             >
                         <div className="image">
-                            <Image  className="img" src={post02} alt="Image do primeiro post pequeno"/>
+                            <Image  className="img" src={post02} alt="imagem manipulação de texto, copywrite, ghost write, creative write"/>
                         </div>
                         <div className="info">
                         <span className="categorie">Manipulação textual</span>
@@ -137,7 +137,7 @@ const SecHer = ()=>{
                 className="card-post-xs" 
             >
                         <div className="image">
-                            <Image className="img" src={post03} alt="Image do primeiro post pequeno"/>
+                            <Image className="img" src={post03} alt="imagem web desenvolvimento"/>
                         </div>
                         <div className="info">
                         <span  className="categorie">Web-Developing</span>
@@ -183,28 +183,36 @@ const SecHer = ()=>{
     useEffect(()=>{
         moveMod()
     },[sair])
+   useEffect(()=>{
+    Aos.init({
+        offset:120,
+        delay:100,
+        easing:'ease',
+        duration:2000
+    })
+   })
     return(
-    <SecHe id="secHer" className="s-hero-post">
-        <Conteiner className="container"> 
-            <div className="left-container">
+    <SecHe  id="secHer" className="s-hero-post">
+        <Conteiner  className="container"> 
+            <div   className="left-container">
                 <div className="title">
                     <div className={`mod ${aparecido ? 'apareça' : 'suma'} ${sair!=='sair'? 'modal': 'span'}`} >{viewMod}</div>
                     <h2>Transformando idéias em conteúdo</h2>  
                 </div>
                 <div className="carButs" >
                     <button id="b1" onClick={()=>{let indis=1; HandFunc(indis);setSair('sair')}}>
-                        <Image className="ima" width={25} heigth={25} src={desi}/>
+                        <Desi  width={25} heigth={25} />
                     </button>
                     <button id="b2" onClick={()=>{let indis=2; HandFunc(indis);setSair('sair')}}>
-                        <Image className="ima" width={25} heigth={25} src={wit}/>
+                        <Wit  width={25} heigth={25}  />
                     </button>
                     <button id="b3" onClick={()=>{let indis=3; HandFunc(indis);setSair('sair')}}>
-                        <Image className="ima" width={25} heigth={25} src={dev}/>
+                        <Dev  width={25} heigth={25} />
                     </button>
                 </div>
                 <div className={`divCar ${pisk ? 'pisk' : ''}`}>{leftCont}</div>
             </div>
-            <div className="right-container">
+            <div data-aos="fade-left" className="right-container">
                 <h4>como posso te ajudar?</h4>
                 <div className="all">
                     <div className={`item-post but ${pisk ? 'pisco1' : ''}`} >
@@ -224,3 +232,7 @@ const SecHer = ()=>{
 )}
 
 export default SecHer;
+
+
+
+

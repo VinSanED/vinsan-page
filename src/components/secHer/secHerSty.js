@@ -2,7 +2,24 @@ import { styled } from "@/styles/Styindex"
 
 import Divisor from '../../../public/assets/UT/line-divisor.svg'
 
+
+import Desi from "@/assets/secHer/design.svg";
+import Dev from "@/assets/secHer/developer.svg";
+import Wit from  "@/assets/secHer/write.svg"
+
 const line_divisor = Divisor.src
+
+export const Des = styled(Desi,{
+
+})
+
+export const De = styled(Dev,{
+  
+})
+export const Wi = styled(Wit,{
+  
+})
+
 
 export const SecHe = styled('section',{
 
@@ -15,11 +32,10 @@ export const SecHe = styled('section',{
       justifyContent: 'space-between',
     },
     ".left-container": {
-      overflow: 'hidden',
       flex: 1,
       maxWidth: '72.5rem',
       ".divCar":{
-        overflow: 'hidden',
+        overflow:'hidden',
         width: '100%',
         height: '100%',
         padding:"1rem",
@@ -34,7 +50,7 @@ export const SecHe = styled('section',{
         left:0,
         height:'100vh',
         width:'65VW',
-        zIndex:'100'
+        zIndex:100
       },
       ".mod":{
         transition:'all .39s ease'
@@ -49,7 +65,7 @@ export const SecHe = styled('section',{
       },
       ".pisk":{
         opacity:0,
-        transform:'translateX(20px)'
+        transform:'translateX(50px)'
       },
       ".carButs":{
         width:"100%",
@@ -144,6 +160,9 @@ export const SecHe = styled('section',{
           display: 'grid',
           gridTemplateColumns: '1fr 35rem',
           gridGap: '3rem',
+        },
+        ".txt-white":{
+          fontSize:'1.7rem'
         }
     },
     "@tablet1" :{
@@ -276,7 +295,7 @@ export const SecHe = styled('section',{
                 fontWeight: 400,
                 fontSize: '1.4rem',
                 lineHeight: '150%',
-                color: '$gray_scale_05',
+                color: 'lime',
                 marginLeft: '0.8rem',
               }
             }
@@ -371,7 +390,7 @@ export const SecHe = styled('section',{
               fontWeight: 400,
               fontSize: '1.4rem',
               lineHeight: '150%',
-              color: '$gray_scale_05',
+              color: 'lime',
             }
           }
         }

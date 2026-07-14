@@ -1,8 +1,26 @@
 
 
 import { styled, frames, keyframes } from "@/styles/Styindex";
+import Icon from '@/assets/olhoCarrega.svg'
 
 const animatioText = keyframes(frames.texAni) 
+const rodando = keyframes(frames.roda)
+ 
+
+export const AnimatedYea = styled(Icon,{
+ 
+  margin:'auto auto',
+  '& > g:first-of-type':{
+    transformOrigin:'center',
+    animationName:`${rodando}`,
+    animationDuration:'1s',
+    animationDelay:'0s',
+    animationDirection:'normal',
+    animationFillMode:'backwards',
+    animationTimingFunction:'linear',
+    animationIterationCount:'infinite',
+  }
+})
 
 export const ArtSty = styled('section',{
     
@@ -21,6 +39,10 @@ export const ArtSty = styled('section',{
       animationFillMode:'backwards',
       animationTimingFunction:'linear',
       animationIterationCount:'unset',
+    },
+    ".icon":{
+      "#g7":{
+      }
     },
     ".btnFech":{
       marginTop:'1rem',

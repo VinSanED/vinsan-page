@@ -7,6 +7,20 @@ import {
 
 const nextConfig = {
   reactStrictMode: true,
+  webpack(config){
+    config.module.rules.push({
+      test:/\.svg$/i,
+      use:[
+        {
+          loader: "@svgr/webpack",
+          options: {
+            svgo: true
+          }
+        }
+      ]
+    });
+    return config
+  }
 }
 const nextConfigFunction = async (phase) => {
   if (phase === PHASE_DEVELOPMENT_SERVER || phase === PHASE_PRODUCTION_BUILD) {

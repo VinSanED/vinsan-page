@@ -1,4 +1,4 @@
-import post01 from "../../../../../public/assets/UT/modaPost/sitePost.jpg"
+import post01 from "../../../../../public/assets/UT/modaPost/sitepos.jpg"
 import Image from "next/image";
 import ModalDev2 from "./ModalDevs 2/dModal2";
 

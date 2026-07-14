@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-import { Link as ScrollLink } from "react-scroll";
+import Link from "next/link";
 
 import { SetaSty , BacSeta} from "./setaStyle";
 const ArrowIndicator = () => {
@@ -25,18 +25,17 @@ const ArrowIndicator = () => {
 
   return (
     <BacSeta>
-        <ScrollLink
+        <Link
             className='scroll'
-            to="secHer"
-            spy={true}
-            smooth={true}
-            offset={-70}
-            duration={500}
+            href="#secHer"
+            spy="true"
+            smooth="true"
+            duration="500"
         >
             <SetaSty viewBox="0 0 24 24" fill="none" stroke="cyan" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ transform: `rotate(${rotation}deg)`}}>
                 <path d="M12 19V5M5 12l7-7 7 7" />
             </SetaSty>
-        </ScrollLink>
+        </Link>
     </BacSeta>
   );
 };

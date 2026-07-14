@@ -1,0 +1,88 @@
+{
+  "../../node_modules/react-player/lib/ReactPlayer.js -> ./Preview": {
+    "id": "../../node_modules/react-player/lib/ReactPlayer.js -> ./Preview",
+    "files": []
+  },
+  "../../node_modules/react-player/lib/players/index.js -> ./DailyMotion": {
+    "id": "../../node_modules/react-player/lib/players/index.js -> ./DailyMotion",
+    "files": []
+  },
+  "../../node_modules/react-player/lib/players/index.js -> ./Facebook": {
+    "id": "../../node_modules/react-player/lib/players/index.js -> ./Facebook",
+    "files": []
+  },
+  "../../node_modules/react-player/lib/players/index.js -> ./FilePlayer": {
+    "id": "../../node_modules/react-player/lib/players/index.js -> ./FilePlayer",
+    "files": []
+  },
+  "../../node_modules/react-player/lib/players/index.js -> ./Kaltura": {
+    "id": "../../node_modules/react-player/lib/players/index.js -> ./Kaltura",
+    "files": []
+  },
+  "../../node_modules/react-player/lib/players/index.js -> ./Mixcloud": {
+    "id": "../../node_modules/react-player/lib/players/index.js -> ./Mixcloud",
+    "files": []
+  },
+  "../../node_modules/react-player/lib/players/index.js -> ./Mux": {
+    "id": "../../node_modules/react-player/lib/players/index.js -> ./Mux",
+    "files": []
+  },
+  "../../node_modules/react-player/lib/players/index.js -> ./SoundCloud": {
+    "id": "../../node_modules/react-player/lib/players/index.js -> ./SoundCloud",
+    "files": []
+  },
+  "../../node_modules/react-player/lib/players/index.js -> ./Streamable": {
+    "id": "../../node_modules/react-player/lib/players/index.js -> ./Streamable",
+    "files": []
+  },
+  "../../node_modules/react-player/lib/players/index.js -> ./Twitch": {
+    "id": "../../node_modules/react-player/lib/players/index.js -> ./Twitch",
+    "files": []
+  },
+  "../../node_modules/react-player/lib/players/index.js -> ./Vidyard": {
+    "id": "../../node_modules/react-player/lib/players/index.js -> ./Vidyard",
+    "files": []
+  },
+  "../../node_modules/react-player/lib/players/index.js -> ./Vimeo": {
+    "id": "../../node_modules/react-player/lib/players/index.js -> ./Vimeo",
+    "files": []
+  },
+  "../../node_modules/react-player/lib/players/index.js -> ./Wistia": {
+    "id": "../../node_modules/react-player/lib/players/index.js -> ./Wistia",
+    "files": []
+  },
+  "../../node_modules/react-player/lib/players/index.js -> ./YouTube": {
+    "id": "../../node_modules/react-player/lib/players/index.js -> ./YouTube",
+    "files": []
+  },
+  "index.js -> @/components/artigos/artP": {
+    "id": "index.js -> @/components/artigos/artP",
+    "files": [
+      "static/chunks/src_components_artigos_artP_js.js"
+    ]
+  },
+  "index.js -> @/components/projetos/projInd": {
+    "id": "index.js -> @/components/projetos/projInd",
+    "files": [
+      "static/chunks/src_components_projetos_projInd_js.js"
+    ]
+  },
+  "index.js -> @/components/secHer/secHerInd": {
+    "id": "index.js -> @/components/secHer/secHerInd",
+    "files": [
+      "static/chunks/src_components_secHer_secHerInd_js.js"
+    ]
+  },
+  "index.js -> @/components/setinha/setaIndex": {
+    "id": "index.js -> @/components/setinha/setaIndex",
+    "files": [
+      "static/chunks/src_components_setinha_setaIndex_js.js"
+    ]
+  },
+  "index.js -> @/components/tecnologias/tecPage": {
+    "id": "index.js -> @/components/tecnologias/tecPage",
+    "files": [
+      "static/chunks/src_components_tecnologias_tecPage_js.js"
+    ]
+  }
+}

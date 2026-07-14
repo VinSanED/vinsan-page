@@ -5,7 +5,7 @@ import cssIcon from "../../../public/assets/UT/icon-css.svg"
 import sass from "../../../public/assets/UT/iconsTech/sass.svg"
 
 import jsIcon from "../../../public/assets/UT/icon-js.svg"
-import swiper from "../../../public/assets/UT/iconsTech/swiper.svg"
+import swiperIcon from "../../../public/assets/UT/iconsTech/swiper.svg"
 import gulp from "../../../public/assets/UT/iconsTech/gulp.svg"
 import d3js from "../../../public/assets/UT/iconsTech/d3js.svg"
 
@@ -65,48 +65,79 @@ import React, { useEffect,useState } from 'react';
 
 import { TecSty } from '@/components/tecnologias/tecSty'
 
-import 'swiper/css/bundle';
-import { Swiper } from 'swiper/bundle';
+import Aos from "aos";
+import 'aos/dist/aos.css'
+import "swiper"
+import Swiper from "swiper";
 
 
 const TecSec = ()=>{
+   
     const[tecPage , setTecPage]= useState('')
-    
-    
+
     useEffect(()=>{
-        new Swiper(".slide-container", {
-            slidesPerView: 4,
-            spaceBetween: 30,
-            pagination: {
-              el: ".container",
-              clickable: true,
-            },
+       const isFirefox = navigator.userAgent.toLowerCase().includes('firefox') 
+       console.log(isFirefox, "ISFIREIEF")
+       let swiOpt = {
+            slidesPerView:'auto',
+            spaceBetween: 40,
+            centeredSlides: isFirefox ? false: true,
             speed: 600,
+            slidesOffsetAfter:5,
+            grabCursor:true,
+            scrollbar: {
+                el: '.swiper-scrollbar',
+                draggable: true,
+                snapOnRelease:false,
+            },
+            mousewheel: {
+                invert: true,
+                snapOnRelease:false,
+            },
+            keyboard: {
+                enabled: true,
+                onlyInViewport: false,
+                snapOnRelease:false,
+            },
+            pagination: {
+            el: ".container",
+            clickable: false,
+            },
+            effect: isFirefox ? 'slide' : 'coverflow',
+            coverflowEffect: {
+            rotate: -5,
+            stretch:2,
+            depth:200,
+            modifier:1,
+            slideShadows: true,
+            },
             breakpoints: {
-              320: {
+            320: {
                 slidesPerView: 1.5,
                 spaceBetween: 20,
-              },
-              500: {
+            },
+            500: {
                 slidesPerView: 2.5,
-              },
-              768: {
+            },
+            768: {
                 slidesPerView: 3.3
-              },
-              991: {
+            },
+            991: {
                 slidesPerView: 2.8
-              },
-              1100: {
+            },
+            1100: {
                 slidesPerView: 4.2,
                 spaceBetween: 32,
-              },
-              1200: {
+            },
+            1200: {
                 slidesPerView: 4.5,
                 spaceBetween: 32,
-              }
             }
-          });
+            },
+        }
+       new Swiper(".slide-container", swiOpt);
     }, [])
+   
     function DescF(i) {
         if(i===1){
             setTecPage(HTMLDesc)
@@ -192,11 +223,21 @@ const TecSec = ()=>{
         <TecSty className="s-playlist">
             <>{tecPage}</>
             <div className="container">
-                <div className="text-left">
+                <div
+                    data-aos="fade-down"
+                    data-aos-easing="linear" 
+                    className="text-left"
+                >
                     <Image src={tecno} className="imagemn" height={100} width={100} alt=""/>
-                    <h4>Algumas das tecnologias a que tenho algum dominio</h4>
+                    <h4>Eis algumas das tecnologias a que tenho algum dominio</h4>
                 </div>
-                <div className="right-container slide-container">
+                <div
+                    data-aos="fade-zoom-in"
+                    data-aos-easing="ease-in-back"
+                    data-aos-delay="300"
+                    data-aos-offset="50" 
+                    className="right-container slide-container"
+                >
                     <div className="swiper-wrapper">
                         <div className="swiper-slide">
                             <button onClick={()=>{let i=1 ;DescF(i)}} className="item-playlist">
@@ -241,7 +282,7 @@ const TecSec = ()=>{
                         <div className="swiper-slide">
                             <button onClick={()=>{let i=6 ;DescF(i)}} className="item-playlist">
                                 <div className="icon">
-                                    <Image className='img' src={swiper} alt=""/>
+                                    <Image className='img' src={swiperIcon} alt=""/>
                                 </div>
                                 <h5>SwiperJS</h5>
                             </button>
@@ -400,6 +441,7 @@ const TecSec = ()=>{
                             </button>
                         </div>    
                     </div>
+                    <div className="swiper-scrollbar"></div>
                 </div>
             </div>
         </TecSty>

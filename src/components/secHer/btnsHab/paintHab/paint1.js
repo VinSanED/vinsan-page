@@ -25,7 +25,7 @@ const Paint1 = ({sair, setSair, setViewMod })=>{
                 <h6 className="txt-white">Construção de conteúdo Visual para négocios, iniciativas e projetos gerais. Marketing e Propaganda.</h6>
                 <ul>
                     <li>
-                    <span>2 a 20dias</span>
+                    <span>2 a 20 dias</span>
                     </li>
                     <li>
                     <span>100 a 1000R$</span>

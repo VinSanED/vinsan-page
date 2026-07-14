@@ -10,7 +10,7 @@ export const SetaSty = styled('svg',{
 export const BacSeta = styled('div',{
     position: 'fixed', 
     top: '5px',
-    left: '12px',
+    right: '12px',
     width: '40px',
     height: "40px",
     backgroundColor:'rgba(0,0,0,0.4)',

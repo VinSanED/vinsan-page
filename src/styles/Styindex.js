@@ -38,6 +38,37 @@ const fontFace = `
   }
 `;
 
+const monosp = `
+    font-family: 'Space Mono', monospace;
+    src: url('/fonts/space_mono/SpaceMono-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+`;
+const firaCode = `
+    font-family: 'Fira Code', monospace;
+    src: url('/fonts/fira/static/FiraCode-Medium.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+`;
+const segoe_UI = `
+  font-family: 'Segoe UI, system-ui, sans-serif';
+  src: url("/fonts/segoe_UI/SegoeUI.ttf") format('truetype'); 
+  font-weight: normal;
+  font-style: normal;
+`;
+
+const RobotoMono = `
+  font-family: 'Roboto Mono', monospace;
+  src: url("/fonts/roboto_mono/static/RobotoMono-Regular.ttf") format('truetype'); 
+  font-weight: normal;
+  font-style: normal;
+`
+
+
+
+const a = 500;
+
+
 export const frames={
   texAni:{
     '0%':{
@@ -78,6 +109,12 @@ export const frames={
 
 export const {css, styled,  globalCss, keyframes, getCssText, theme} = 
 createStitches({ 
+  globalCss:{
+    '@font-face':firaCode,
+    '@font-face':segoe_UI,
+    '@font-face':RobotoMono,
+    '@font-face':monosp,
+  },
   theme: {
     colors: {
       cyberCy:"#00ffffff",
@@ -92,12 +129,15 @@ createStitches({
     },
 
     fonts: {
-      atypBLText: fontFace,
+      segoeUI: 'Segoe UI, system-ui, sans-serif',
+      fira: "'Fira Code', monospace",
+      roboto: "'Roboto Mono', monospace",
+      mono: " 'Space Mono', monospace"
     },
 
     fontWeights: {
       regular: 'normal',
-      medium: 500,
+      medium: a,
       bold: 'bold',
       semibold: 600,
     }
@@ -105,11 +145,12 @@ createStitches({
   media: {
     hM1:"(max-height:815px) and (max-width:991px)",
     hM2:"(max-height:720px) and (max-width:991px)",
-    lgScreen:"(max-width:1300px)",
+    hM3:"(max-height:670px) and (max-width:450px)",
+    lgScreen:"(max-width:1250px)",
     lgScreen1:"(max-width:1100px)",
     tablet:"(max-width:991px)",
     tablet1:"(max-width:768px)",
-    mobile:"(max-width:600px)",
+    mobile:"(max-width:620px)",
     mobile1:"(max-width:410px)",
   },    
 });

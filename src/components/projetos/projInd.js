@@ -1,7 +1,10 @@
 import Image from 'next/image'
 import React,{ useEffect, useState } from 'react';
+
 import 'swiper/css/bundle';
 import { Swiper } from 'swiper/bundle';
+import Aos from 'aos';
+import "aos/dist/aos.css"
 
 import { ProjPSty, CardPodcast } from './projSty';
 
@@ -9,7 +12,6 @@ import arrowL from "../../../public/assets/UT/arrow-slide.svg"
 import time from "../../../public/assets/UT/icon-timer.svg"
 import play from "../../../public/assets/UT/icon-play.svg"
 import gitIcon from "../../../public/assets/UT/iconsTech/github1.svg"
-import ima2 from "../../../public/assets/UT/img-podcast-02.jpg"
 
 import CapaMilk from "../../../public/assets/imaProjetos/milkShake/millkscapa.png"
 import CapaComp from "../../../public/assets/imaProjetos/comptwave/tec.png"
@@ -74,7 +76,7 @@ const ProjInd = ()=>{
           });
           setExib(Vprojetos[0])
     }, [])
-
+    
 //criando observador de classe, para fechar a exibição do projeto
     useEffect(()=>{
         let contF = document.querySelector('.exibir')
@@ -144,7 +146,11 @@ const ProjInd = ()=>{
                 <div className="slide-podcast">
                     <div className="swiper-wrapper">
                         <div className="swiper-slide">
-                            <CardPodcast onClick={()=>{let nome='Comptwave'; exibir(nome)}} className="card-podcast pro01">
+                            <CardPodcast 
+                                data-aos="flip-left"
+                                data-aos-easing="ease-out-cubic"  
+                                className="card-podcast pro01"
+                            >
                                 <div className="image">
                                     <Image className='img' width={200} height={'auto'} src={CapaComp} alt=""/>
                                 </div>
@@ -153,153 +159,173 @@ const ProjInd = ()=>{
                                         <span className="tag-ep">Proj-01</span>
                                         <div className="read">
                                             <Image className='img' width={10} height={10} src={time} alt=""/>
-                                        <span>landing-page</span>
+                                        <span>WEB-PAGE</span>
                                         </div>
                                     </div>
-                                    <h6 className="txt-white">Realidade virtual: Entendendo a tecnologia</h6>
+                                    <h6 className="txt-white">pagina estática, com HTML e CSS.</h6>
                                     <div className="play">
                                         <div className='refa'>
                                             <Image className='img' width={15} height={'auto'} src={play} alt="icone de play"/>
-                                            <span>Observar projetos</span>
+                                            <button  onClick={()=>{let nome='Comptwave'; exibir(nome)}} ><span>Observar projeto</span></button>
                                         </div>
                                         <div className='refa'>
                                             <Image className='img' width={15} height={'auto'} src={gitIcon} alt="icone de play"/>
-                                            <a href='google.com'><span>Git code</span></a>
+                                            <a href='https://github.com/VinKSSan/computwave'><span>Git code</span></a>
                                         </div>
                                     </div>
                                 </div>
                             </CardPodcast>
                         </div>
                         <div className="swiper-slide">
-                            <CardPodcast onClick={()=>{let nome='MilkShake';exibir(nome)}} className="card-podcast pro02">
+                            <CardPodcast 
+                                data-aos="flip-left"
+                                data-aos-easing="ease-out-cubic"
+                                className="card-podcast pro02"
+                            >
                                 <div className="image">
                                     <Image className='img' width={200} height={200} src={CapaMilk} alt=""/>
                                 </div>
                                 <div className="info">
                                     <div className="time">
-                                        <span className="tag-ep">Proj-01</span>
+                                        <span className="tag-ep">Proj-02</span>
                                         <div className="read">
                                         <Image className='img' width={10} height={10} src={time} alt=""/>
-                                        <span>landing-page</span>
+                                        <span>WEB-PAGE</span>
                                         </div>
                                     </div>
-                                    <h6 className="txt-white">Realidade virtual: Entendendo a tecnologia</h6>
+                                    <h6 className="txt-white">pagina estática, com HTML e SASS.</h6>
                                     <div className="play">
                                         <div className='refa'>
                                             <Image className='img' width={15} height={'auto'} src={play} alt="icone de play"/>
-                                            <span>Observar projetos</span>
+                                            <button onClick={()=>{let nome='MilkShake';exibir(nome)}} ><span>Observar projeto</span></button>
                                         </div>
                                         <div className='refa'>
                                             <Image className='img' width={15} height={'auto'} src={gitIcon} alt="icone de play"/>
-                                            <a href='google.com'><span>Git code</span></a>
+                                            <a href='https://github.com/VinKSSan/milkshake'><span>Git code</span></a>
                                         </div>
                                     </div>
                                 </div>
                             </CardPodcast>
                         </div>
                         <div className="swiper-slide">
-                            <CardPodcast onClick={()=>{let nome='BlogExample';exibir(nome)}} className="card-podcast pro03">
+                            <CardPodcast 
+                                data-aos="flip-left"
+                                data-aos-easing="ease-out-cubic"
+                                className="card-podcast pro03"
+                            >
                                 <div className="image">
                                     <Image className='img' width={200} height={200} src={capaBlogE} alt=""/>
                                 </div>
                                 <div className="info">
                                     <div className="time">
-                                        <span className="tag-ep">Proj-01</span>
+                                        <span className="tag-ep">Proj-03</span>
                                         <div className="read">
                                         <Image className='img' width={10} height={10} src={time} alt=""/>
-                                        <span>landing-page</span>
+                                        <span>Blog-Site</span>
                                         </div>
                                     </div>
-                                    <h6 className="txt-white">Realidade virtual: Entendendo a tecnologia</h6>
+                                    <h6 className="txt-white">Blog-site contruido com HTML, SASS e JS.</h6>
                                     <div className="play">
                                         <div className='refa'>
                                             <Image className='img' width={15} height={'auto'} src={play} alt="icone de play"/>
-                                            <span>Observar projetos</span>
+                                            <button  onClick={()=>{let nome='BlogExample';exibir(nome)}}  ><span>Observar projeto</span></button>
                                         </div>
                                         <div className='refa'>
                                             <Image className='img' width={15} height={'auto'} src={gitIcon} alt="icone de play"/>
-                                            <a href='google.com'><span>Git code</span></a>
+                                            <a href='https://github.com/VinKSSan/blog_example'><span>Git code</span></a>
                                         </div>
                                     </div>
                                 </div>
                             </CardPodcast>
                         </div>
                         <div className="swiper-slide">
-                            <CardPodcast onClick={()=>{let nome='RickAndMorty';exibir(nome)}} className="card-podcast pro04">
+                            <CardPodcast 
+                                data-aos="flip-left"
+                                data-aos-easing="ease-out-cubic"
+                                className="card-podcast pro04"
+                            >
                                 <div className="image">
                                     <Image className='img' width={200} height={200} src={capaRick} alt=""/>
                                 </div>
                                 <div className="info">
                                     <div className="time">
-                                        <span className="tag-ep">Proj-01</span>
+                                        <span className="tag-ep">Proj-04</span>
                                         <div className="read">
                                         <Image className='img' width={10} height={10} src={time} alt=""/>
-                                        <span>landing-page</span>
+                                        <span>WEB-SITE</span>
                                         </div>
                                     </div>
-                                    <h6 className="txt-white">Realidade virtual: Entendendo a tecnologia</h6>
+                                    <h6 className="txt-white">web-site, desenvolvido com ReactJS.</h6>
                                     <div className="play">
                                         <div className='refa'>
                                             <Image className='img' width={15} height={'auto'} src={play} alt="icone de play"/>
-                                            <span>Observar projetos</span>
+                                            <button  onClick={()=>{let nome='RickAndMorty';exibir(nome)}} ><span>Observar projeto</span></button>
                                         </div>
                                         <div className='refa'>
                                             <Image className='img' width={15} height={'auto'} src={gitIcon} alt="icone de play"/>
-                                            <a href='google.com'><span>Git code</span></a>
+                                            <a href='https://github.com/VinKSSan/Rick_and_Morty'><span>Git code</span></a>
                                         </div>
                                     </div>
                                 </div>
                             </CardPodcast>
                         </div>
                         <div className="swiper-slide">
-                            <CardPodcast onClick={()=>{let nome='SystemInfor';exibir(nome)}} className="card-podcast pro05">
+                            <CardPodcast 
+                                data-aos="flip-left"
+                                data-aos-easing="ease-out-cubic"
+                                className="card-podcast pro05"
+                            >
                                 <div className="image">
                                     <Image className='img' width={200} height={200} src={capaSys} alt=""/>
                                 </div>
                                 <div className="info">
                                     <div className="time">
-                                        <span className="tag-ep">Proj-01</span>
+                                        <span className="tag-ep">Proj-05</span>
                                         <div className="read">
                                         <Image className='img' width={10} height={10} src={time} alt=""/>
-                                        <span>landing-page</span>
+                                        <span>WEB-APP</span>
                                         </div>
                                     </div>
-                                    <h6 className="txt-white">Realidade virtual: Entendendo a tecnologia</h6>
+                                    <h6 className="txt-white">WEB-APP desenvolvido com NextJS</h6>
                                     <div className="play">
                                         <div className='refa'>
                                             <Image className='img' width={15} height={'auto'} src={play} alt="icone de play"/>
-                                            <span>Observar projetos</span>
+                                            <button  onClick={()=>{let nome='SystemInfor';exibir(nome)}}  ><span>Observar projeto</span></button>
                                         </div>
                                         <div className='refa'>
                                             <Image className='img' width={15} height={'auto'} src={gitIcon} alt="icone de play"/>
-                                            <a href='google.com'><span>Git code</span></a>
+                                            <a href='https://github.com/VinKSSan/SystemInfor'><span>Git code</span></a>
                                         </div>
                                     </div>
                                 </div>
                             </CardPodcast>
                         </div>
                         <div className="swiper-slide">
-                            <CardPodcast onClick={()=>{let nome='Marvel';exibir(nome)}} className="card-podcast pro06">
+                            <CardPodcast 
+                                data-aos="flip-left"
+                                data-aos-easing="ease-out-cubic"
+                                className="card-podcast pro06"
+                            >
                                 <div className="image">
                                     <Image className='img' width={200} height={200} src={capaMar} alt=""/>
                                 </div>
                                 <div className="info">
                                     <div className="time">
-                                        <span className="tag-ep">Proj-01</span>
+                                        <span className="tag-ep">Proj-06</span>
                                         <div className="read">
                                         <Image className='img' width={10} height={10} src={time} alt=""/>
-                                        <span>landing-page</span>
+                                        <span>WEB-SITE</span>
                                         </div>
                                     </div>
-                                    <h6 className="txt-white">Realidade virtual: Entendendo a tecnologia</h6>
+                                    <h6 className="txt-white">WEB-Site desenvolvido com NextJS e prismic CMS.</h6>
                                     <div className="play">
                                         <div className='refa'>
                                             <Image className='img' width={15} height={'auto'} src={play} alt="icone de play"/>
-                                            <span>Observar projetos</span>
+                                            <button  onClick={()=>{let nome='Marvel';exibir(nome)}} ><span>Observar projeto</span></button>
                                         </div>
                                         <div className='refa'>
                                             <Image className='img' width={15} height={'auto'} src={gitIcon} alt="icone de play"/>
-                                            <a href='google.com'><span>Git code</span></a>
+                                            <a href='https://github.com/VinKSSan/Pagina_Marvel'><span>Git code</span></a>
                                         </div>
                                     </div>
                                 </div>

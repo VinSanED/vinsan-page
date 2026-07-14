@@ -80,7 +80,7 @@ export const ProjPSty = styled('section', {
     }
 })
 
-export const CardPodcast = styled('button' , {
+export const CardPodcast = styled('div' , {
   position: 'relative',
   display:'block',
   width: '100%',

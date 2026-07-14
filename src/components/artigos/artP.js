@@ -1,57 +1,50 @@
 import { Conteiner } from "@/styles/globalSty"
 import Image from "next/image"
 
-import { ArtSty, CardPost } from "./artPsty"
+import 'aos/dist/aos.css';
+
+import { ArtSty, CardPost} from "./artPsty"
 
 
-import ICCViewer from "./artigosEpub/apresentaIlusCC/ICdC.js"
+import ICCViewer from "./artigosEpub/ICdC.js"
 
-import rocket from "../../../public/assets/UT/icon-rocket.png";
+import IArticle from "../../../public/assets/IconsArticle.svg";
 import image_post01 from "../../../public/ArtigosEpubs/capas/ilustrandoCC.jpg";
 import image_post02 from "../../../public/ArtigosEpubs/capas/prodSuper.jpg"
 import image_post03 from "../../../public/ArtigosEpubs/capas/compHisto.jpg"
-import image_post04 from "../../../public/assets/UT/image-post-default-04.jpg"
-import image_post05 from "../../../public/assets/UT/image-post-default-05.jpg"
-import image_post06 from "../../../public/assets/UT/image-post-default-06.jpg"
 import { useEffect, useState } from "react";
 import React from "react";
 
 
 const ArtP  = ()=>{
-    const [viewer, setViewer] = useState('');
+    const [viewer, setViewer] = useState(<p>.</p>);
     const [texAN, setTexAN] = useState([])
 
     const fechar= ()=>{
         document.querySelector('body').classList.remove('overN')
         setViewer(<p>.</p>)} 
 
-    const artigs = [
-        (
+    const artigs = (uri)=>{
+        console.log("uri:",uri)
+        return(
             <div key={0} className="Eviewer">
-                <button class="btnFech" onClick={fechar}> Sair </button>
-                <ICCViewer class="iccViewer" epubFilePath="ArtigosEpubs/ilusCienComp.epub" /> 
-            </div>
-        ),
-        (
-            <div key={1} className="Eviewer">
-                <button class="btnFech" onClick={fechar}> Sair </button>
-                <ICCViewer class="iccViewer" epubFilePath="ArtigosEpubs/ProdSuper.epub" /> 
-            </div>
-        ),
-        (
-            <div key={2} className="Eviewer">
-                <button class="btnFech" onClick={fechar}> Sair </button>
-                <ICCViewer class="iccViewer" epubFilePath="ArtigosEpubs/BreIntroHistCom.epub" /> 
+                <button className="btnFech" onClick={fechar}> Sair </button>
+                <ICCViewer className="iccViewer" epubFilePath={uri} /> 
             </div>
         )
-    ]
+    }
 
     const vizu = (tit)=>{
 
         document.querySelector('body').classList.add('overN')
-        if(tit==='ICC'){setViewer( artigs[0])}
-        if(tit==='prodsuper'){setViewer(artigs[1])}
-        if(tit==='breIntHisComp'){setViewer(artigs[2])}
+
+        let uriEpub = {'ICC':"ArtigosEpubs/ilusCienComp.epub",
+            'prodSuper':"ArtigosEpubs/ProdSuper.epub",
+            'breIntHisComp':"ArtigosEpubs/BreIntroHistCom.epub"
+        }
+        if(tit==='ICC'){console.log(uriEpub.ICC); setViewer( artigs(uriEpub.ICC))}
+        if(tit==='prodsuper'){setViewer(artigs(uriEpub.prodSuper))}
+        if(tit==='breIntHisComp'){setViewer(artigs(uriEpub.breIntHisComp))}
     }
 
     const addAnimaTex = () =>{
@@ -71,6 +64,13 @@ const ArtP  = ()=>{
                 return ()=>clearTimeout(timeOID)
             }
         },[texAN])
+    const [isMob , setIsMob] = useState(false)
+    
+    useEffect(()=>{
+       
+        const bodyRectL = document.body.getBoundingClientRect().width;
+        setIsMob(bodyRectL) 
+    },[])
 
     return(
         <ArtSty id="artig" className="s-artigos">
@@ -78,11 +78,17 @@ const ArtP  = ()=>{
             <Conteiner className="container">
                 <div className="top">
                     <h2>Artigos</h2>
-                    <p>Lorem ipsum dolor sit amet <Image className="img" src={rocket} alt=""/></p>
+                    <p>Leia meus artigos<Image className="img" width={50}  src={IArticle} alt=""/></p>
                 </div>
                 <div className="all">
-                    <CardPost onClick={()=>{let tit="ICC";vizu(tit)}} className="card-post-default">
-                        <div className="image">
+                    <CardPost 
+                        data-aos={isMob?"fade-up" : "zoom-in-up"}
+                        data-aos-anchor-placement={isMob? "center-bottom" : "center-center"}
+                        onClick={()=>{let tit="ICC";vizu(tit)}} 
+                        className="card-post-default"
+                    >
+
+                    <div className="image">
                             <Image className="img"  src={image_post01} alt=""/>
                         </div>
                         <div className="info">
@@ -98,7 +104,12 @@ const ArtP  = ()=>{
                             </ul>
                         </div>
                     </CardPost>
-                    <CardPost onClick={()=>{let tit="prodsuper";vizu(tit)}}  className="card-post-default">
+                    <CardPost 
+                        data-aos={isMob?"fade-up" : "zoom-in-up"}
+                        data-aos-anchor-placement={isMob? "center-bottom" : "center-center"}
+                        onClick={()=>{let tit="prodsuper";vizu(tit)}}  
+                        className="card-post-default"
+                    >
                         <div className="image">
                             <Image className="img"  src={image_post02} alt=""/>
                         </div>
@@ -115,7 +126,12 @@ const ArtP  = ()=>{
                             </ul>
                         </div>
                     </CardPost>
-                    <CardPost onClick={()=>{let tit="breIntHisComp";vizu(tit)}} href="detalhes-post.html" className="card-post-default">
+                    <CardPost 
+                        data-aos={isMob?"fade-up" : "zoom-in-up"}
+                        data-aos-anchor-placement={isMob? "center-bottom" : "center-center"}
+                        onClick={()=>{let tit="breIntHisComp";vizu(tit)}} 
+                        href="detalhes-post.html" className="card-post-default"
+                    >
                         <div className="image">
                             <Image  className="img"  src={image_post03} alt=""/>
                         </div>
@@ -136,7 +152,12 @@ const ArtP  = ()=>{
                 {texAN.map((e,i)=>(
                     <React.Fragment key={i}>{e}</React.Fragment>
                 ))}
-                <button onClick={()=>{addAnimaTex()}} className="btn-primary" >Carregar mais</button>
+                <button 
+                    data-aos="fade-up"
+                    delay="500"
+                    onClick={()=>{addAnimaTex()}} 
+                    className="btn-primary" 
+                >Carregar mais</button>
             </Conteiner>
         </ArtSty>
 

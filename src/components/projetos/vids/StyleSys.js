@@ -15,6 +15,13 @@ export const SysInfSty = styled('section', {
     borderBottom:"solid 2px blue",
     display:"flex",
     flexDirection: "column",
+    button:{
+        fontFamily:"fangsong",
+        fontWeight:'bold',
+        fontSize:"18pt",
+        color:"rgba(5,255,5,1)",
+        background:'rgba(0,255,255,0.2)'
+    },
     ".textDiv":{
         padding:"5rem",
         display:"flex",
@@ -40,7 +47,7 @@ export const SysInfSty = styled('section', {
             alignItems:"center",
             justifyContent:"center",
             margin:"0 auto",
-            height:'65vh',
+            height:'50vh',
             width:"50%",
             backgroundSize:"cover",
             backgroundPosition:"center",
@@ -48,9 +55,13 @@ export const SysInfSty = styled('section', {
             border:"solid 2px cyan",
             button:{
                 border:"solid 1px cyan",
-                backgroundColor:"$blackOpa",
+                backgroundColor:"transparent",
                 padding:"1rem 0rem 1rem 1.5rem",
-                borderRadius:"50%"
+                borderRadius:"50%",
+                transition:"all .2s ease",
+                "&:hover":{
+                    scale:1.1,
+                }
             }
 
         }
@@ -68,16 +79,17 @@ export const SysInfSty = styled('section', {
         width:"100%",
         backgroundColor:"$blackOpa",
         ".btnFechar":{
-            width:"80%",
-            height:"8rem",
+            width:"100%",
+            height:"2.6rem",
             display:"flex",
             alignItems:"center",
             justifyContent:"center",
-            backgroundColor:"$wayCyberBlue",
+            backgroundColor:"rgba(255,255,255,0.2)",
             button:{
                 padding:"1rem",
                 textAlign:"center",
                 color:"lime",
+                fontSize:"15pt",
                 borderRadius: "10px",
                 backgroundColor:"$blackOpa",
                 width:"22rem",
@@ -86,7 +98,7 @@ export const SysInfSty = styled('section', {
         }
     },
     ".divVideo":{
-        height:"80vh",
+        height:"100vh",
         maxWidth:"100%",
         backgroundColor:"$blackOpa",
 
@@ -97,6 +109,10 @@ export const SysInfSty = styled('section', {
         }
     },
     "@tablet":{
+        ".thumb":{
+            height:'50vh !important',
+            width:"90vw !important",
+        },
         p:{
             fontSize:'14pt !important'
         },
@@ -105,7 +121,7 @@ export const SysInfSty = styled('section', {
     },   
     "@mobile":{
         ".thumb":{
-            height:"30vh !important"
+            height:"35vh !important"
         },
         
         p:{

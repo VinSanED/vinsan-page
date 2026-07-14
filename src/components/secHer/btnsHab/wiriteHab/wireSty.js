@@ -5,12 +5,14 @@ export const DivInfo = styled('div',{
     position:'fixed',
     top:"0%",
     left:'0%',
-    height:'100vh',
+    height:'110vh',
     display:'flex',
     alignItems:'center',
     justifyContent:'center',
     flexDirection:"column",
     backgroundColor:'rgba(0,0,0,0.8)',
+    padding:"0.2rem 1rem 1rem 1rem",
+    overflowY:'scroll',
     ".Sair":{
         width:'100%',
         height:'5%',
@@ -140,11 +142,23 @@ export const DivInfo = styled('div',{
     },  
     "@hM2":{
         ".Sair":{
-            marginTop:"4rem !important"
+            marginTop:"1rem !important"
         }
     },
-
+    "@hM3":{
+        ".contain":{
+            marginBottom:'1rem'
+        },
+        
+        ".formu":{
+            form:{
+                paddingTop:'1rem !important'
+            }
+        }
+    },
+    
     "@tablet":{
+        width:"100vw",
         ".Sair":{
             button:{
                 width:"10%",
@@ -156,8 +170,11 @@ export const DivInfo = styled('div',{
                 width:"90% !important",
             },
         },
+        ".formNE":{
+            flexDirection:'row'
+        },
         ".texto":{
-            width:'90% !important',
+            width:'90vw !important',
             p:{
                 fontSize:'12pt'
             },
@@ -168,23 +185,28 @@ export const DivInfo = styled('div',{
                 justifyContent:'start',
                 flexDirection:'column',
             },
-            form:{
-                flexDirection:'column',
-                alignItems:'end !important'
-            }
         }
     },
 
 //mobile 600px
-    "@mobile1":{
+    "@mobile":{
         ".Sair":{
             justifyContent:'start',
         },
         ".inform":{
             width:"80% !important",
         },
+        ".formNE":{
+            display:'flex',
+            alignItems:'center',
+            justifyContent:'center',
+            flexDirection:'row !important',
+            "divTxt":{
+                width:"auto"
+            }
+        },
         ".formu":{
-            maxWidth:'70%',
+            maxWidth:'80%',        
             ".areaTex":{
                 textarea:{
                     maxWidth:'70% !important'

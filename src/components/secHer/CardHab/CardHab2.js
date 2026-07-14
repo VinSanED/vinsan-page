@@ -35,7 +35,7 @@ const CardHab2 = ()=>{
             </div>
             <div className="info">
             <div className="top-info">
-                <span className="categorie">tecnologia</span>
+                <span className="categorie">Manipulação Textual</span>
                 <ul>
                 <li>
                     <Image src={calendar} alt="Icone de calendario"/>

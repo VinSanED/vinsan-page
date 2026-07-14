@@ -34,14 +34,14 @@ const CardHab1=()=>{
         </div>
         <div className="info">
         <div className="top-info">
-            <span className="categorie">tecnologia</span>
+            <span className="categorie">Manipulação Gráfica</span>
             <ul>
             <li>
                 <Image src={calendar} alt="Icone de calendario"/>
                 <span>2 a 40 dias</span>
             </li>
             <li>
-                <Image src={clock} width={16} height={16} alt="Icone de calendario"/>
+                <Image src={clock} width={16} height={16} alt="Icone de Moeda"/>
                 <span>100 a 2000R$</span>
             </li>
             </ul>
