@@ -1,74 +1,5 @@
 import { createStitches } from "@stitches/react";
 
-const fontFace = `
-  @font-face {
-    font-family: 'Atyp BL Text';
-    src: url('../fonts/AtypBLText-Regular.woff2') format('woff2'),
-         url('../fonts/AtypBLText-Regular.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
-  }
-
-  @font-face {
-    font-family: 'Atyp BL Text';
-    src: url('../fonts/AtypBLText-Medium.woff2') format('woff2'),
-         url('../fonts/AtypBLText-Medium.woff') format('woff');
-    font-weight: 500;
-    font-style: normal;
-    font-display: swap;
-  }
-
-  @font-face {
-    font-family: 'Atyp BL Text';
-    src: url('../fonts/AtypBLText-Bold.woff2') format('woff2'),
-         url('../fonts/AtypBLText-Bold.woff') format('woff');
-    font-weight: bold;
-    font-style: normal;
-    font-display: fallback;
-  }
-
-  @font-face {
-    font-family: 'Atyp BL Text';
-    src: url('../fonts/AtypBLText-Semibold.woff2') format('woff2'),
-         url('../fonts/AtypBLText-Semibold.woff') format('woff');
-    font-weight: 600;
-    font-style: normal;
-    font-display: fallback;
-  }
-`;
-
-const monosp = `
-    font-family: 'Space Mono', monospace;
-    src: url('/fonts/space_mono/SpaceMono-Regular.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-`;
-const firaCode = `
-    font-family: 'Fira Code', monospace;
-    src: url('/fonts/fira/static/FiraCode-Medium.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-`;
-const segoe_UI = `
-  font-family: 'Segoe UI, system-ui, sans-serif';
-  src: url("/fonts/segoe_UI/SegoeUI.ttf") format('truetype'); 
-  font-weight: normal;
-  font-style: normal;
-`;
-
-const RobotoMono = `
-  font-family: 'Roboto Mono', monospace;
-  src: url("/fonts/roboto_mono/static/RobotoMono-Regular.ttf") format('truetype'); 
-  font-weight: normal;
-  font-style: normal;
-`
-
-
-
-const a = 500;
-
-
 export const frames={
   texAni:{
     '0%':{
@@ -109,36 +40,48 @@ export const frames={
 
 export const {css, styled,  globalCss, keyframes, getCssText, theme} = 
 createStitches({ 
-  globalCss:{
-    '@font-face':firaCode,
-    '@font-face':segoe_UI,
-    '@font-face':RobotoMono,
-    '@font-face':monosp,
-  },
   theme: {
     colors: {
-      cyberCy:"#00ffffff",
-      blaCyan:"rgba(5,210,255,1)",
-      pink: "green",
-      gray_scale_01:  '#050110',
-      gray_scale_02: '#0F0C1B',
-      gray_scale_03: '#3F3D49',
-      gray_scale_04: '#57555F',
-      gray_scale_05: '#9995A6',
-      gray_scale_06: '#ACB4BF',
+      background: "#f7f9fb",
+      backgroundAlt: "#eef4f6",
+      surface: "#ffffff",
+      surfaceSoft: "#f1f6f8",
+      surfaceMuted: "#e5edf0",
+      text: "#102027",
+      textMuted: "#5a6a72",
+      heading: "#07151b",
+      border: "#d7e2e6",
+      borderStrong: "#9db4bd",
+      accent: "#006d77",
+      accentStrong: "#004f58",
+      accentSoft: "#d8f0f2",
+      accentWash: "#edfafa",
+      positive: "#2f855a",
+      shadow: "rgba(16, 32, 39, 0.12)",
+      cyberCy:"#d8f0f2",
+      blaCyan:"#006d77",
+      pink: "#2f855a",
+      gray_scale_01:  "#f7f9fb",
+      gray_scale_02: "#ffffff",
+      gray_scale_03: "#d7e2e6",
+      gray_scale_04: "#9db4bd",
+      gray_scale_05: "#5a6a72",
+      gray_scale_06: "#102027",
     },
 
     fonts: {
-      segoeUI: 'Segoe UI, system-ui, sans-serif',
+      body: "Inter, Segoe UI, Roboto, Arial, system-ui, sans-serif",
+      heading: "Inter, Segoe UI, Roboto, Arial, system-ui, sans-serif",
+      segoeUI: "Segoe UI, system-ui, sans-serif",
       fira: "'Fira Code', monospace",
       roboto: "'Roboto Mono', monospace",
       mono: " 'Space Mono', monospace"
     },
 
     fontWeights: {
-      regular: 'normal',
-      medium: a,
-      bold: 'bold',
+      regular: 400,
+      medium: 500,
+      bold: 700,
       semibold: 600,
     }
   },

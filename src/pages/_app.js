@@ -33,14 +33,14 @@ export default function App({ Component, pageProps }) {
         <meta charSet="utf-8" />
         <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
         <meta name='viewport' content='minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no, user-scalable=no, viewport-fit=cover' />
-        <meta name="description" content="pagina pessoal/proficional de Vinicius Sanches, editor e desenvolvedor de conteúdo web-informacional." />
+        <meta name="description" content="Página pessoal e profissional de Vinicius Sanches, focada em engenharia de software, sistemas, automação e dados." />
         <meta name="author" content="Vinicius Sanches"/>
-        <meta name="keywords" content=" programador freelancer,content freelancer,design freelancer,vinsan,freelancer, vinicius sanches, vincius, sanches, Vinicius Sanches, pagina proficional,vinsan-page, manipulação de textos, manipulação de imagens, desenvolvimento de sistemas, webdev, desenvolvimento web, escritor, programador, vindaed, vinsanED, VinSanEd, VinSanED, vinsan.ed" />
-        <title>VinSan-Page</title>
+        <meta name="keywords" content="Vinicius Sanches, Vinsan Page, desenvolvimento de sistemas, engenharia de software, automação, dados, dashboards, JavaScript, Next.js, React" />
+        <title>Vinicius Sanches | Software, Sistemas e Dados</title>
 
-        <meta property="og:title" content="VinSan-Page"/>
-        <meta property="og:description" content="pagina pessoal de Vinicius Sanches, editor e desenvolvedor de conteúdo web-informacional"/>
-        <meta property="og:image" content="/public/assets/UT/card_habilit/spacingBACK.png"/>
+        <meta property="og:title" content="Vinicius Sanches | Software, Sistemas e Dados"/>
+        <meta property="og:description" content="Projetos, competências e contato profissional de Vinicius Sanches."/>
+        <meta property="og:image" content="/assets/imaProjetos/systemInf/Compcapa.png"/>
 
 
         <link rel="manifest" href="/manifest.json" />
@@ -54,7 +54,7 @@ export default function App({ Component, pageProps }) {
           rel="icon"
           type="image/png"
         />
-        <meta name="theme-color" content="rgba(255,255,255,0.2)" />
+        <meta name="theme-color" content="#f7f9fb" />
     </Head>
     <Header/>
     <Component {...pageProps} />
