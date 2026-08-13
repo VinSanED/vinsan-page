@@ -20,9 +20,15 @@ export const HeaderInner = styled(Conteiner, {
 
 export const BrandLink = styled("a", {
   display: "inline-flex",
-  flexDirection: "column",
-  gap: "0.2rem",
+  alignItems: "center",
+  gap: "1rem",
   color: "$heading",
+
+  div: {
+    display: "flex",
+    flexDirection: "column",
+    gap: "0.2rem",
+  },
 
   strong: {
     color: "$heading",
@@ -187,7 +193,7 @@ export const Section = styled("section", {
 });
 
 export const HeroSection = styled("section", {
-  padding: "10.4rem 0 8rem",
+  padding: "7.2rem 0 6.4rem",
   borderBottom: "1px solid $border",
 });
 
@@ -216,12 +222,14 @@ export const HeroCopy = styled("div", {
   h1: {
     maxWidth: "72rem",
     marginBottom: "1.2rem",
+    fontSize: "clamp(4rem, 5vw, 6.4rem)",
+    lineHeight: 1.02,
   },
 
   h2: {
     marginBottom: "2.4rem",
     color: "$accentStrong",
-    fontSize: "clamp(2.2rem, 4vw, 3.8rem)",
+    fontSize: "clamp(2.2rem, 3vw, 3.2rem)",
   },
 
   p: {
@@ -244,6 +252,19 @@ export const HeroPanel = styled("aside", {
   backgroundColor: "$surface",
   boxShadow: "0 24px 60px $shadow",
   overflow: "hidden",
+});
+
+export const BrandBanner = styled("div", {
+  minHeight: "17rem",
+  borderBottom: "1px solid $border",
+  backgroundImage:
+    "linear-gradient(90deg, rgba(7, 20, 28, 0.18), rgba(7, 20, 28, 0.04)), url('/fotLogNav.png')",
+  backgroundPosition: "center",
+  backgroundSize: "cover",
+
+  "@mobile": {
+    minHeight: "13rem",
+  },
 });
 
 export const PanelHeader = styled("div", {
@@ -326,6 +347,20 @@ export const ProjectGrid = styled(Conteiner, {
 
   "@tablet": {
     gridTemplateColumns: "1fr",
+  },
+});
+
+export const ProjectSubhead = styled(Conteiner, {
+  marginTop: "4.8rem",
+  marginBottom: "2rem",
+
+  h3: {
+    marginBottom: "0.8rem",
+    fontSize: "2.6rem",
+  },
+
+  p: {
+    maxWidth: "74rem",
   },
 });
 
@@ -571,6 +606,27 @@ export const AvailabilityBox = styled("aside", {
   },
 });
 
+export const SignatureBadge = styled("div", {
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
+  minHeight: "8.8rem",
+  marginBottom: "2rem",
+  padding: "1.4rem",
+  border: "1px solid rgba(0, 121, 134, 0.18)",
+  borderRadius: "8px",
+  background:
+    "linear-gradient(135deg, rgba(255,255,255,0.86), rgba(218,250,250,0.56))",
+  overflow: "hidden",
+
+  img: {
+    width: "100%",
+    maxWidth: "28rem",
+    height: "auto",
+    objectFit: "contain",
+  },
+});
+
 export const ContactGrid = styled(Conteiner, {
   display: "grid",
   gridTemplateColumns: "repeat(4, minmax(0, 1fr))",
@@ -635,7 +691,7 @@ export const ArticleCard = styled("a", {
   overflow: "hidden",
 
   ".articleImage": {
-    width: "100%",
+    maxHeight:'75vh',
     aspectRatio: "16 / 9",
     objectFit: "cover",
   },
@@ -734,13 +790,16 @@ export const ProfilePanel = styled("section", {
   boxShadow: "0 24px 60px $shadow",
 
   h1: {
-    marginBottom: "1rem",
+    marginBottom: "0.8rem",
+    fontSize: "clamp(3rem, 4vw, 4.4rem)",
+    lineHeight: 1,
   },
 
   h2: {
-    marginBottom: "2rem",
+    marginBottom: 0,
     color: "$accentStrong",
-    fontSize: "2.8rem",
+    fontSize: "2.2rem",
+    lineHeight: 1.25,
   },
 
   p: {
@@ -749,6 +808,43 @@ export const ProfilePanel = styled("section", {
 
   ".focusList": {
     marginTop: "2.4rem",
+  },
+});
+
+export const ProfileHeader = styled("div", {
+  display: "flex",
+  flexDirection: "row",
+  alignItems: "center",
+  gap: "2rem",
+  marginBottom: "2.4rem",
+
+  "@mobile": {
+    flexDirection: "column",
+    alignItems: "flex-start",
+    gap: "1.6rem",
+  },
+});
+
+export const ProfilePhoto = styled("div", {
+  position: "relative",
+  width: "14rem",
+  height: "14rem",
+  flex: "0 0 14rem",
+  overflow: "hidden",
+  border: "1px solid $border",
+  borderRadius: "50%",
+  backgroundColor: "$surfaceSoft",
+  boxShadow: "0 18px 42px $shadow",
+
+  ".profileImage": {
+    objectFit: "cover",
+    objectPosition: "50% 34%",
+  },
+
+  "@mobile": {
+    width: "12rem",
+    height: "12rem",
+    flexBasis: "12rem",
   },
 });
 
@@ -763,8 +859,28 @@ export const CardContactPanel = styled("aside", {
     fontSize: "2.4rem",
   },
 
-  div: {
+  ".contactList": {
     display: "grid",
     gap: "1rem",
+  },
+});
+
+export const CardBrandStrip = styled("div", {
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
+  minHeight: "9.6rem",
+  marginBottom: "2rem",
+  padding: "1.2rem",
+  border: "1px solid rgba(0, 121, 134, 0.18)",
+  borderRadius: "8px",
+  background:
+    "linear-gradient(135deg, rgba(255,255,255,0.9), rgba(224,251,251,0.72))",
+
+  img: {
+    width: "100%",
+    maxWidth: "24rem",
+    height: "auto",
+    objectFit: "contain",
   },
 });

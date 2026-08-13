@@ -1,0 +1,205 @@
+TEXTOS DOS PROJETOS DO PORTFÓLIO
+==================================
+
+1. SYSTEMINFOR
+--------------
+
+Categoria:
+DASHBOARD OPERACIONAL
+
+Título:
+SystemInfor
+
+Descrição:
+Aplicação web para organizar informações do sistema e apresentar indicadores técnicos em uma interface de leitura rápida.
+
+Minha contribuição:
+Estruturação da interface, componentes reutilizáveis, visualização de dados e rota local de consulta.
+
+Tecnologias:
+Next.js
+React
+Stitches
+D3.js
+API local
+
+Aspectos implementados:
+dashboard
+componentes
+indicadores
+documentação
+
+Botão:
+Repositório
+
+
+2. RICK AND MORTY
+-----------------
+
+Categoria:
+INTERFACE E CONSUMO DE DADOS
+
+Título:
+Rick and Morty
+
+Descrição:
+Projeto de interface em React para consulta, navegação e apresentação organizada de informações de uma API pública.
+
+Minha contribuição:
+Construção da experiência visual, componentes de listagem e fluxo de consulta para explorar dados externos.
+
+Tecnologias:
+React
+JavaScript
+CSS
+API
+
+Aspectos implementados:
+consumo de API
+UI responsiva
+estado de tela
+
+Botão:
+Repositório
+
+
+3. MARVEL PAGE
+--------------
+
+Categoria:
+APLICAÇÃO WEB E CONTEÚDO
+
+Título:
+Marvel Page
+
+Descrição:
+Estudo de página web com Next.js e CMS, usando conteúdo estruturado e apresentação visual de personagens.
+
+Minha contribuição:
+Implementação da página, integração de conteúdo e organização visual do material do projeto.
+
+Tecnologias:
+Next.js
+React
+Prismic CMS
+CSS
+
+Aspectos implementados:
+roteamento
+conteúdo estruturado
+frontend
+
+Botão:
+Repositório
+
+
+4. PRECISION PHI
+----------------
+
+Categoria:
+APLICAÇÃO GEOESPACIAL OFFLINE
+
+Título:
+Precision Phi
+
+Descrição:
+Aplicação web progressiva para localizar registros de planilhas em mapas, apoiar operações de campo e continuar funcionando mesmo sem conexão.
+
+Minha contribuição:
+Concepção da arquitetura offline-first, importação e busca de dados, persistência local, integração com mapas, geolocalização e organização do fluxo operacional.
+
+Tecnologias:
+Next.js
+React
+PWA
+IndexedDB
+API
+
+Aspectos implementados:
+offline-first
+geolocalização
+processamento de planilhas
+operações de campo
+
+Botão:
+Repositório
+
+
+5. SMART TRADE BOOT
+-------------------
+
+Categoria:
+ECOSSISTEMA DE ENGENHARIA E DADOS
+
+Título:
+Smart Trade Boot
+
+Descrição:
+Ecossistema de engenharia para construir, organizar, validar e aplicar conhecimento operacional sobre mercados financeiros, com pipelines rastreáveis e execução controlada em Paper e Sandbox.
+
+Minha contribuição:
+Arquitetura em camadas, contratos e artefatos operacionais, automação de pipelines, geração de relatórios, rastreabilidade de evidências, empacotamento, instalação, testes e estabilização da versão 1.0.0.
+
+Tecnologias:
+Java
+Maven
+JUnit
+CLI
+NDJSON
+HTTP local
+
+Aspectos implementados:
+arquitetura de software
+automação de pipelines
+rastreabilidade
+testes e release
+
+Botão:
+Repositório
+
+
+6. VSCOMMERCE
+-------------
+
+Categoria:
+APLICAÇÃO FULL STACK
+
+Título:
+VSCommerce
+
+Descrição:
+Projeto de comércio eletrônico desenvolvido ao longo do curso Desenvolvimento Moderno, aplicando integração entre frontend, API REST e banco de dados relacional.
+
+Minha contribuição:
+Implementação e adaptação do backend em Spring Boot, modelagem do banco PostgreSQL, regras de domínio, endpoints REST e integração da interface em React.
+
+Tecnologias:
+Java
+Spring Boot
+React
+PostgreSQL
+REST API
+
+Aspectos implementados:
+desenvolvimento full stack
+arquitetura em camadas
+modelagem de dados
+integração frontend-backend
+
+Botão:
+Repositório
+
+o link para o repo vsc:
+back: https://github.com/VinKSSan/vscommerce
+front: https://github.com/VinKSSan/vscommerce_frontend
+
+No lugar de colocar os links para os repositórios de SMT e Precision Phi,
+vamos direcionar para as páginas:
+
+precision:
+https://precision-phi.vercel.app/
+
+
+smt: 
+
+https://smt-project.vercel.app/

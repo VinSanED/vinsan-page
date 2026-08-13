@@ -96,8 +96,8 @@ const Card = ()=>{
                         <div className="Bcont">
                             <div className="Lcont" >
                                 <div>
-                                    <a target="_blank" href='https://github.com/VinKSSan' className="relogs"><Image className="imaRL" src={gitIcon} alt="github logo"/></a>
-                                    <a target="_blank" rel="linkedin path" href="https://www.linkedin.com/in/vinicius-sanches-88aa27218" className="relogs"><Image className="imaRL" src={likedinLog} alt="linkedin logo"/> </a>
+                                    <a target="_blank" rel="noreferrer" href='https://github.com/vinsaned' className="relogs"><Image className="imaRL" src={gitIcon} alt="github logo"/></a>
+                                    <a target="_blank" rel="noreferrer" href="https://www.linkedin.com/in/vinsan631" className="relogs"><Image className="imaRL" src={likedinLog} alt="linkedin logo"/> </a>
                                     <a href="https://www.facebook.com/profile.php?id=61553152607144" target="_blank" className="relogs"> <Image className="imaRL" src={faceLog} alt="facebook logo"/></a>
                                 </div>
                             </div>
@@ -110,7 +110,7 @@ const Card = ()=>{
                         <BtnAbout f={movCenterBtn} src={uri} />
                         <div className="rec" key={0}>
                             <span >Vinicius Sanches</span>
-                            <strong>Cientista da Computação</strong>
+                            <strong>Desenvolvedor de software</strong>
                         </div>
                     </div>
                 </div>

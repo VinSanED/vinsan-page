@@ -26,8 +26,10 @@ const Header = () => {
     <HeaderShell>
       <HeaderInner>
         <BrandLink href="/#" aria-label="Voltar para o início da Vinsan Page">
-          <strong>Vinicius Sanches</strong>
-          <span>Software, sistemas e dados</span>
+          <div>
+            <strong>Vinicius Sanches</strong>
+            <span>Software, automação e dados</span>
+          </div>
         </BrandLink>
 
         <DesktopNav aria-label="Navegação principal">
@@ -41,7 +43,7 @@ const Header = () => {
         <HeaderActions>
           <ButtonLink
             tone="quiet"
-            href="https://github.com/VinKSSan"
+            href="https://github.com/vinsaned"
             target="_blank"
             rel="noreferrer"
           >
@@ -70,7 +72,7 @@ const Header = () => {
               </NavItem>
             ))}
             <NavItem
-              href="https://github.com/VinKSSan"
+              href="https://github.com/vinsaned"
               target="_blank"
               rel="noreferrer"
               onClick={() => setIsOpen(false)}
@@ -78,7 +80,7 @@ const Header = () => {
               GitHub
             </NavItem>
             <NavItem
-              href="https://www.linkedin.com/in/vinicius-sanches-88aa27218"
+              href="https://www.linkedin.com/in/vinsan631"
               target="_blank"
               rel="noreferrer"
               onClick={() => setIsOpen(false)}

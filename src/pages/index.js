@@ -1,8 +1,12 @@
 import Head from "next/head";
 import Image from "next/image";
-import capaSys from "../../public/assets/imaProjetos/systemInf/Compcapa.png";
-import capaRick from "../../public/assets/imaProjetos/siteRick/capa.webp";
-import capaMarvel from "../../public/assets/imaProjetos/marvel/MarvelCapa.png";
+import imageSystemInfor from "../assets/new/systenInf/i2.png";
+import imageRickAndMorty from "../assets/new/rickAndMorty/rickBack.png";
+import imageMarvel from "../assets/new/marvel/marvelBack.png";
+import imagePrecision from "../assets/new/precision/precision.png";
+import imageSmartTrade from "../assets/new/SMT/2026-07-16-135052_1366x768_scrot.png";
+import imageVsCommerce from "../assets/new/vscommerce/vsc.png";
+import curriculoPdf from "../assets/new/Curriculo_Vinicius_Sanches.pdf";
 import artigoComputacao from "../../public/ArtigosEpubs/capas/ilustrandoCC.jpg";
 import artigoHistoria from "../../public/ArtigosEpubs/capas/compHisto.jpg";
 import artigoProdutividade from "../../public/ArtigosEpubs/capas/prodSuper.jpg";
@@ -11,6 +15,7 @@ import {
   ArticleCard,
   ArticleGrid,
   AvailabilityBox,
+  BrandBanner,
   BulletList,
   ButtonLink,
   CardGrid,
@@ -25,7 +30,6 @@ import {
   HeroPanel,
   HeroSection,
   HomeMain,
-  IntroNote,
   MethodGrid,
   MethodStep,
   PanelHeader,
@@ -35,63 +39,101 @@ import {
   ProjectGrid,
   ProjectImage,
   ProjectMeta,
+  ProjectSubhead,
   Section,
   SectionIntro,
+  SignatureBadge,
   SplitGrid,
   TechGrid,
   TechGroup,
   TextBlock,
 } from "@/styles/siteStyles";
 
-const projects = [
+const featuredProjects = [
+  {
+    name: "Smart Trade Boot",
+    label: "Ecossistema de engenharia e dados",
+    image: imageSmartTrade,
+    objective:
+      "Ecossistema de engenharia para construir, organizar, validar e aplicar conhecimento operacional sobre mercados financeiros, com pipelines rastreáveis e execução controlada em Paper e Sandbox.",
+    contribution:
+      "Arquitetura em camadas, contratos e artefatos operacionais, automação de pipelines, geração de relatórios, rastreabilidade de evidências, empacotamento, instalação, testes e estabilização da versão 1.0.0.",
+    technologies: ["Java", "Maven", "JUnit", "CLI", "NDJSON", "HTTP local"],
+    actions: [{ label: "Ver projeto", href: "https://smt-project.vercel.app/" }],
+  },
+  {
+    name: "Precision Phi",
+    label: "Aplicação geoespacial offline",
+    image: imagePrecision,
+    objective:
+      "Aplicação web progressiva para localizar registros de planilhas em mapas, apoiar operações de campo e continuar funcionando mesmo sem conexão.",
+    contribution:
+      "Concepção da arquitetura offline-first, importação e busca de dados, persistência local, integração com mapas, geolocalização e organização do fluxo operacional.",
+    technologies: ["Next.js", "React", "PWA", "IndexedDB", "API"],
+    actions: [{ label: "Abrir aplicação", href: "https://precision-phi.vercel.app/" }],
+  },
+  {
+    name: "VSCommerce",
+    label: "Aplicação full stack",
+    image: imageVsCommerce,
+    objective:
+      "Projeto de comércio eletrônico desenvolvido ao longo do curso Desenvolvimento Moderno, aplicando integração entre frontend, API REST e banco de dados relacional.",
+    contribution:
+      "Implementação e adaptação do backend em Spring Boot, modelagem do banco PostgreSQL, regras de domínio, endpoints REST e integração da interface em React.",
+    technologies: ["Java", "Spring Boot", "React", "PostgreSQL", "REST API"],
+    actions: [
+      { label: "Back-end", href: "https://github.com/VinKSSan/vscommerce" },
+      { label: "Front-end", href: "https://github.com/VinKSSan/vscommerce_frontend" },
+    ],
+  },
   {
     name: "SystemInfor",
     label: "Dashboard operacional",
-    image: capaSys,
-    repo: "https://github.com/VinKSSan/SystemInfor",
+    image: imageSystemInfor,
     objective:
       "Aplicação web para organizar informações do sistema e apresentar indicadores técnicos em uma interface de leitura rápida.",
     contribution:
       "Estruturação da interface, componentes reutilizáveis, visualização de dados e rota local de consulta.",
     technologies: ["Next.js", "React", "Stitches", "D3.js", "API local"],
-    capabilities: ["dashboard", "componentes", "indicadores", "documentação"],
+    actions: [{ label: "Repositório", href: "https://github.com/VinKSSan/SystemInfor" }],
   },
+];
+
+const complementaryProjects = [
   {
     name: "Rick and Morty",
     label: "Interface e consumo de dados",
-    image: capaRick,
-    repo: "https://github.com/VinKSSan/Rick_and_Morty",
+    image: imageRickAndMorty,
     objective:
       "Projeto de interface em React para consulta, navegação e apresentação organizada de informações de uma API pública.",
     contribution:
       "Construção da experiência visual, componentes de listagem e fluxo de consulta para explorar dados externos.",
     technologies: ["React", "JavaScript", "CSS", "API"],
-    capabilities: ["consumo de API", "UI responsiva", "estado de tela"],
+    actions: [{ label: "Repositório", href: "https://github.com/VinKSSan/Rick_and_Morty" }],
   },
   {
     name: "Marvel Page",
     label: "Aplicação web e conteúdo",
-    image: capaMarvel,
-    repo: "https://github.com/VinKSSan/Pagina_Marvel",
+    image: imageMarvel,
     objective:
       "Estudo de página web com Next.js e CMS, usando conteúdo estruturado e apresentação visual de personagens.",
     contribution:
       "Implementação da página, integração de conteúdo e organização visual do material do projeto.",
     technologies: ["Next.js", "React", "Prismic CMS", "CSS"],
-    capabilities: ["roteamento", "conteúdo estruturado", "frontend"],
+    actions: [{ label: "Repositório", href: "https://github.com/VinKSSan/Pagina_Marvel" }],
   },
 ];
 
 const competencies = [
   {
     title: "Desenvolvimento e Engenharia de Software",
-    text: "Construção e manutenção de aplicações web, backends, APIs e ferramentas técnicas com foco em evolução segura.",
+    text: "Construção e manutenção de aplicações web, backends, APIs e ferramentas técnicas com testes e documentação.",
     items: ["arquitetura modular", "testes", "documentação", "release e empacotamento"],
   },
   {
     title: "Análise e Desenvolvimento de Sistemas",
     text: "Investigação de problemas, organização de requisitos e transformação de fluxos operacionais em soluções práticas.",
-    items: ["modelagem de fluxos", "regras de negócio", "prototipação", "escopo verificável"],
+    items: ["modelagem de fluxos", "regras de negócio", "prototipação", "definição de escopo"],
   },
   {
     title: "Dados e Apoio à Decisão",
@@ -107,16 +149,16 @@ const competencies = [
 
 const techGroups = [
   ["Linguagens", ["Java", "Python", "JavaScript", "SQL", "HTML", "CSS"]],
-  ["Desenvolvimento", ["Git", "GitHub", "Maven", "APIs REST", "JSON", "testes"]],
-  ["Dados", ["SQL", "Python", "planilhas", "visualização", "CSV", "JSON"]],
-  ["Ambiente", ["Linux", "terminal", "VS Code", "IntelliJ IDEA", "IA assistiva"]],
+  ["Frameworks e desenvolvimento", ["React", "Next.js", "Spring Boot", "Maven", "APIs REST", "testes automatizados"]],
+  ["Dados e integração", ["PostgreSQL", "CSV", "JSON", "análise exploratória", "dashboards", "processamento de dados"]],
+  ["Engenharia e ambiente", ["Git", "GitHub", "Linux", "terminal", "IntelliJ IDEA", "Visual Studio Code"]],
 ];
 
 const methodSteps = [
   ["Investigar", "Compreender o problema, os usuários, os dados e as restrições antes de escolher a solução."],
   ["Modelar", "Definir requisitos, componentes, contratos e critérios de sucesso de forma objetiva."],
   ["Construir", "Implementar em ciclos pequenos, revisáveis e compatíveis com o nível de risco do projeto."],
-  ["Validar", "Testar comportamento, integração, qualidade e utilidade operacional com evidência reproduzível."],
+  ["Validar", "Testar comportamento, integração e utilidade operacional, registrando os resultados."],
   ["Entregar", "Documentar, empacotar e preparar a solução para uso, manutenção e evolução."],
 ];
 
@@ -141,18 +183,71 @@ const articles = [
   },
 ];
 
+const whatsappOfferUrl =
+  "https://wa.me/5593991594902?text=Ol%C3%A1%2C%20Vinicius.%20Quero%20avaliar%20um%20processo%20que%20hoje%20depende%20de%20planilhas%20ou%20WhatsApp.%20Meu%20fluxo%20%C3%A9%3A%20";
+
 const contacts = [
   ["E-mail", "VinSan.ed@proton.me", "mailto:VinSan.ed@proton.me"],
-  ["GitHub", "github.com/VinKSSan", "https://github.com/VinKSSan"],
-  ["LinkedIn", "vinicius-sanches", "https://www.linkedin.com/in/vinicius-sanches-88aa27218"],
-  ["WhatsApp", "Contato direto", "https://wa.me/559392283745"],
+  ["GitHub", "github.com/vinsaned", "https://github.com/vinsaned"],
+  ["LinkedIn", "linkedin.com/in/vinsan631", "https://www.linkedin.com/in/vinsan631"],
+  ["WhatsApp", "Avaliar meu processo", whatsappOfferUrl],
+  ["Currículo", "PDF profissional", curriculoPdf],
 ];
+
+const renderProjectCard = (project) => (
+  <ProjectCard key={project.name}>
+    <ProjectImage>
+      <Image
+        className="coverImage"
+        src={project.image}
+        alt={`Imagem do projeto ${project.name}`}
+        sizes="(max-width: 768px) 100vw, 33vw"
+      />
+    </ProjectImage>
+    <ProjectBody>
+      <span>{project.label}</span>
+      <h3>{project.name}</h3>
+      <p>{project.objective}</p>
+      <ProjectMeta>
+        <div>
+          <strong>Minha contribuição</strong>
+          <p>{project.contribution}</p>
+        </div>
+        <div>
+          <strong>Tecnologias</strong>
+          <ChipList>
+            {project.technologies.map((tech) => (
+              <li key={tech}>{tech}</li>
+            ))}
+          </ChipList>
+        </div>
+      </ProjectMeta>
+      <ProjectActions>
+        {project.actions.map((action) => (
+          <ButtonLink
+            key={action.href}
+            tone="quiet"
+            href={action.href}
+            target="_blank"
+            rel="noreferrer"
+          >
+            {action.label}
+          </ButtonLink>
+        ))}
+      </ProjectActions>
+    </ProjectBody>
+  </ProjectCard>
+);
 
 export default function Home() {
   return (
     <>
       <Head>
-        <title>Vinicius Sanches | Software, Sistemas e Dados</title>
+        <title>Vinicius Sanches | Desenvolvimento de Software, Automação e Dados</title>
+        <meta
+          name="description"
+          content="Portfólio de Vinicius Sanches: projetos em Java, aplicações web, automação, APIs e dados."
+        />
       </Head>
 
       <HomeMain>
@@ -160,98 +255,74 @@ export default function Home() {
           <HeroGrid>
             <HeroCopy>
               <Eyebrow>Vinicius Sanches</Eyebrow>
-              <h1>Engenharia de Software, Sistemas e Dados</h1>
-              <h2>Aplicações, automações e soluções orientadas por dados.</h2>
+              <h1>Desenvolvimento de Software, Automação e Dados</h1>
+              <h2>
+                Aplicações web, APIs e ferramentas técnicas para problemas
+                operacionais.
+              </h2>
               <p>
-                Desenvolvo soluções de pequena e média complexidade, trabalhando
-                desde a compreensão do problema até a implementação, validação e
-                documentação da entrega.
+                Desenvolvo soluções da compreensão do problema à implementação,
+                com testes, documentação e foco em manutenibilidade.
               </p>
               <ActionRow>
-                <ButtonLink href="#projects">Ver projetos</ButtonLink>
-                <ButtonLink tone="secondary" href="#contact">
-                  Entrar em contato
+                <ButtonLink
+                  href={whatsappOfferUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Conversar sobre um projeto
+                </ButtonLink>
+                <ButtonLink tone="secondary" href="#projects">
+                  Ver projetos
                 </ButtonLink>
               </ActionRow>
             </HeroCopy>
 
-            <HeroPanel aria-label="Evidências de atuação">
+            <HeroPanel aria-label="Oferta de diagnóstico e protótipo">
+              <BrandBanner role="img" aria-label="Banner visual Vinsan.ed" />
               <PanelHeader>
-                <span>Foco atual</span>
-                <strong>Construir ferramentas técnicas com clareza operacional.</strong>
+                <span>Primeiro passo</span>
+                <strong>Raio-X do processo + protótipo navegável</strong>
               </PanelHeader>
               <EvidenceList>
-                <li>Aplicações web, dashboards e ferramentas internas.</li>
-                <li>Automação de processos, importação e transformação de dados.</li>
-                <li>Testes, documentação e cuidado com manutenção.</li>
-                <li>Disponibilidade para oportunidades remotas e projetos tecnicamente alinhados.</li>
+                <li>Conversa de descoberta de até 20 minutos.</li>
+                <li>Mapa de um fluxo e identificação do principal gargalo.</li>
+                <li>Protótipo com dados fictícios ou sanitizados em até 3 dias.</li>
+                <li>
+                  O valor é descontado da implementação se contratada em até 7
+                  dias.
+                </li>
               </EvidenceList>
             </HeroPanel>
           </HeroGrid>
         </HeroSection>
 
-        <Section id="projects">
+        <Section id="projects" tone="soft">
           <SectionIntro>
             <div>
               <Eyebrow>Portfólio técnico</Eyebrow>
               <h2>Projetos selecionados</h2>
               <p>
-                Seleção feita apenas com materiais presentes no diretório do
-                projeto. O foco está em evidências de construção, interface,
-                dados e organização técnica.
+                A seleção reúne aplicações web, APIs, automação, dados e
+                soluções para problemas operacionais.
               </p>
             </div>
-            <IntroNote>
-              Não encontrei materiais locais suficientes para incluir Smart Trade
-              Boot ou Precision Phi nesta página sem depender de informação externa.
-            </IntroNote>
           </SectionIntro>
 
           <ProjectGrid>
-            {projects.map((project) => (
-              <ProjectCard key={project.name}>
-                <ProjectImage>
-                  <Image
-                    className="coverImage"
-                    src={project.image}
-                    alt={`Imagem do projeto ${project.name}`}
-                    sizes="(max-width: 768px) 100vw, 33vw"
-                  />
-                </ProjectImage>
-                <ProjectBody>
-                  <span>{project.label}</span>
-                  <h3>{project.name}</h3>
-                  <p>{project.objective}</p>
-                  <ProjectMeta>
-                    <div>
-                      <strong>Minha contribuição</strong>
-                      <p>{project.contribution}</p>
-                    </div>
-                    <div>
-                      <strong>Tecnologias</strong>
-                      <ChipList>
-                        {project.technologies.map((tech) => (
-                          <li key={tech}>{tech}</li>
-                        ))}
-                      </ChipList>
-                    </div>
-                    <div>
-                      <strong>Capacidades demonstradas</strong>
-                      <ChipList>
-                        {project.capabilities.map((capability) => (
-                          <li key={capability}>{capability}</li>
-                        ))}
-                      </ChipList>
-                    </div>
-                  </ProjectMeta>
-                  <ProjectActions>
-                    <ButtonLink tone="quiet" href={project.repo} target="_blank" rel="noreferrer">
-                      Repositório
-                    </ButtonLink>
-                  </ProjectActions>
-                </ProjectBody>
-              </ProjectCard>
-            ))}
+            {featuredProjects.map(renderProjectCard)}
+          </ProjectGrid>
+
+          <ProjectSubhead>
+            <h3>Projetos complementares e estudos anteriores</h3>
+            <p>
+              Estudos de interface, consumo de APIs, visualização de dados e
+              organização de conteúdo.
+            </p>
+          </ProjectSubhead>
+
+          <ProjectGrid>
+            {complementaryProjects.map(renderProjectCard)}
           </ProjectGrid>
         </Section>
 
@@ -259,11 +330,9 @@ export default function Home() {
           <SectionIntro>
             <div>
               <Eyebrow>Competências</Eyebrow>
-              <h2>Atuação delimitada e verificável</h2>
+              <h2>Áreas de atuação</h2>
               <p>
-                A página deixa de vender serviços genéricos e passa a comunicar
-                áreas técnicas conectadas ao desenvolvimento de sistemas,
-                automação e dados.
+                Áreas em que concentro minha prática técnica e meus projetos.
               </p>
             </div>
           </SectionIntro>
@@ -289,8 +358,7 @@ export default function Home() {
               <Eyebrow>Tecnologias</Eyebrow>
               <h2>Ferramentas organizadas por uso</h2>
               <p>
-                Sem porcentagens de domínio e sem lista inflada: apenas grupos
-                relevantes para construir, integrar, validar e apresentar soluções.
+                Linguagens, ferramentas e ambientes utilizados na construção dos projetos.
               </p>
             </div>
           </SectionIntro>
@@ -336,29 +404,49 @@ export default function Home() {
           <SplitGrid>
             <TextBlock>
               <Eyebrow>Sobre</Eyebrow>
-              <h2>Construção técnica com curiosidade e critério</h2>
+              <h2>Projetos construídos a partir de problemas concretos</h2>
               <p>
-                Sou Vinicius Sanches, desenvolvedor e estudante das ciências da
-                computação, com atuação concentrada em engenharia de software,
-                análise de sistemas, automação e dados.
+                Sou Vinicius Sanches, desenvolvedor de software com foco em Java,
+                aplicações web, automação e dados. Construo projetos que partem
+                de problemas concretos e avançam até implementação, testes,
+                documentação e publicação.
               </p>
               <p>
                 Tenho interesse especial em sistemas que organizam conhecimento,
-                automatizam processos e auxiliam decisões. Minha abordagem combina
-                investigação, modelagem, implementação, testes e documentação.
+                automatizam processos e auxiliam decisões. Nos projetos, trabalho
+                com investigação, modelagem, implementação, testes e documentação.
+              </p>
+              <p>
+                Utilizo ferramentas assistidas por IA para acelerar investigação,
+                documentação, testes e revisão, mantendo validação humana e
+                responsabilidade técnica sobre as entregas.
               </p>
             </TextBlock>
 
             <AvailabilityBox>
+              <SignatureBadge aria-label="Assinatura visual Vinsan.ed">
+                <img src="/assets/VinSanLog1.png" alt="" aria-hidden="true" />
+              </SignatureBadge>
               <h3>Disponibilidade profissional</h3>
               <p>
-                Aberto a oportunidades remotas, colaboração com equipes e projetos
-                freelance relacionados a desenvolvimento de sistemas, automação e dados.
+                Comece por um único fluxo operacional. Eu avalio a dor, preparo
+                um protótipo e delimito a primeira versão útil antes de qualquer
+                sistema maior.
               </p>
               <ActionRow>
-                <ButtonLink href="#contact">Contato</ButtonLink>
-                <ButtonLink tone="secondary" href="/cardPage">
-                  Cartão profissional
+                <ButtonLink
+                  href={whatsappOfferUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Solicitar diagnóstico
+                </ButtonLink>
+                <ButtonLink
+                  tone="secondary"
+                  href={curriculoPdf}
+                  download="Curriculo_Vinicius_Sanches.pdf"
+                >
+                  Baixar currículo
                 </ButtonLink>
               </ActionRow>
             </AvailabilityBox>
@@ -371,7 +459,7 @@ export default function Home() {
               <Eyebrow>Contato</Eyebrow>
               <h2>Canais principais</h2>
               <p>
-                Canais enxutos para conversa profissional, avaliacao de projetos
+                Canais enxutos para conversa profissional, avaliação de projetos
                 e acompanhamento do portfólio técnico.
               </p>
             </div>
@@ -384,6 +472,7 @@ export default function Home() {
                 href={href}
                 target={href.startsWith("http") ? "_blank" : undefined}
                 rel={href.startsWith("http") ? "noreferrer" : undefined}
+                download={label === "Currículo" ? "Curriculo_Vinicius_Sanches.pdf" : undefined}
               >
                 <span>{label}</span>
                 <strong>{value}</strong>
@@ -396,10 +485,10 @@ export default function Home() {
           <SectionIntro>
             <div>
               <Eyebrow>Laboratório e artigos</Eyebrow>
-              <h2>Conteúdo antigo em posição secundária</h2>
+              <h2>Notas e estudos</h2>
               <p>
-                Materiais preservados sem competir com o portfólio técnico. Eles
-                ficam como registro de estudo, escrita e exploração didática.
+                Materiais produzidos ao longo da minha formação, preservados como
+                registro de estudo, escrita e exploração didática.
               </p>
             </div>
           </SectionIntro>
