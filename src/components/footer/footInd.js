@@ -1,42 +1,55 @@
-import {
-  FooterInner,
-  FooterLinks,
-  FooterShell,
-} from "@/styles/siteStyles";
-import curriculoPdf from "@/assets/new/Curriculo_Vinicius_Sanches.pdf";
+import Link from "next/link";
+import { profile, emailUrl } from "@/data/profile";
+import styles from "@/styles/navigation.module.css";
 
 const Foot = () => {
   return (
-    <FooterShell id="contact-footer">
-      <FooterInner>
-        <div>
-          <strong>Vinicius Sanches</strong>
+    <footer className={styles.footer} id="contact-footer">
+      <div className={styles.footerInner}>
+        <div className={styles.footerIntro}>
+          <Link className={styles.brand} href="/" aria-label="Vinsan — início">
+            vinsan<span aria-hidden="true">.</span>
+          </Link>
           <p>
-            Página pessoal para reunir projetos, competências e canais de contato
-            relacionados a desenvolvimento de sistemas, automação e dados.
+            APIs, autenticação, integrações e automações.
+            <br />
+            De boas perguntas a soluções úteis.
           </p>
         </div>
 
-        <FooterLinks aria-label="Links de contato no rodapé">
-          <a href="mailto:VinSan.ed@proton.me">E-mail</a>
-          <a href="https://github.com/vinsaned" target="_blank" rel="noreferrer">
-            GitHub
-          </a>
+        <nav className={styles.footerLinks} aria-label="Explore o portfólio">
+          <span>Explore</span>
+          <Link href="/#projects">Projetos</Link>
+          <Link href="/cardPage">Cartão profissional</Link>
           <a
-            href="https://www.linkedin.com/in/vinsan631"
-            target="_blank"
-            rel="noreferrer"
+            href={profile.curriculum}
+            download="Curriculo_Vinicius_Sanches.pdf"
           >
-            LinkedIn
+            Currículo em PDF <span aria-hidden="true">↓</span>
           </a>
-          <a href="/cardPage">Cartão profissional</a>
-          <a href={curriculoPdf} download="Curriculo_Vinicius_Sanches.pdf">
-            Currículo
+        </nav>
+
+        <nav className={styles.footerLinks} aria-label="Canais de contato">
+          <span>Conecte-se</span>
+          <a href={emailUrl}>
+            E-mail <span aria-hidden="true">↗</span>
           </a>
-          <a href="/#">Topo</a>
-        </FooterLinks>
-      </FooterInner>
-    </FooterShell>
+          <a href={profile.github} target="_blank" rel="noreferrer">
+            GitHub <span aria-hidden="true">↗</span>
+          </a>
+          <a href={profile.linkedin} target="_blank" rel="noreferrer">
+            LinkedIn <span aria-hidden="true">↗</span>
+          </a>
+        </nav>
+
+        <div className={styles.footerBottom}>
+          <p>© {new Date().getFullYear()} Vinicius Sanches</p>
+          <a href="#site-top">
+            Voltar ao topo <span aria-hidden="true">↑</span>
+          </a>
+        </div>
+      </div>
+    </footer>
   );
 };
 
