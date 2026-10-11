@@ -1,0 +1,497 @@
+.page {
+  background: #f5f6f2;
+  padding: 4rem 0 8.8rem;
+  scroll-margin-top: 9rem;
+}
+
+.container {
+  width: 100%;
+  max-width: 124rem;
+  margin: 0 auto;
+  padding: 0 3.2rem;
+}
+
+.pageTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.backLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 1.2rem;
+  min-height: 4.4rem;
+  color: #5f6d66;
+  font-size: 1.3rem;
+  font-weight: 400;
+}
+
+.backLink:hover {
+  color: #17483e;
+}
+
+.eyebrow {
+  color: #5f6d66;
+  font-size: 1.05rem;
+  font-weight: 500;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.card {
+  display: grid;
+  grid-template-columns: 1.35fr 1fr;
+  border: 1px solid #dce1d9;
+  border-radius: 1.6rem;
+  background: #fcfcf9;
+  overflow: hidden;
+}
+
+.profilePanel {
+  padding: 4.8rem;
+  min-width: 0;
+}
+
+.profileTop {
+  display: flex;
+  align-items: center;
+  gap: 2.2rem;
+  margin-bottom: 3rem;
+}
+
+.photo {
+  position: relative;
+  flex-shrink: 0;
+  width: 11.2rem;
+  height: 11.2rem;
+  border-radius: 50%;
+  overflow: hidden;
+  background: #dce1d9;
+}
+
+.photo img {
+  object-fit: cover;
+  object-position: 53% 32%;
+  transform: scale(1.5);
+  transform-origin: 54% 10%;
+}
+
+.profileLabel {
+  color: #5f6d66;
+  font-size: 1.25rem;
+  font-weight: 400;
+  line-height: 1.8;
+}
+
+.profilePanel h1 {
+  margin: 0 0 2.4rem;
+  color: #172b27;
+  font-size: clamp(4.8rem, 5.5vw, 7rem);
+  font-weight: 500;
+  letter-spacing: -0.055em;
+  line-height: 1.03;
+}
+
+.profilePanel h1 span {
+  color: #467649;
+}
+
+.lead {
+  margin-bottom: 1.8rem;
+  color: #172b27;
+  font-size: 2.1rem;
+  font-weight: 400;
+  line-height: 1.45;
+  letter-spacing: -0.035em;
+}
+
+.description {
+  max-width: 47rem;
+  color: #5f6d66;
+  font-size: 1.5rem;
+  line-height: 1.85;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1.4rem 2rem;
+  margin: 2.8rem 0 3.6rem;
+}
+
+.primaryButton,
+.secondaryButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.8rem;
+  min-height: 4.8rem;
+  font-size: 1.3rem;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+.primaryButton {
+  padding: 1.4rem 1.7rem;
+  border-radius: 0.6rem;
+  background: #17483e;
+  color: #f5f6f2;
+  transition: background 180ms ease;
+}
+
+.primaryButton:hover {
+  background: #236051;
+}
+
+.secondaryButton {
+  padding: 1.4rem 0;
+  color: #17483e;
+}
+
+.secondaryButton:hover {
+  text-decoration: underline;
+  text-underline-offset: 0.5rem;
+}
+
+.focusList {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.8rem;
+  padding-top: 2.5rem;
+  border-top: 1px solid #dce1d9;
+}
+
+.focusList li {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  color: #5f6d66;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.focusNumber {
+  margin-bottom: 1.2rem;
+  color: #5f6d66;
+  font-size: 1rem;
+}
+
+.focusList strong {
+  margin-bottom: 0.4rem;
+  color: #172b27;
+  font-size: 1.45rem;
+  font-weight: 500;
+}
+
+.contactPanel {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  padding: 4.8rem 4rem;
+  background: #17483e;
+}
+
+.contactEyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin-bottom: 4.4rem;
+  color: #d9f28b;
+  font-size: 1.05rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.contactEyebrow::before {
+  content: "";
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  background: currentColor;
+}
+
+.contactIntro h2 {
+  margin-bottom: 2rem;
+  color: #f5f6f2;
+  font-size: clamp(3rem, 3.2vw, 4.3rem);
+  font-weight: 400;
+  letter-spacing: -0.05em;
+  line-height: 1.12;
+}
+
+.contactIntro p {
+  max-width: 32rem;
+  color: #c8d8d0;
+  font-size: 1.5rem;
+  line-height: 1.8;
+}
+
+.whatsappButton {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.6rem;
+  min-height: 5.4rem;
+  margin: 3rem 0 2rem;
+  padding: 1.5rem 1.8rem;
+  border-radius: 0.6rem;
+  background: #d9f28b;
+  color: #172b27;
+  font-size: 1.4rem;
+  font-weight: 500;
+  line-height: 1.5;
+  transition: background 180ms ease;
+}
+
+.whatsappButton:hover {
+  background: #e6ffa0;
+}
+
+.whatsappButton > span {
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.contactList {
+  display: flex;
+  flex-direction: column;
+}
+
+.contactList a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.2rem;
+  padding: 2.1rem 0;
+  border-bottom: 1px solid rgba(245, 246, 242, 0.2);
+  color: #f5f6f2;
+}
+
+.contactList a > div {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  gap: 0.6rem;
+}
+
+.contactList a div > span {
+  color: #b9cec3;
+  font-size: 1.05rem;
+  font-weight: 400;
+}
+
+.contactList a strong {
+  font-size: 1.55rem;
+  font-weight: 400;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+
+.contactArrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 3.2rem;
+  height: 3.2rem;
+  border: 1px solid rgba(245, 246, 242, 0.3);
+  border-radius: 50%;
+  font-size: 1.6rem;
+  font-weight: 400;
+  transition:
+    background 180ms ease,
+    color 180ms ease;
+}
+
+.contactList a:hover .contactArrow {
+  background: #d9f28b;
+  color: #172b27;
+  border-color: #d9f28b;
+}
+
+.contactNote {
+  margin-top: auto;
+  padding-top: 3rem;
+  color: #b9cec3;
+  font-size: 1.15rem;
+  line-height: 1.8;
+}
+
+.page a:focus-visible {
+  outline: 2px solid #17483e;
+  outline-offset: 5px;
+}
+
+.contactPanel a:focus-visible {
+  outline-color: #d9f28b;
+}
+
+@media (max-width: 1000px) {
+  .profilePanel {
+    padding: 3.6rem;
+  }
+
+  .contactPanel {
+    padding: 3.6rem 2.8rem;
+  }
+
+  .card {
+    grid-template-columns: 1.2fr 1fr;
+  }
+}
+
+@media (max-width: 760px) {
+  .card {
+    grid-template-columns: 1fr;
+  }
+
+  .profilePanel h1 {
+    font-size: 6rem;
+  }
+
+  .contactPanel {
+    padding: 3.6rem;
+  }
+
+  .contactIntro h2 {
+    font-size: 4rem;
+  }
+
+  .contactEyebrow {
+    margin-bottom: 2.8rem;
+  }
+
+  .contactIntro p {
+    max-width: 44rem;
+  }
+
+  .contactNote {
+    max-width: 38rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .page {
+    padding: 2rem 0 5.2rem;
+    scroll-margin-top: 7.2rem;
+  }
+
+  .container {
+    padding: 0 2rem;
+  }
+
+  .pageTop {
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    margin-bottom: 2rem;
+  }
+
+  .eyebrow {
+    font-size: 0.9rem;
+    letter-spacing: 0.08em;
+  }
+
+  .backLink {
+    gap: 0.8rem;
+    font-size: 1.2rem;
+  }
+
+  .card {
+    border-radius: 1.2rem;
+  }
+
+  .profilePanel,
+  .contactPanel {
+    padding: 3rem 2.4rem;
+  }
+
+  .profileTop {
+    gap: 1.6rem;
+    margin-bottom: 2.8rem;
+  }
+
+  .photo {
+    width: 8.8rem;
+    height: 8.8rem;
+  }
+
+  .profileLabel {
+    font-size: 1.1rem;
+  }
+
+  .profilePanel h1 {
+    font-size: clamp(4.4rem, 13vw, 6rem);
+  }
+
+  .lead {
+    font-size: 1.9rem;
+  }
+
+  .description {
+    font-size: 1.4rem;
+  }
+
+  .actions {
+    align-items: stretch;
+    flex-direction: column;
+    gap: 0.4rem;
+    margin-bottom: 2.6rem;
+  }
+
+  .focusList {
+    grid-template-columns: 1fr;
+    gap: 1.8rem;
+  }
+
+  .focusList li {
+    display: grid;
+    grid-template-columns: 30px minmax(0, 1fr);
+    column-gap: 12px;
+  }
+
+  .focusList .focusNumber {
+    grid-row: span 2;
+    margin-bottom: 0;
+  }
+
+  .focusList strong {
+    font-size: 1.25rem;
+  }
+
+  .focusList li {
+    font-size: 1rem;
+  }
+
+  .contactIntro h2 {
+    font-size: 3.8rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .primaryButton,
+  .whatsappButton,
+  .contactArrow {
+    transition: none;
+  }
+}
+
+.page h1,
+.page h2,
+.page p,
+.page a,
+.page strong {
+  overflow-wrap: anywhere;
+}
+.actions > a {
+  min-width: 0;
+}
+
+.focusList li span {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}

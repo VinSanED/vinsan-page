@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Currículo de Vinicius Sanches: desenvolvimento de software, APIs, autenticação, automação e dados.">
+  <meta name="author" content="Vinicius Sanches">
+  <title>Currículo — Vinicius Sanches</title>
+  <style>
+    :root { color-scheme: light; --ink: #172b27; --green: #17483e; --muted: #5f6d66; --line: #d5ddd3; --paper: #f5f6f2; }
+    * { box-sizing: border-box; }
+    html { font-family: Arial, Helvetica, sans-serif; font-size: 10pt; color: var(--ink); background: #e9eee7; }
+    body { margin: 0; line-height: 1.5; }
+    a { color: var(--green); text-decoration: underline; text-underline-offset: 2px; }
+    a:focus-visible { outline: 2px solid var(--green); outline-offset: 4px; }
+    .toolbar { width: min(100%, 210mm); margin: 18px auto; padding: 0 24px; display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; font-size: 11pt; }
+    .page { position: relative; width: 210mm; min-height: 297mm; margin: 0 auto 24px; padding: 15mm 17mm 18mm; background: var(--paper); overflow-wrap: anywhere; }
+    .brand-row { display: flex; justify-content: space-between; align-items: center; margin-bottom: 9mm; }
+    .brand { font-size: 19pt; font-weight: bold; letter-spacing: -1px; }
+    .brand span { color: #467649; }
+    .kicker { color: var(--muted); font-size: 8pt; letter-spacing: 1.2px; text-transform: uppercase; }
+    h1 { margin: 0 0 2mm; font-size: 31pt; font-weight: 600; letter-spacing: -1.3px; line-height: 1.12; }
+    .role { margin: 0 0 5mm; color: var(--green); font-size: 12pt; line-height: 1.4; }
+    .contacts { display: grid; grid-template-columns: 1fr 1.3fr; gap: 1.7mm 5mm; margin: 0; font-style: normal; font-size: 9pt; }
+    .contacts a { overflow-wrap: anywhere; }
+    header { padding-bottom: 6mm; border-bottom: 1px solid var(--line); }
+    section { margin-top: 6mm; break-inside: avoid; }
+    h2 { margin: 0 0 3mm; color: var(--green); font-size: 9pt; font-weight: bold; letter-spacing: 1.2px; text-transform: uppercase; }
+    h3 { margin: 0 0 1.5mm; font-size: 11pt; line-height: 1.35; }
+    p { margin: 0 0 2.5mm; }
+    p:last-child { margin-bottom: 0; }
+    .meta { color: var(--muted); font-size: 9pt; }
+    .experience { padding: 4mm; border-left: 3px solid var(--green); background: #eaf0e3; }
+    .experience + .experience { margin-top: 3.5mm; }
+    .skills { margin: 0; }
+    .skills div { display: grid; grid-template-columns: minmax(29mm, max-content) minmax(0, 1fr); gap: 3mm; margin-bottom: 2.5mm; }
+    dt { color: var(--green); font-weight: bold; }
+    dd { margin: 0; }
+    .education { font-size: 10pt; }
+    .running-head { display: flex; justify-content: space-between; gap: 12px; padding-bottom: 4mm; border-bottom: 1px solid var(--line); margin-bottom: 7mm; font-size: 9pt; }
+    .page-title { margin: 0 0 2.5mm; font-size: 24pt; line-height: 1.2; font-weight: 600; letter-spacing: -0.7px; }
+    .project { margin-top: 6mm; padding-top: 5mm; border-top: 1px solid var(--line); }
+    .project h3 { font-size: 15pt; font-weight: 600; }
+    .project .meta { margin-bottom: 3mm; }
+    .project .technologies { font-size: 9pt; }
+    .project .links { margin-top: 3mm; display: flex; gap: 6mm; flex-wrap: wrap; font-size: 9pt; }
+    .work-note { margin-top: 6mm; padding: 4mm; color: var(--green); background: #eaf0e3; }
+    .folio { position: absolute; bottom: 8mm; left: 17mm; right: 17mm; display: flex; justify-content: space-between; border-top: 1px solid var(--line); padding-top: 2.5mm; color: var(--muted); font-size: 8pt; }
+    @page { size: A4; margin: 0; }
+    @media screen {
+      .folio { position: static; margin-top: 28px; gap: 12px; }
+    }
+    @media print {
+      html, body { background: var(--paper); }
+      body { print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+      .toolbar { display: none; }
+      .page { margin: 0; width: 210mm; height: 297mm; min-height: 0; break-after: page; }
+      .page:last-child { break-after: auto; }
+      a { text-decoration: none; }
+    }
+    @media screen and (max-width: 800px) {
+      .page { width: 100%; min-height: 0; padding: 32px 24px; }
+      .contacts { grid-template-columns: 1fr; gap: 8px; }
+      .brand-row { margin-bottom: 28px; }
+      h1 { font-size: clamp(25pt, 7vw, 31pt); }
+      .running-head { flex-wrap: wrap; }
+      .folio { position: static; margin-top: 28px; }
+    }
+    @media screen and (max-width: 420px) {
+      .brand-row { align-items: flex-start; gap: 16px; flex-wrap: wrap; }
+      .skills div { grid-template-columns: 1fr; gap: 2px; margin-bottom: 12px; }
+    }
+  </style>
+</head>
+<body>
+  <nav class="toolbar" aria-label="Ações do currículo">
+    <a href="/">Voltar ao portfólio</a>
+    <a href="curriculo-vinicius-sanches.pdf" download>Baixar currículo em PDF</a>
+  </nav>
+  <main>
+    <article class="page" aria-label="Currículo, página 1 de 2">
+      <div class="brand-row"><span class="brand">vinsan<span>.</span></span><span class="kicker">Currículo profissional</span></div>
+      <header>
+        <h1>Vinicius Sanches</h1>
+        <p class="role">Desenvolvedor de software · APIs, automação e dados</p>
+        <address class="contacts">
+          <a href="mailto:VinSan.ed@proton.me">VinSan.ed@proton.me</a>
+          <a href="https://vinsan-page.vercel.app/">vinsan-page.vercel.app</a>
+          <a href="tel:+5593991594902">+55 (93) 99159-4902</a>
+          <a href="https://github.com/vinsaned">github.com/vinsaned</a>
+          <a href="https://www.linkedin.com/in/vinsan631">linkedin.com/in/vinsan631</a>
+        </address>
+      </header>
+
+      <section aria-labelledby="resumo">
+        <h2 id="resumo">Resumo profissional</h2>
+        <p>Desenvolvedor de software com foco em APIs, autenticação, integrações, automações e processamento de dados. Experiência prática com Java, Spring Boot, React e Next.js em projetos de back-end, aplicações web e ferramentas orientadas por dados.</p>
+        <p>Atuo da compreensão do problema à implementação, com atenção a modelagem, testes e documentação. Busco contribuir em projetos para clientes e equipes de desenvolvimento.</p>
+      </section>
+
+      <section aria-labelledby="experiencia">
+        <h2 id="experiencia">Experiência prática</h2>
+        <div class="experience">
+          <h3>Autenticação para aplicação de cliente</h3>
+          <p class="meta">Projeto para cliente</p>
+          <p>Realizei uma entrega de autenticação para uma aplicação de cliente.</p>
+        </div>
+        <div class="experience">
+          <h3>Desenvolvimento de sistemas e aplicações web</h3>
+          <p>Experiência em projetos com modelagem de dados, construção de APIs, integração entre back-end e interface, testes automatizados e documentação. Projetos selecionados na página seguinte.</p>
+        </div>
+      </section>
+
+      <section aria-labelledby="competencias">
+        <h2 id="competencias">Competências técnicas</h2>
+        <dl class="skills">
+          <div><dt>Back-end</dt><dd>Java, Spring Boot, APIs REST, JPA, Hibernate e arquitetura em camadas.</dd></div>
+          <div><dt>Front-end</dt><dd>JavaScript, React, Next.js, HTML, CSS e aplicações web progressivas (PWA).</dd></div>
+          <div><dt>Dados</dt><dd>SQL, PostgreSQL, MongoDB, IndexedDB, processamento de planilhas e visualização de dados.</dd></div>
+          <div><dt>Engenharia</dt><dd>Git, GitHub, Linux, Maven, JUnit, automação de pipelines e documentação técnica.</dd></div>
+        </dl>
+      </section>
+
+      <section aria-labelledby="formacao">
+        <h2 id="formacao">Formação</h2>
+        <p class="education">Análise e Desenvolvimento de Sistemas — GRAN Faculdade | Em andamento.</p>
+      </section>
+      <footer class="folio"><span>Vinicius Sanches · Desenvolvimento de software</span><span>1 / 2</span></footer>
+    </article>
+
+    <article class="page" aria-label="Currículo, página 2 de 2">
+      <div class="running-head"><strong>Vinicius Sanches</strong><a href="https://vinsan-page.vercel.app/">vinsan-page.vercel.app</a></div>
+      <h2 class="page-title" style="text-transform:none; letter-spacing:-0.7px; color:var(--ink)">Projetos selecionados</h2>
+      <p class="meta">Contribuições práticas em software, automação e dados.</p>
+
+      <section class="project" aria-labelledby="smtb">
+        <h3 id="smtb">Smart Trade Boot / SmTB</h3>
+        <p class="meta">Projeto de engenharia e pesquisa · Research/Paper local</p>
+        <p>Ecossistema para organizar pesquisa sobre mercados financeiros, automatizar pipelines e manter evidências de execução. A edição local utiliza Paper/Sandbox, com capital fictício e sem envio de ordens reais.</p>
+        <p><strong>Minha contribuição:</strong> arquitetura, contratos de software, automação de pipelines, relatórios, rastreabilidade, testes e empacotamento.</p>
+        <p class="technologies"><strong>Tecnologias:</strong> Java, Maven, JUnit, CLI, NDJSON e HTTP local.</p>
+        <p class="links"><a href="https://smt-project.vercel.app/">smt-project.vercel.app</a></p>
+      </section>
+
+      <section class="project" aria-labelledby="precision">
+        <h3 id="precision">Precision Phi</h3>
+        <p class="meta">Aplicação geoespacial · Armazenamento local</p>
+        <p>Aplicação web progressiva para importar planilhas, localizar coordenadas e apresentar dados em mapas. O uso offline depende dos dados e mapas em cache; serviços remotos exigem conexão.</p>
+        <p><strong>Minha contribuição:</strong> concepção da solução, arquitetura offline-first, importação e busca de dados, persistência local, mapas e geolocalização.</p>
+        <p class="technologies"><strong>Tecnologias:</strong> Next.js, React, JavaScript, PWA e IndexedDB.</p>
+        <p class="links"><a href="https://precision-phi.vercel.app/">precision-phi.vercel.app</a></p>
+      </section>
+
+      <section class="project" aria-labelledby="vscommerce">
+        <h3 id="vscommerce">VSCommerce</h3>
+        <p class="meta">Aplicação full stack · Projeto de formação</p>
+        <p>Projeto de comércio eletrônico desenvolvido ao longo do curso Desenvolvimento Moderno, de Nelio Alves, na DevSuperior. Integra interface, API REST, regras de negócio e banco de dados relacional.</p>
+        <p><strong>Minha contribuição:</strong> implementação e adaptação do back-end, modelagem do banco, endpoints REST e integração da interface em React, no contexto do curso.</p>
+        <p class="technologies"><strong>Tecnologias:</strong> Java, Spring Boot, React, PostgreSQL, JPA e Hibernate.</p>
+        <p class="links"><a href="https://github.com/VinKSSan/vscommerce">GitHub · back-end</a><a href="https://github.com/VinKSSan/vscommerce_frontend">GitHub · front-end</a></p>
+      </section>
+
+      <div class="work-note">
+        <p><strong>Vamos conversar sobre seu projeto ou sua equipe.</strong><br><a href="mailto:VinSan.ed@proton.me">VinSan.ed@proton.me</a> · <a href="https://www.linkedin.com/in/vinsan631">linkedin.com/in/vinsan631</a></p>
+      </div>
+      <footer class="folio"><span>Vinicius Sanches · Projetos selecionados</span><span>2 / 2</span></footer>
+    </article>
+  </main>
+</body>
+</html>
