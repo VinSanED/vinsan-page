@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="430" viewBox="0 0 1200 430" role="img" aria-labelledby="title description">
+  <title id="title">Do comportamento esperado ao pacote verificável</title>
+  <desc id="description">Síntese conceitual do método de entrega: contrato, implementação, testes, evidências e pacote. Não é a reprodução de um pipeline interno.</desc>
+  <rect width="1200" height="430" rx="20" fill="#e9ede2" />
+  <g font-family="Arial, Helvetica, sans-serif">
+    <text x="54" y="51" font-size="14" fill="#426153" letter-spacing="2">DIAGRAMA CONCEITUAL / MÉTODO DE ENTREGA</text>
+    <text x="54" y="108" font-size="34" fill="#173f36" font-weight="600">Do comportamento esperado ao pacote verificável.</text>
+    <g>
+      <rect x="54" y="160" width="197" height="142" rx="10" fill="#f5f6f2" stroke="#b9c8ae" />
+      <text x="73" y="195" font-size="14" fill="#527249" letter-spacing="1">01</text>
+      <text x="73" y="249" font-size="23" fill="#173f36" font-weight="600">Contrato</text>
+      <path d="M255 232h19m-5-5 5 5-5 5" fill="none" stroke="#527249" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+    </g><g>
+      <rect x="278" y="160" width="197" height="142" rx="10" fill="#f5f6f2" stroke="#b9c8ae" />
+      <text x="297" y="195" font-size="14" fill="#527249" letter-spacing="1">02</text>
+      <text x="297" y="249" font-size="23" fill="#173f36" font-weight="600">Implementação</text>
+      <path d="M479 232h19m-5-5 5 5-5 5" fill="none" stroke="#527249" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+    </g><g>
+      <rect x="502" y="160" width="197" height="142" rx="10" fill="#f5f6f2" stroke="#b9c8ae" />
+      <text x="521" y="195" font-size="14" fill="#527249" letter-spacing="1">03</text>
+      <text x="521" y="249" font-size="23" fill="#173f36" font-weight="600">Testes</text>
+      <path d="M703 232h19m-5-5 5 5-5 5" fill="none" stroke="#527249" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+    </g><g>
+      <rect x="726" y="160" width="197" height="142" rx="10" fill="#f5f6f2" stroke="#b9c8ae" />
+      <text x="745" y="195" font-size="14" fill="#527249" letter-spacing="1">04</text>
+      <text x="745" y="249" font-size="23" fill="#173f36" font-weight="600">Evidências</text>
+      <path d="M927 232h19m-5-5 5 5-5 5" fill="none" stroke="#527249" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+    </g><g>
+      <rect x="950" y="160" width="197" height="142" rx="10" fill="#f5f6f2" stroke="#b9c8ae" />
+      <text x="969" y="195" font-size="14" fill="#527249" letter-spacing="1">05</text>
+      <text x="969" y="249" font-size="23" fill="#173f36" font-weight="600">Pacote</text>
+
+    </g>
+    <text x="54" y="351" font-size="21" fill="#294c38">Definir, implementar, testar, registrar e empacotar.</text>
+    <text x="54" y="391" font-size="16" fill="#526657">Representação conceitual. Os artefatos e os procedimentos internos permanecem privados.</text>
+  </g>
+</svg>

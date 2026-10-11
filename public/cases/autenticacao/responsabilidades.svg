@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="540" viewBox="0 0 1200 540" role="img" aria-labelledby="title description">
+  <title id="title">Identificar não é autorizar</title>
+  <desc id="description">Modelo conceitual: requisição, identidade, permissão e operação. Não representa a topologia, a ordem interna dos componentes ou a configuração do cliente.</desc>
+  <rect width="1200" height="540" rx="20" fill="#173f36" />
+  <g font-family="Arial, Helvetica, sans-serif">
+    <text x="54" y="52" font-size="14" fill="#c7deb6" letter-spacing="2">DIAGRAMA CONCEITUAL / RESPONSABILIDADES</text>
+    <text x="54" y="111" font-size="39" fill="#f5f6f2" font-weight="600">Identificar não é autorizar.</text>
+    <g>
+      <rect x="54" y="177" width="248" height="191" rx="13" fill="#244d42" stroke="#718d7c" />
+      <text x="77" y="214" font-size="14" fill="#d5f38a" letter-spacing="1">01</text>
+      <text x="77" y="259" font-size="25" fill="#f5f6f2" font-weight="600">Requisição</text>
+      <text x="77" y="301" font-size="17" fill="#d8e6da">Credenciais e contexto</text>
+      <text x="77" y="328" font-size="17" fill="#d8e6da">recebidos</text>
+      <path d="M308 273h18m-5-5 5 5-5 5" fill="none" stroke="#c4d9bd" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+    </g><g>
+      <rect x="332" y="177" width="248" height="191" rx="13" fill="#244d42" stroke="#718d7c" />
+      <text x="355" y="214" font-size="14" fill="#d5f38a" letter-spacing="1">02</text>
+      <text x="355" y="259" font-size="25" fill="#f5f6f2" font-weight="600">Identidade</text>
+      <text x="355" y="301" font-size="17" fill="#d8e6da">Validade e vínculo</text>
+      <text x="355" y="328" font-size="17" fill="#d8e6da">verificados</text>
+      <path d="M586 273h18m-5-5 5 5-5 5" fill="none" stroke="#c4d9bd" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+    </g><g>
+      <rect x="610" y="177" width="248" height="191" rx="13" fill="#244d42" stroke="#718d7c" />
+      <text x="633" y="214" font-size="14" fill="#d5f38a" letter-spacing="1">03</text>
+      <text x="633" y="259" font-size="25" fill="#f5f6f2" font-weight="600">Permissão</text>
+      <text x="633" y="301" font-size="17" fill="#d8e6da">Ação e recurso</text>
+      <text x="633" y="328" font-size="17" fill="#d8e6da">avaliados</text>
+      <path d="M864 273h18m-5-5 5 5-5 5" fill="none" stroke="#c4d9bd" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+    </g><g>
+      <rect x="888" y="177" width="248" height="191" rx="13" fill="#244d42" stroke="#718d7c" />
+      <text x="911" y="214" font-size="14" fill="#d5f38a" letter-spacing="1">04</text>
+      <text x="911" y="259" font-size="25" fill="#f5f6f2" font-weight="600">Operação</text>
+      <text x="911" y="301" font-size="17" fill="#d8e6da">Regra de negócio</text>
+      <text x="911" y="328" font-size="17" fill="#d8e6da">do integrador</text>
+
+    </g>
+    <text x="54" y="413" font-size="20" fill="#dbecbe">Se uma verificação necessária falha, a operação não deve prosseguir.</text>
+    <path d="M54 443h1092" stroke="#57756a" />
+    <text x="54" y="480" font-size="16" fill="#d8e6da">Abstração técnica criada para o case. Não representa a topologia, a ordem interna</text>
+    <text x="54" y="506" font-size="16" fill="#d8e6da">dos componentes ou a configuração do cliente. Sem dados operacionais.</text>
+  </g>
+</svg>

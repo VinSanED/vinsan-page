@@ -1,0 +1,32 @@
+LOCAL TERMINAL CAPTURE
+Step: Execucao local real / documentacao
+
+VINSAN / CASE TECNICO / EXECUCAO REAL
+Saida anonimizada: nomes internos e diagnosticos omitidos.
+Fonte somente leitura | rede isolada | dados sinteticos
+Escopo: kit de transferencia tecnica
+Data UTC: 2026-10-10T22:16:15
+
+[1/2] Validar estrutura, links e referencias
+  resultado: PASS
+  documentos: 11
+  links_quebrados: 0
+  ancoras_quebradas: 0
+  exemplos_shell_executados: false
+  exit_code: 0
+
+[2/2] Executar suite selecionada com node --test
+  tests: 13
+  pass: 13
+  fail: 0
+  cancelled: 0
+  skipped: 0
+  todo: 0
+  duration_ms: 106.869898
+  exit_code: 0
+
+Pipeline concluido. Exit code real: 0
+Esta execucao nao equivale aos 564 testes historicos.
+Homologacao e producao nao fazem parte deste escopo.
+
+Exit status: 0
