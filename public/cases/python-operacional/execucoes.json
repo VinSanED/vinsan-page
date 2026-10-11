@@ -1,0 +1,229 @@
+{
+  "title": "Reforma operacional Python: execuções reais em dados fictícios",
+  "scope": "Pipeline e testes registrados às 15:38 UTC; interface atual capturada às 17:42 UTC. Amostras fictícias isoladas. Nenhuma alteração na operação original.",
+  "results": [
+    {
+      "mode": "pipeline",
+      "executed_at_utc": "2026-10-11T15:38:28.951697+00:00",
+      "exit_code": 0,
+      "source_integrity_preserved": true,
+      "network_disabled": true,
+      "synthetic_data": true,
+      "duration_seconds": 0.494,
+      "result": {
+        "scope": "Original selected source; all inputs synthetic; no external network",
+        "initial_records": 9,
+        "final_records": 10,
+        "csv_tables": 5,
+        "tasks": 9,
+        "captures": 1,
+        "preview_without_write": true,
+        "confirmation_required": true,
+        "stale_version_rejected": true,
+        "record_saved_when_ods_locked": true,
+        "opportunity_invalid_range_rejected": true,
+        "prepared_events": 2,
+        "applied_events": 2,
+        "ods_sheets": 7,
+        "ods_filters": 7,
+        "portal": "preserved in demo mode",
+        "quality_occurrences": 8,
+        "steps_completed": 7
+      },
+      "capture": {
+        "image": "terminal-pipeline.png",
+        "transcript": "terminal-pipeline.txt",
+        "method": "Captura nativa Weston/screenshooter em compositor isolado",
+        "pixel_editing": false,
+        "width": 1600,
+        "height": 1100,
+        "image_sha256": "8b99aca64657f859dfd52d0233c3a2a3991a0f7a6f2c12f6b7b1ce01d5d0bca7",
+        "transcript_sha256": "ecfb5efd59ae5befb13e18c9bd6d586c546b250974f5bac66ae74ad2fe191a74",
+        "all_process_lines_displayed": true
+      },
+      "scope_note": "Execução histórica de 11/10/2026 às 15:38 UTC, anterior ao novo tema e às visualizações D3."
+    },
+    {
+      "mode": "testes",
+      "executed_at_utc": "2026-10-11T15:38:28.529283+00:00",
+      "exit_code": 0,
+      "source_integrity_preserved": true,
+      "network_disabled": true,
+      "synthetic_data": true,
+      "duration_seconds": 2.446,
+      "result": {
+        "suites": [
+          {
+            "suite": "Núcleo ERP",
+            "tests": 13,
+            "passed": 13,
+            "failures": 0,
+            "errors": 0,
+            "skipped": 0,
+            "exit_code": 0,
+            "seconds": 0.013
+          },
+          {
+            "suite": "Integração, domínio, HTTP e terminal",
+            "tests": 59,
+            "passed": 59,
+            "failures": 0,
+            "errors": 0,
+            "skipped": 0,
+            "exit_code": 0,
+            "seconds": 1.222
+          },
+          {
+            "suite": "Diagnóstico local",
+            "tests": 5,
+            "passed": 5,
+            "failures": 0,
+            "errors": 0,
+            "skipped": 0,
+            "exit_code": 0,
+            "seconds": 0.167
+          },
+          {
+            "suite": "Radar: parsers e persistência local",
+            "tests": 17,
+            "passed": 17,
+            "failures": 0,
+            "errors": 0,
+            "skipped": 0,
+            "exit_code": 0,
+            "seconds": 0.025
+          }
+        ],
+        "total": 94,
+        "passed": 94,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "note": "Selected tests, including inherited domain scenarios repeated in HTTP class; no external collectors exercised"
+      },
+      "capture": {
+        "image": "terminal-testes.png",
+        "transcript": "terminal-testes.txt",
+        "method": "Captura nativa Weston/screenshooter em compositor isolado",
+        "pixel_editing": false,
+        "width": 1600,
+        "height": 1100,
+        "image_sha256": "f31725cc6fda75fd6b821e70143fa3a9a9b2328c4156941d23bb27f7f9113df7",
+        "transcript_sha256": "7f5dcff98510a8c8a5e4b76f3471f604028546ba3bff7fd49c13d1167cc74a2d",
+        "all_process_lines_displayed": true
+      },
+      "scope_note": "Execução histórica de 11/10/2026 às 15:38 UTC, anterior ao novo tema e às visualizações D3."
+    }
+  ],
+  "artifacts": [
+    {
+      "file": "resumo-demo.json",
+      "stage": "Resumo inicial: 5 CSVs, 9 registros fictícios",
+      "sha256": "bdd554bb062bd19fe7f708890e952c029b6422e9ade398f8868636ebf6ddcf92"
+    },
+    {
+      "file": "painel-demo.ods",
+      "stage": "Após pipeline: 5 CSVs, 10 registros, 9 tarefas, 2 eventos aplicados; anterior à interação extra no navegador",
+      "sha256": "78b2410a57d40a61d4e2ead77bce9415d1d7fa895da28dfbb7fca0afa752263a"
+    },
+    {
+      "file": "indicadores-demo.json",
+      "stage": "Mesmo snapshot do painel pós-pipeline; anterior à interação extra no navegador",
+      "sha256": "db36412e30d3c4a80351cbdb07cc626ba42ff4bbb4d3686edaae5b5c3a0a1348"
+    },
+    {
+      "file": "indicadores-interface.json",
+      "stage": "Interface atual, 11/10/2026 às 17:42 UTC; dados fictícios preparados para consulta e prévia, sem confirmação de gravação.",
+      "sha256": "fe0d43ddfe8f2080a20e3d35b005df7a62f3b4472b0c614bff7cbc975bc4944b"
+    }
+  ],
+  "limits": [
+    "94 são execuções de testes; há cenários de domínio herdados repetidos na classe HTTP.",
+    "Central documental preservada em modo demo; não foi regenerada a central real.",
+    "Observabilidade pontual local: sem monitoramento contínuo, ML ou validação multiusuário."
+  ],
+  "browser": {
+    "status": "Desktop e prévia verificados; ressalva no Radar a 390 px",
+    "started_at_utc": "2026-10-11T17:42:18.223629+00:00",
+    "finished_at_utc": "2026-10-11T17:42:23.308126+00:00",
+    "transcript": "registro-navegador.txt",
+    "screenshots": [
+      {
+        "file": "interface-indicadores.png",
+        "sha256": "55da31080771a64f79742c6205d06ddb8683a4460e056f369f1c2be20c35231d",
+        "width": 1440,
+        "height": 1000,
+        "pixel_editing": false,
+        "source": "WebDriver GET /screenshot; decoded bytes saved unchanged",
+        "scroll_y": 0,
+        "evidence": {
+          "view": "inicio",
+          "scope": "matriz de tarefas e contagens; dados fictícios",
+          "saved": false
+        }
+      },
+      {
+        "file": "interface-completude.png",
+        "sha256": "5c1545cfc7185cfc55183405bff358cf60c73819ef43933633728d2fb37e9d1c",
+        "width": 1440,
+        "height": 1000,
+        "pixel_editing": false,
+        "source": "WebDriver GET /screenshot; decoded bytes saved unchanged",
+        "scroll_y": 0,
+        "evidence": {
+          "view": "radar",
+          "scope": "presença de campos e faixas de esforço; dados fictícios",
+          "saved": false
+        }
+      },
+      {
+        "file": "interface-previa.png",
+        "sha256": "c0b511b9e5ab08e0ee0440ddca2c78e908c9b4750410b9726030c087368efb08",
+        "width": 1440,
+        "height": 1000,
+        "pixel_editing": false,
+        "source": "WebDriver GET /screenshot; decoded bytes saved unchanged",
+        "scroll_y": 3452,
+        "evidence": {
+          "task": "WS-001",
+          "before": "PRONTA",
+          "preview": "EM_ANDAMENTO",
+          "saved": false
+        }
+      }
+    ],
+    "source_files_verified": 52,
+    "source_version": "Atual na captura de 11/10/2026 às 17:42 UTC",
+    "d3_version": "7.9.0",
+    "original_ui_unchanged": true,
+    "pixel_editing": false,
+    "preview_without_write": true,
+    "committed_changes": false,
+    "matrix_selection_verified": true,
+    "checks_passed": 92,
+    "checks_with_caveat": 1,
+    "desktop_widths": [
+      1440,
+      1366
+    ],
+    "desktop_horizontal_overflow": false,
+    "mobile_width": 390,
+    "mobile_radar_scroll_width": 489,
+    "unexpected_console_errors": 0,
+    "isolation": {
+      "network_interfaces": [
+        "lo"
+      ],
+      "ipv4_routes": 0,
+      "original_workspace_visible": false,
+      "source_readonly": true
+    },
+    "transcript_sha256": "21d65436d93363b5b23dbb75ec7f46c4a8105b9b89bd46b2c5be95cbab8bed0c"
+  },
+  "browser_history": {
+    "recorded_at_utc": "2026-10-11T15:41:33.493566+00:00",
+    "status": "Verificação anterior preservada como histórico; capturas substituídas pela interface atual.",
+    "previously_confirmed_and_reloaded": true,
+    "previous_mobile_scroll_width": 428
+  }
+}

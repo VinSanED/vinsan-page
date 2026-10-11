@@ -1,0 +1,255 @@
+{
+  "title": "Python: dados confiáveis e uma operação visível.",
+  "subtitle": "Uma infraestrutura local em Python que conecta tarefas, oportunidades, análise SQL e indicadores. Da prévia de uma alteração ao painel atualizado, cada etapa tem regras, evidências e um resultado que pode ser conferido.",
+  "context": "Projeto próprio · infraestrutura da operação freelance",
+  "role": "Modelagem de dados, automação, interface local e rastreabilidade",
+  "status": "Demonstração isolada com dados fictícios",
+  "technologies": [
+    "Python",
+    "SQLite",
+    "HTTP local",
+    "JavaScript",
+    "D3.js",
+    "CSV / JSON",
+    "OpenDocument / ODS",
+    "unittest"
+  ],
+  "problem": "Planilhas e documentos registram o trabalho, mas não explicam sozinhos o que está pronto, o que foi alterado ou por que um indicador mudou. A operação precisava transformar esses registros em ações consistentes, preservar o histórico e tornar pendências e falhas visíveis.",
+  "contribution": "Evoluí meu pipeline Python para uma infraestrutura de operação local. Modelei regras de dados e ações de tarefa, conectei terminal e interface à mesma camada de domínio e implementei indicadores, eventos, backups e saídas derivadas. O case acompanha essa evolução com execuções reais em uma cópia fictícia do workspace.",
+  "deliveries": [
+    {
+      "number": "01",
+      "title": "Ações operacionais com prévia e confirmação",
+      "summary": "Do registro de progresso à conclusão, a mudança pode ser revisada antes de gravar.",
+      "details": "A CLI e a interface local usam as mesmas funções Python para iniciar, registrar progresso, anexar evidência, bloquear, retomar e concluir tarefas. A revisão de oportunidades reutiliza os validadores do ERP.",
+      "points": [
+        "A prévia mostra antes e depois. A confirmação depende da versão das fontes; uma edição concorrente exige nova leitura e revisão.",
+        "Backups, locks de edição e substituição atômica de cada arquivo ajudam a preservar o trabalho existente."
+      ],
+      "value": "Reduz a necessidade de editar CSVs manualmente e torna explícito o que cada ação altera."
+    },
+    {
+      "number": "02",
+      "title": "Análise de dados com regras de interpretação",
+      "summary": "Indicadores que explicam o que contam e de onde vêm.",
+      "details": "Cinco tabelas ERP passam por validações de formatos, estados e vínculos. O núcleo usa SQLite em memória para prioridades e agregados financeiros; a camada operacional calcula contagens, recência e completude dos registros.",
+      "points": [
+        "Valores monetários passam por Decimal e centavos inteiros. Totais permanecem separados por moeda e tipo; valores desconhecidos não viram zero.",
+        "Matrizes D3 mostram prioridade × estado e presença de campos por oportunidade. Fonte, unidade, denominador e alternativa tabular acompanham os gráficos."
+      ],
+      "value": "Permite investigar a qualidade dos dados e interpretar os números sem confundir contagens com produtividade ou receita."
+    },
+    {
+      "number": "03",
+      "title": "Observabilidade da própria operação",
+      "summary": "Saber o que mudou, o que falhou e o que precisa de revisão.",
+      "details": "Eventos PREPARADO e APLICADO registram etapas da gravação. A interface atual reúne matrizes interativas, indicadores de qualidade e fotografias de diagnósticos, referências e hashes. A consulta relê as fontes; não executa testes ou monitoramento contínuo.",
+      "points": [
+        "Uma ocorrência de qualidade vem acompanhada de fonte e detalhe; o mesmo registro pode produzir mais de uma ocorrência.",
+        "A resposta distingue registro salvo de painel desatualizado. Uma falha na geração do ODS pode ser tratada sem repetir a decisão já gravada."
+      ],
+      "value": "Facilita localizar problemas, conferir alterações e retomar uma rotina com contexto."
+    },
+    {
+      "number": "04",
+      "title": "Automação com saídas úteis para outras pessoas",
+      "summary": "Terminal, interface e planilha trabalham sobre as mesmas fontes.",
+      "details": "Comandos ws organizam consulta, revisão e atualização. JSON e Markdown atendem integração e leitura; o painel ODS combina CSVs validados, triagem e fila, reutilizando a análise financeira em sete abas. A central documental reúne as referências da operação.",
+      "points": [
+        "Importação e seleção de oportunidades são etapas explícitas; repetir uma captura não deve duplicá-la.",
+        "ODS e central são derivados regeneráveis. Na demonstração, somente o ODS fictício é atualizado; a central real permanece preservada."
+      ],
+      "value": "Entrega uma rotina repetível e informação examinável no formato usado pela equipe."
+    }
+  ],
+  "decisions": [
+    {
+      "title": "Uma regra de negócio, duas formas de operar",
+      "text": "Interface e CLI chamam a mesma camada Python. O JavaScript apresenta a prévia; os contratos e a decisão de gravar são validados novamente no servidor."
+    },
+    {
+      "title": "Indicadores descritivos, com denominadores",
+      "text": "A matriz de completude mostra campos conhecidos e desconhecidos, sem imputar valores ou avaliar sua veracidade. A seleção nos gráficos é temporária e tem alternativa tabular; não altera os registros. A pontuação de triagem continua sendo uma heurística."
+    },
+    {
+      "title": "Persistência e derivados têm estados próprios",
+      "text": "Salvar uma fonte, confirmar seu evento e atualizar ODS ou central são etapas distintas. A resposta informa falhas posteriores à gravação para evitar repetir uma ação já aplicada."
+    },
+    {
+      "title": "Simplicidade local com limites explícitos",
+      "text": "CSV mantém os registros acessíveis e SQLite é usado em memória. Hashes, backups e locks protegem a rotina, mas não criam uma transação global entre arquivos. A coordenação de um editor por material continua necessária."
+    }
+  ],
+  "stats": [
+    {
+      "value": "94 / 94",
+      "label": "execuções de teste aprovadas na rodada anterior, preservadas como evidência histórica"
+    },
+    {
+      "value": "7 abas",
+      "label": "no painel ODS, com sete filtros e fontes identificadas"
+    }
+  ],
+  "demonstration": {
+    "date": "11 out 2026 · interface capturada às 17:42 UTC",
+    "environment": "Interface atual em cópia isolada com dados fictícios, D3 local e rede externa desabilitada. Os registros de terminal às 15:38 UTC pertencem à rodada anterior."
+  },
+  "evidence": {
+    "basis": "As telas mostram a versão atual da interface: centro de comando, matrizes D3 e prévia tabular. As capturas de terminal e os arquivos do pipeline anterior continuam disponíveis, com seus horários e escopos identificados.",
+    "scopeNote": "Os 94 resultados são execuções da rodada anterior, com cenários repetidos; não foram reexecutados para esta atualização visual. A nova conferência cobriu consulta, seleção de gráficos e prévia sem gravar. O aceite oficial do workspace permanece separado.",
+    "checks": [
+      {
+        "label": "Núcleo de dados",
+        "result": "13 testes aprovados",
+        "detail": "Formatos, vínculos, estados, evidências, valores inválidos e agregação por moeda."
+      },
+      {
+        "label": "Integração, domínio e HTTP",
+        "result": "59 testes aprovados",
+        "detail": "CLI, importação, seleção, operações com confirmação, edição concorrente, recuperação e handler HTTP por streams."
+      },
+      {
+        "label": "Diagnóstico e Radar",
+        "result": "22 testes aprovados",
+        "detail": "5 de prontidão e 17 do Radar reutilizado. Fontes externas não foram consultadas."
+      },
+      {
+        "label": "Pipeline da reforma",
+        "result": "7 etapas concluídas",
+        "detail": "Da validação à seleção, prévia, confirmação, conflito e recuperação de um painel desatualizado."
+      },
+      {
+        "label": "Dados e painel",
+        "result": "7 abas e 7 filtros",
+        "detail": "9 registros ERP iniciais; 10 após a seleção. A fila contém 9 tarefas fictícias. Central real preservada."
+      },
+      {
+        "label": "Interface atual",
+        "result": "D3, seleção e prévia conferidos",
+        "detail": "Capturas 1440 × 1000 e navegação desktop 1366 × 768. Fontes preservadas; a visão Radar ainda apresenta overflow a 390 px."
+      }
+    ]
+  },
+  "executions": [
+    {
+      "width": 1440,
+      "height": 1000,
+      "transcript": "registro-navegador.txt",
+      "transcriptLabel": "Ler verificação das telas atuais em texto",
+      "title": "01 / Centro de comando e matriz de tarefas",
+      "description": "A interface atual reúne contagens de trabalho ativo e uma matriz de prioridade × estado. Cada célula abre a seleção correspondente de tarefas por clique ou teclado, mantendo os registros intactos.",
+      "scope": "Captura de 11/10/2026, 17:42 UTC. Amostra independente com nove tarefas fictícias. O gráfico informa a unidade e oferece os mesmos dados em tabela.",
+      "result": "Tema escuro · D3 local · matriz interativa · 9 tarefas fictícias.",
+      "caption": "Captura nativa do centro de comando atual, com verde e ciano. Contagens por ID representam tarefas, não horas ou produtividade.",
+      "screenshot": "interface-indicadores.png"
+    },
+    {
+      "width": 1440,
+      "height": 1000,
+      "transcript": "registro-navegador.txt",
+      "transcriptLabel": "Ler verificação das telas atuais em texto",
+      "title": "02 / Completude sem esconder o desconhecido",
+      "description": "A matriz de oportunidades distingue campos informados de campos desconhecidos. As faixas de esforço apresentam estimativas por oportunidade e mantêm os escopos separados.",
+      "scope": "Três oportunidades fictícias, com cinco campos observados por ID. Presença de valor não comprova veracidade; zero é conhecido e campo vazio permanece desconhecido.",
+      "result": "3 oportunidades · 5 campos por ID · valores ausentes visíveis.",
+      "caption": "Captura real da visão Radar da versão atual. A matriz D3 e sua legenda mostram o significado dos dados; a tabela expansível oferece leitura alternativa.",
+      "screenshot": "interface-completude.png"
+    },
+    {
+      "width": 1440,
+      "height": 1000,
+      "transcript": "registro-navegador.txt",
+      "transcriptLabel": "Ler verificação das telas atuais em texto",
+      "title": "03 / Prévia tabular antes de confirmar",
+      "description": "O formulário atual exibe a diferença entre Antes e Depois em uma tabela. A ação fictícia de iniciar foi validada e cancelada após a captura, preservando o estado da tarefa.",
+      "scope": "Prévia PRONTA → EM_ANDAMENTO em uma tarefa sintética. Esta rodada não confirmou gravações nem gerou novamente os derivados.",
+      "result": "Prévia conferida · dados preservados · nenhuma ação confirmada.",
+      "caption": "Captura nativa da interface atual, com formulário e tabela de alterações. A confirmação continua sendo uma etapa explícita, posterior à revisão.",
+      "screenshot": "interface-previa.png"
+    },
+    {
+      "title": "04 / Pipeline operacional · registro anterior",
+      "description": "O pipeline valida dados, gera análises SQL, importa e seleciona uma oportunidade fictícia. Em seguida, exercita a prévia sem gravação, a confirmação, a recusa de uma versão antiga e a atualização dos derivados.",
+      "scope": "7 etapas sobre 5 CSVs. A seleção leva o ERP de 9 a 10 registros; 2 ações aplicadas geram eventos. O lock demonstrado é sintético e a central real não é regenerada. Execução anterior: 11/10/2026, 15:38 UTC.",
+      "result": "7 etapas concluídas · conflito recusado · registro salvo com painel pendente · ODS atualizado depois.",
+      "caption": "Captura nativa do terminal durante execução real. A saída resume verificações do processo e dos artefatos; os dados são fictícios e os pixels não foram editados.",
+      "screenshot": "terminal-pipeline.png",
+      "transcript": "terminal-pipeline.txt",
+      "width": 1600,
+      "height": 1100
+    },
+    {
+      "title": "05 / Testes · registro anterior",
+      "description": "Registro preservado da execução anterior das suítes do núcleo ERP, integração, operações, handler HTTP, diagnóstico e Radar. Os cenários abrangem recusas, conflitos e recuperação em arquivos temporários.",
+      "scope": "13 testes do núcleo + 59 de integração, domínio, HTTP e terminal + 5 de diagnóstico + 17 do Radar. Há cenários herdados e repetidos. Os testes de handler usam streams; o navegador tem registro separado.",
+      "result": "94 de 94 execuções aprovadas · 0 falhas · 0 erros · 0 testes ignorados.",
+      "caption": "Captura nativa registrada em 11/10/2026 às 15:38 UTC. Os 94 resultados pertencem àquela versão e não foram atribuídos às visualizações D3 atuais.",
+      "screenshot": "terminal-testes.png",
+      "transcript": "terminal-testes.txt",
+      "width": 1600,
+      "height": 1100
+    }
+  ],
+  "outcome": "O projeto reúne engenharia de dados, análise descritiva, automação e observabilidade operacional em uma ferramenta de uso local. Demonstra como transformo controles dispersos em rotinas Python que outra pessoa consegue operar, conferir e manter.",
+  "limits": [
+    "Projeto próprio, demonstrado com dados sintéticos. Não há medição de produtividade, receita ou resultado comercial atribuída ao case.",
+    "Observabilidade local por eventos, diagnósticos e indicadores; não há monitoramento contínuo, tracing distribuído ou alertas de produção neste recorte.",
+    "A análise é descritiva. Não inclui modelo preditivo, experimento causal ou treinamento de machine learning.",
+    "O serviço HTTP é local, iniciado manualmente. A sessão não representa autenticação individual nem validação de operação multiusuário.",
+    "Não há transação global entre CSV, evento e derivados. Backups locais e controle de edição não substituem a coordenação de acesso aos arquivos.",
+    "Os testes não comprovam autenticidade de documentos, conciliação bancária ou integração externa. ODS e central permanecem visões derivadas; editar a planilha não atualiza a fonte.",
+    "A interface atual foi conferida em desktop. Em 390 px, Início, Qualidade e Tarefas não apresentaram overflow da página; a visão Radar chegou a 489 px e ainda requer ajuste no projeto de origem."
+  ],
+  "visualNote": "As três telas atuais foram capturadas em 11/10/2026 às 17:42 UTC, sem editar pixels. Os dois terminais preservam as execuções anteriores às 15:38 UTC. Todas as amostras são fictícias.",
+  "downloads": [
+    {
+      "label": "Resumo inicial do núcleo em JSON",
+      "file": "resumo-demo.json",
+      "description": "9 registros fictícios antes da seleção."
+    },
+    {
+      "label": "Indicadores da demonstração em JSON",
+      "file": "indicadores-demo.json",
+      "description": "Snapshot histórico do pipeline às 15:38 UTC."
+    },
+    {
+      "label": "Indicadores da interface atual em JSON",
+      "file": "indicadores-interface.json",
+      "description": "Snapshot das novas capturas, sem confirmação de gravações."
+    },
+    {
+      "label": "Painel de demonstração em ODS",
+      "file": "painel-demo.ods",
+      "description": "7 abas após a seleção; 10 registros ERP e 9 tarefas."
+    },
+    {
+      "label": "Registro das execuções em JSON",
+      "file": "execucoes.json",
+      "description": "Escopos, resultados e hashes dos arquivos publicados."
+    }
+  ],
+  "heroLead": "Dados confiáveis.",
+  "heroAccent": "Operação visível.",
+  "flow": [
+    [
+      "Operar",
+      "CLI e interface HTTP local"
+    ],
+    [
+      "Conferir",
+      "Prévia, regras e versão das fontes"
+    ],
+    [
+      "Persistir",
+      "CSV, backup e eventos da ação"
+    ],
+    [
+      "Acompanhar",
+      "Indicadores, relatórios e painel ODS"
+    ]
+  ],
+  "flowCaption": "Ações de tarefa e oportunidade passam pela mesma camada Python. A análise financeira usa SQLite em memória; os indicadores operacionais também leem fila e triagem. O ODS reutiliza fontes e análise, sem consumir o resumo JSON/Markdown.",
+  "flowAlt": "CLI e interface local chamam regras Python para conferir e persistir ações. As fontes alimentam a análise SQL, os indicadores e o painel ODS.",
+  "integrityCaption": "Uma versão divergente interrompe a alteração. Após salvar a fonte, a confirmação do evento e a geração dos derivados têm estados próprios. PREPARADO sozinho não comprova aplicação; não há transação global entre arquivos.",
+  "integrityAlt": "Prévia e versão conferidas levam à confirmação, backup e gravação. Conflitos exigem revisão; falhas posteriores são informadas como evento ou derivado pendente."
+}

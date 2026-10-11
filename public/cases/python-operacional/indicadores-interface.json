@@ -1,0 +1,71 @@
+{
+  "stage": "Interface atual, 11/10/2026 às 17:42 UTC; dados fictícios preparados para consulta e prévia, sem confirmação de gravação.",
+  "natureza": "DEMONSTRAÇÃO FICTÍCIA",
+  "consultado_em": "2026-10-11T17:42:23+00:00",
+  "denominadores": {
+    "tarefas": 9,
+    "capturas": 1,
+    "qualidade": 8
+  },
+  "gestao": [
+    {
+      "grupo": "ADIADA / P2",
+      "quantidade": 1
+    },
+    {
+      "grupo": "AGUARDA_EVIDENCIA / P2",
+      "quantidade": 1
+    },
+    {
+      "grupo": "BLOQUEADA / P2",
+      "quantidade": 1
+    },
+    {
+      "grupo": "CONCLUIDA / P1",
+      "quantidade": 1
+    },
+    {
+      "grupo": "CONCLUIDA / P2",
+      "quantidade": 2
+    },
+    {
+      "grupo": "EM_ANDAMENTO / P2",
+      "quantidade": 1
+    },
+    {
+      "grupo": "PRONTA / P1",
+      "quantidade": 1
+    },
+    {
+      "grupo": "PROPOSTA / P2",
+      "quantidade": 1
+    }
+  ],
+  "qualidade": [
+    {
+      "grupo": "campo ausente",
+      "quantidade": 4
+    },
+    {
+      "grupo": "verificação pendente",
+      "quantidade": 4
+    }
+  ],
+  "prospeccao": [
+    {
+      "grupo": "manual / freelance",
+      "quantidade": 1
+    }
+  ],
+  "contagens_erp": {
+    "oportunidades": 3,
+    "propostas": 1,
+    "projetos": 1,
+    "entregas": 1,
+    "financeiro": 4
+  },
+  "painel": {
+    "atualizado_em": "2026-10-11T15:41:35+00:00",
+    "atual": false
+  }
+}

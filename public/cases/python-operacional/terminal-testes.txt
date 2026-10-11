@@ -1,0 +1,23 @@
+LOCAL TERMINAL CAPTURE
+Step: 94 execuções de testes selecionados
+
+VINSAN / PYTHON / REFORMA OPERACIONAL
+Execução real; todos os dados são fictícios.
+Fontes preservadas; ambiente isolado sem rede externa.
+Data UTC: 2026-10-11T15:38:28+00:00
+
+[1/4] Núcleo ERP
+  13/13 aprovados; 0 falhas; 0 erros; 0 ignorados.
+[2/4] Integração, domínio, HTTP e terminal
+  59/59 aprovados; 0 falhas; 0 erros; 0 ignorados.
+[3/4] Diagnóstico local
+  5/5 aprovados; 0 falhas; 0 erros; 0 ignorados.
+[4/4] Radar: parsers e persistência local
+  17/17 aprovados; 0 falhas; 0 erros; 0 ignorados.
+TOTAL: 94/94 execuções de testes aprovadas.
+Há cenários de domínio repetidos na classe HTTP; não são 94 requisitos.
+
+Código de saída real: 0
+Dados fictícios; nenhuma ação comercial ou financeira real.
+
+Exit status: 0

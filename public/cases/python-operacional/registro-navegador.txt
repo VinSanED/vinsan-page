@@ -1,0 +1,42 @@
+VINSAN / PYTHON / CAPTURAS DA INTERFACE ATUAL
+11 de outubro de 2026, 17:42 UTC.
+
+Interface original preservada: tema escuro, verde e ciano; D3 7.9.0 local.
+Todos os registros da cópia são fictícios. Nenhum dado da operação real foi exposto.
+Capturas nativas Chromium: 1440 × 1000; sem alteração de DOM, CSS ou pixels.
+
+Telas capturadas:
+- interface-indicadores.png: centro de comando, contagens e matriz prioridade × estado.
+- interface-completude.png: campos conhecidos/desconhecidos das oportunidades.
+- interface-previa.png: formulário e tabela Antes/Depois da tarefa fictícia WS-001.
+
+Verificações executadas:
+- D3 local carregado e matriz renderizada.
+- Célula selecionada por clique e teclado, abrindo a seleção de tarefas.
+- Prévia PRONTA → EM_ANDAMENTO validada sem alterar a fonte.
+- Prévia cancelada; nenhuma confirmação de gravação ou geração de painel executada.
+- Fontes e registros preservados após consulta, seleção e prévia.
+- Desktop 1440 e visões Início/Radar/Qualidade/Saúde em 1366: sem overflow da página.
+- Em 390 px: Início, Qualidade e Tarefas sem overflow da página; Radar chegou a 489 px.
+- Console sem erro inesperado; favicon 404 registrado.
+- 92 verificações passaram; 1 ressalva de layout mobile (Radar) permanece.
+
+Estado da amostra: 9 tarefas, 1 captura na triagem, 10 registros ERP,
+3 oportunidades e 8 ocorrências de qualidade. Ocorrências não são registros únicos.
+A matriz mostra presença de cinco campos por oportunidade, não veracidade dos dados.
+A seleção é temporária; o botão de consulta não coleta fontes externas nem executa testes.
+
+Proveniência:
+- 52 arquivos atuais de implementação/dependências selecionadas conferidos por SHA-256.
+- Ambiente isolado com apenas loopback; nenhuma rota IPv4 externa.
+- Workspace original invisível ao servidor e navegador; fontes montadas somente leitura.
+- Dados derivados da amostra fictícia anterior, preparados separadamente para estas telas.
+- Diagnósticos reais, contratos, informações comerciais e credenciais não foram copiados.
+- Servidor, Chromium e ChromeDriver temporários encerrados após as capturas.
+
+Escopos separados:
+As capturas e artefatos do pipeline/testes às 15:38 UTC continuam históricos.
+Os 94 resultados anteriores não foram reexecutados nem atribuídos ao CSS/D3 atual.
+O snapshot indicadores-interface.json corresponde à nova consulta às 17:42 UTC.
+Esta verificação não altera o aceite oficial do workspace e não valida produção
+ou uso multiusuário. A pendência mobile foi registrada, sem modificar o projeto.

@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="Uma infraestrutura local em Python que conecta tarefas, oportunidades, análise SQL e indicadores. Da prévia de uma alteração ao painel atualizado, cada etapa tem regras, evidências e um resultado que pode ser conferido."><meta name="author" content="Vinicius Sanches"><title>Python: dados confiáveis e uma operação visível. | Vinsan</title><style>
+:root { color-scheme: light; --paper: #f5f6f2; --ink: #172b27; --green: #17483e; --muted: #53665b; --line: #d5ded1; --soft: #e9ede2; }
+* { box-sizing: border-box; }
+html { background: #e7ece3; color: var(--ink); font: 16px/1.65 Arial, Helvetica, sans-serif; }
+body { margin: 0; }
+a { color: var(--green); text-underline-offset: 4px; overflow-wrap: anywhere; }
+a:focus-visible { outline: 3px solid #779252; outline-offset: 5px; }
+h1, h2, h3, p, dd, li, span, strong { overflow-wrap: anywhere; }
+h1, h2, h3 { font-weight: 600; line-height: 1.15; margin: 0; }
+h1 { font-size: clamp(2.4rem, 4.5vw, 4.2rem); letter-spacing: -.055em; max-width: 1000px; }
+h2 { font-size: clamp(1.85rem, 3vw, 2.8rem); letter-spacing: -.035em; }
+h3 { font-size: 1.35rem; letter-spacing: -.018em; }
+p { margin: 14px 0 0; color: var(--muted); }
+ul { margin: 18px 0; padding-left: 22px; color: var(--muted); }
+li { padding-left: 3px; margin: 8px 0; }
+.sheet { max-width: 1240px; margin: 24px auto; padding: 52px 64px; background: var(--paper); }
+.brand { font-size: 1.9rem; color: var(--green); font-weight: 700; letter-spacing: -.06em; }
+.brand span { color: #648047; }
+.topline { display: flex; justify-content: space-between; gap: 20px; align-items: center; border-bottom: 1px solid var(--line); padding-bottom: 22px; margin-bottom: 42px; }
+.eyebrow { margin: 0 0 15px; font-size: .73rem; font-weight: 700; letter-spacing: .13em; color: #426153; text-transform: uppercase; }
+.lead { font-size: 1.18rem; line-height: 1.65; max-width: 950px; }
+.notice { border-left: 3px solid #749258; background: var(--soft); padding: 16px 20px; margin: 26px 0; color: #2b4b36; }
+.meta { font-size: .86rem; color: var(--muted); }
+.facts { display: grid; grid-template-columns: 1fr 1.1fr 1fr; gap: 24px; margin: 30px 0; padding: 22px 0; border-block: 1px solid var(--line); }
+dt { color: var(--muted); font-size: .78rem; margin-bottom: 7px; }
+dd { margin: 0; line-height: 1.5; }
+.chapter { margin-top: 56px; }
+.chapter > h2 { margin-bottom: 24px; }
+.columns { display: grid; grid-template-columns: 1fr 1fr; gap: 34px; }
+.tags { display: flex; flex-wrap: wrap; gap: 8px; padding: 0; list-style: none; margin: 24px 0 0; }
+.tags li { border: 1px solid #c2cfba; border-radius: 40px; padding: 5px 12px; font-size: .8rem; margin: 0; }
+.delivery { display: grid; grid-template-columns: 48px minmax(0,1fr); gap: 24px; border-top: 1px solid var(--line); padding: 26px 0; }
+.number { color: #648047; font-size: 1.8rem; }
+.summary { color: #294c38; font-size: 1.1rem; }
+.value { margin-top: 20px; padding-left: 15px; border-left: 2px solid #9bb08b; }
+figure { margin: 26px 0; }
+figure img { display: block; width: 100%; height: auto; }
+figcaption { color: var(--muted); font-size: .78rem; line-height: 1.6; margin-top: 13px; }
+.decision { padding: 18px 0; border-top: 1px solid var(--line); }
+.decisions { display: grid; grid-template-columns: 1fr 1fr; gap: 0 28px; }
+.stats { display: grid; grid-template-columns: repeat(auto-fit,minmax(min(100%,240px),1fr)); gap: 20px; margin: 30px 0; }
+.stat { padding: 22px 24px; border: 1px solid var(--line); border-radius: 9px; min-width: 0; }
+.stat:first-child { background: var(--green); color: #f5f6f2; border-color: var(--green); }
+.stat strong { display: block; font-size: clamp(2rem,3.4vw,3rem); font-weight: 500; line-height: 1.1; letter-spacing: -.045em; }
+.stat span { display: block; font-size: .86rem; margin-top: 12px; }
+.checks { width: 100%; border-collapse: collapse; margin-top: 26px; table-layout: fixed; }
+.checks th { text-align: left; font-size: .76rem; color: #426153; letter-spacing: .04em; padding: 12px 14px 12px 0; border-bottom: 1px solid #a7ba9d; }
+.checks td { vertical-align: top; padding: 16px 18px 16px 0; border-bottom: 1px solid var(--line); font-size: .91rem; overflow-wrap: anywhere; }
+.checks td:last-child { color: var(--muted); }
+.checks th:nth-child(1), .checks th:nth-child(2) { width: 27%; }
+.checks th:nth-child(3) { width: 46%; }
+.endnote { display: flex; justify-content: space-between; gap: 18px; flex-wrap: wrap; border-top: 1px solid var(--line); margin-top: 38px; padding-top: 18px; font-size: .8rem; color: var(--muted); }
+.toolbar { max-width: 1240px; margin: 20px auto; display: flex; flex-wrap: wrap; gap: 20px; padding: 0 30px; font-size: .9rem; }
+.execution .result { color: var(--green); font-size: 1.2rem; font-weight: 600; }
+.execution figure { border: 1px solid var(--line); border-radius: 9px; overflow: hidden; }
+.execution figcaption { padding: 0 18px 16px; }
+.downloads { display: grid; grid-template-columns: repeat(auto-fit,minmax(min(100%,210px),1fr)); gap: 12px; padding: 0; margin: 24px 0 0; list-style: none; }
+.downloads-title { margin-top: 30px; }
+.downloads li { margin: 0; padding: 0; }
+.downloads a { display: block; height: 100%; padding: 14px 17px; border: 1px solid var(--line); border-radius: 7px; font-size: .9rem; }
+.downloads a span { display: block; margin-top: 7px; color: var(--muted); font-size: .8rem; }
+@media screen and (max-width:760px) {
+  .sheet { margin: 0; padding: 32px 22px; }
+  .topline { flex-wrap: wrap; margin-bottom: 30px; }
+  .facts, .columns, .stats, .decisions { grid-template-columns: 1fr; gap: 20px; }
+  .delivery { grid-template-columns: 1fr; gap: 8px; }
+  .checks td, .checks th { padding-right: 10px; }
+  .endnote { margin-top: 30px; }
+}
+@page { size: A4; margin: 16mm 16mm 18mm; }
+@media print {
+  html, body { background: var(--paper); font-size: 10pt; line-height: 1.5; }
+  body { print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+  .toolbar { display: none; }
+  .sheet { margin: 0; padding: 0; max-width: none; }
+  .topline { margin-bottom: 7mm; padding-bottom: 4mm; }
+  .brand { font-size: 19pt; }
+  h1 { font-size: 32pt; }
+  h2 { font-size: 23pt; }
+  h3 { font-size: 13pt; }
+  h2, h3 { break-after: avoid; }
+  p { orphans: 3; widows: 3; }
+  .lead { font-size: 11.5pt; }
+  .eyebrow { font-size: 8pt; }
+  .facts { gap: 5mm; margin: 7mm 0; padding: 5mm 0; }
+  .chapter { margin-top: 0; break-before: page; }
+  .chapter > h2 { margin-bottom: 6mm; }
+  .delivery { gap: 4mm; padding: 3.5mm 0; break-inside: avoid; line-height: 1.4; }
+  .deliveries-list > .delivery:nth-child(3) { break-before: page; }
+  .summary { font-size: 10.5pt; }
+  .delivery p { margin-top: 2.5mm; }
+  .delivery ul { margin: 2.5mm 0; }
+  .delivery li { margin: 1mm 0; }
+  .number { font-size: 18pt; }
+  figure, .decision, .notice, tr, .stats, .downloads li { break-inside: avoid; }
+  figure { margin: 5mm 0; }
+  figcaption { font-size: 8pt; }
+  .decisions { gap: 0 6mm; }
+  .decision { padding: 3mm 0; font-size: 9.3pt; line-height: 1.4; }
+  .decision h3 { font-size: 11.5pt; }
+  .decision p { margin-top: 2.5mm; }
+  .stats { grid-template-columns: repeat(auto-fit,minmax(45mm,1fr)); gap: 4mm; margin: 6mm 0; }
+  .stat { padding: 4mm; }
+  .stat strong { font-size: 25pt; }
+  .checks { margin-top: 5mm; }
+  .checks td { font-size: 9pt; padding-block: 3.5mm; }
+  .checks th { font-size: 8pt; }
+  .endnote { margin-top: 6mm; font-size: 8pt; }
+  .execution figure img { max-height: 165mm; width: 100%; height: auto; object-fit: contain; }
+  .execution .meta { font-size: 9pt; }
+  .downloads { margin-top: 5mm; gap: 3mm; }
+  .downloads-title { margin-top: 7mm; }
+  .downloads a { padding: 3mm; font-size: 8.5pt; }
+  .limits { font-size: 9.5pt; }
+  .limits li { margin: 2mm 0; }
+  a { color: inherit; }
+}
+</style></head><body><nav class="toolbar" aria-label="Navegação do documento"><a href="https://vinsan-page.vercel.app/cases/python-operacional">Abrir case no portfólio</a><a href="https://vinsan-page.vercel.app/cases/python-operacional/case-tecnico.pdf" download>Baixar case em PDF</a></nav>
+<main class="sheet">
+  <header>
+    <div class="topline"><div class="brand">vinsan<span>.</span></div><span class="meta">Vinicius Sanches · Case técnico</span></div>
+    <p class="eyebrow">PYTHON / OPERAÇÃO, DADOS E OBSERVABILIDADE</p>
+    <h1>Python: dados confiáveis e uma operação visível.</h1><p class="lead">Uma infraestrutura local em Python que conecta tarefas, oportunidades, análise SQL e indicadores. Da prévia de uma alteração ao painel atualizado, cada etapa tem regras, evidências e um resultado que pode ser conferido.</p>
+    <dl class="facts"><div><dt>Contexto</dt><dd>Projeto próprio · infraestrutura da operação freelance</dd></div><div><dt>Minha atuação</dt><dd>Modelagem de dados, automação, interface local e rastreabilidade</dd></div><div><dt>Estado apresentado</dt><dd>Demonstração isolada com dados fictícios</dd></div></dl>
+    <div class="columns"><section><h2>O desafio</h2><p>Planilhas e documentos registram o trabalho, mas não explicam sozinhos o que está pronto, o que foi alterado ou por que um indicador mudou. A operação precisava transformar esses registros em ações consistentes, preservar o histórico e tornar pendências e falhas visíveis.</p></section><section><h2>Minha contribuição</h2><p>Evoluí meu pipeline Python para uma infraestrutura de operação local. Modelei regras de dados e ações de tarefa, conectei terminal e interface à mesma camada de domínio e implementei indicadores, eventos, backups e saídas derivadas. O case acompanha essa evolução com execuções reais em uma cópia fictícia do workspace.</p></section></div>
+    <ul class="tags" aria-label="Tecnologias e ferramentas"><li>Python</li><li>SQLite</li><li>HTTP local</li><li>JavaScript</li><li>D3.js</li><li>CSV / JSON</li><li>OpenDocument / ODS</li><li>unittest</li></ul>
+  </header>
+  <section class="chapter"><p class="eyebrow">01 / O TRABALHO</p><h2>Modelar, validar e entregar.</h2>
+    <div class="deliveries-list"><article class="delivery"><span class="number">01</span><div><h3>Ações operacionais com prévia e confirmação</h3><p class="summary">Do registro de progresso à conclusão, a mudança pode ser revisada antes de gravar.</p><p>A CLI e a interface local usam as mesmas funções Python para iniciar, registrar progresso, anexar evidência, bloquear, retomar e concluir tarefas. A revisão de oportunidades reutiliza os validadores do ERP.</p><ul><li>A prévia mostra antes e depois. A confirmação depende da versão das fontes; uma edição concorrente exige nova leitura e revisão.</li><li>Backups, locks de edição e substituição atômica de cada arquivo ajudam a preservar o trabalho existente.</li></ul><p class="value"><strong>Valor do trabalho:</strong> Reduz a necessidade de editar CSVs manualmente e torna explícito o que cada ação altera.</p></div></article><article class="delivery"><span class="number">02</span><div><h3>Análise de dados com regras de interpretação</h3><p class="summary">Indicadores que explicam o que contam e de onde vêm.</p><p>Cinco tabelas ERP passam por validações de formatos, estados e vínculos. O núcleo usa SQLite em memória para prioridades e agregados financeiros; a camada operacional calcula contagens, recência e completude dos registros.</p><ul><li>Valores monetários passam por Decimal e centavos inteiros. Totais permanecem separados por moeda e tipo; valores desconhecidos não viram zero.</li><li>Matrizes D3 mostram prioridade × estado e presença de campos por oportunidade. Fonte, unidade, denominador e alternativa tabular acompanham os gráficos.</li></ul><p class="value"><strong>Valor do trabalho:</strong> Permite investigar a qualidade dos dados e interpretar os números sem confundir contagens com produtividade ou receita.</p></div></article><article class="delivery"><span class="number">03</span><div><h3>Observabilidade da própria operação</h3><p class="summary">Saber o que mudou, o que falhou e o que precisa de revisão.</p><p>Eventos PREPARADO e APLICADO registram etapas da gravação. A interface atual reúne matrizes interativas, indicadores de qualidade e fotografias de diagnósticos, referências e hashes. A consulta relê as fontes; não executa testes ou monitoramento contínuo.</p><ul><li>Uma ocorrência de qualidade vem acompanhada de fonte e detalhe; o mesmo registro pode produzir mais de uma ocorrência.</li><li>A resposta distingue registro salvo de painel desatualizado. Uma falha na geração do ODS pode ser tratada sem repetir a decisão já gravada.</li></ul><p class="value"><strong>Valor do trabalho:</strong> Facilita localizar problemas, conferir alterações e retomar uma rotina com contexto.</p></div></article><article class="delivery"><span class="number">04</span><div><h3>Automação com saídas úteis para outras pessoas</h3><p class="summary">Terminal, interface e planilha trabalham sobre as mesmas fontes.</p><p>Comandos ws organizam consulta, revisão e atualização. JSON e Markdown atendem integração e leitura; o painel ODS combina CSVs validados, triagem e fila, reutilizando a análise financeira em sete abas. A central documental reúne as referências da operação.</p><ul><li>Importação e seleção de oportunidades são etapas explícitas; repetir uma captura não deve duplicá-la.</li><li>ODS e central são derivados regeneráveis. Na demonstração, somente o ODS fictício é atualizado; a central real permanece preservada.</li></ul><p class="value"><strong>Valor do trabalho:</strong> Entrega uma rotina repetível e informação examinável no formato usado pela equipe.</p></div></article></div>
+  </section>
+  <section class="chapter"><p class="eyebrow">02 / FLUXO E DECISÕES</p><h2>Fontes claras.<br>Saídas que podem ser conferidas.</h2>
+    <figure><img src="fluxo.svg" width="1200" height="800" alt="CLI e interface local chamam regras Python para conferir e persistir ações. As fontes alimentam a análise SQL, os indicadores e o painel ODS."><figcaption>Ações de tarefa e oportunidade passam pela mesma camada Python. A análise financeira usa SQLite em memória; os indicadores operacionais também leem fila e triagem. O ODS reutiliza fontes e análise, sem consumir o resumo JSON/Markdown.</figcaption></figure>
+    <div class="decisions"><article class="decision"><h3>Uma regra de negócio, duas formas de operar</h3><p>Interface e CLI chamam a mesma camada Python. O JavaScript apresenta a prévia; os contratos e a decisão de gravar são validados novamente no servidor.</p></article><article class="decision"><h3>Indicadores descritivos, com denominadores</h3><p>A matriz de completude mostra campos conhecidos e desconhecidos, sem imputar valores ou avaliar sua veracidade. A seleção nos gráficos é temporária e tem alternativa tabular; não altera os registros. A pontuação de triagem continua sendo uma heurística.</p></article><article class="decision"><h3>Persistência e derivados têm estados próprios</h3><p>Salvar uma fonte, confirmar seu evento e atualizar ODS ou central são etapas distintas. A resposta informa falhas posteriores à gravação para evitar repetir uma ação já aplicada.</p></article><article class="decision"><h3>Simplicidade local com limites explícitos</h3><p>CSV mantém os registros acessíveis e SQLite é usado em memória. Hashes, backups e locks protegem a rotina, mas não criam uma transação global entre arquivos. A coordenação de um editor por material continua necessária.</p></article></div>
+  </section>
+  <section class="chapter"><p class="eyebrow">03 / EVIDÊNCIAS DA DEMONSTRAÇÃO</p><h2>Execução local, escopo explícito.</h2>
+    <p>As telas mostram a versão atual da interface: centro de comando, matrizes D3 e prévia tabular. As capturas de terminal e os arquivos do pipeline anterior continuam disponíveis, com seus horários e escopos identificados.</p><p class="meta">Demonstração: 11 out 2026 · interface capturada às 17:42 UTC</p><p class="meta">Interface atual em cópia isolada com dados fictícios, D3 local e rede externa desabilitada. Os registros de terminal às 15:38 UTC pertencem à rodada anterior.</p>
+    <div class="stats" aria-label="Características e resultados apresentados"><div class="stat"><strong>94 / 94</strong><span>execuções de teste aprovadas na rodada anterior, preservadas como evidência histórica</span></div><div class="stat"><strong>7 abas</strong><span>no painel ODS, com sete filtros e fontes identificadas</span></div></div><table class="checks"><thead><tr><th scope="col">Verificação</th><th scope="col">Resultado registrado</th><th scope="col">Escopo</th></tr></thead>
+    <tbody><tr><td>Núcleo de dados</td><td>13 testes aprovados</td><td>Formatos, vínculos, estados, evidências, valores inválidos e agregação por moeda.</td></tr><tr><td>Integração, domínio e HTTP</td><td>59 testes aprovados</td><td>CLI, importação, seleção, operações com confirmação, edição concorrente, recuperação e handler HTTP por streams.</td></tr><tr><td>Diagnóstico e Radar</td><td>22 testes aprovados</td><td>5 de prontidão e 17 do Radar reutilizado. Fontes externas não foram consultadas.</td></tr><tr><td>Pipeline da reforma</td><td>7 etapas concluídas</td><td>Da validação à seleção, prévia, confirmação, conflito e recuperação de um painel desatualizado.</td></tr><tr><td>Dados e painel</td><td>7 abas e 7 filtros</td><td>9 registros ERP iniciais; 10 após a seleção. A fila contém 9 tarefas fictícias. Central real preservada.</td></tr><tr><td>Interface atual</td><td>D3, seleção e prévia conferidos</td><td>Capturas 1440 × 1000 e navegação desktop 1366 × 768. Fontes preservadas; a visão Radar ainda apresenta overflow a 390 px.</td></tr></tbody></table><p class="notice">Os 94 resultados são execuções da rodada anterior, com cenários repetidos; não foram reexecutados para esta atualização visual. A nova conferência cobriu consulta, seleção de gráficos e prévia sem gravar. O aceite oficial do workspace permanece separado.</p>
+  </section>
+  <section class="chapter execution"><p class="eyebrow">EXECUÇÃO LOCAL / REGISTRO DA DEMONSTRAÇÃO</p><h2>01 / Centro de comando e matriz de tarefas</h2>
+      <p>A interface atual reúne contagens de trabalho ativo e uma matriz de prioridade × estado. Cada célula abre a seleção correspondente de tarefas por clique ou teclado, mantendo os registros intactos.</p><p class="meta">Captura de 11/10/2026, 17:42 UTC. Amostra independente com nove tarefas fictícias. O gráfico informa a unidade e oferece os mesmos dados em tabela.</p><p class="result">Tema escuro · D3 local · matriz interativa · 9 tarefas fictícias.</p><figure><img src="interface-indicadores.png" alt="Captura nativa do centro de comando atual, com verde e ciano. Contagens por ID representam tarefas, não horas ou produtividade." width="1440" height="1000"><figcaption>Captura nativa do centro de comando atual, com verde e ciano. Contagens por ID representam tarefas, não horas ou produtividade.</figcaption></figure>
+      <p class="meta"><a href="https://vinsan-page.vercel.app/cases/python-operacional/registro-navegador.txt">Ler a saída desta execução em texto</a></p></section>
+<section class="chapter execution"><p class="eyebrow">EXECUÇÃO LOCAL / REGISTRO DA DEMONSTRAÇÃO</p><h2>02 / Completude sem esconder o desconhecido</h2>
+      <p>A matriz de oportunidades distingue campos informados de campos desconhecidos. As faixas de esforço apresentam estimativas por oportunidade e mantêm os escopos separados.</p><p class="meta">Três oportunidades fictícias, com cinco campos observados por ID. Presença de valor não comprova veracidade; zero é conhecido e campo vazio permanece desconhecido.</p><p class="result">3 oportunidades · 5 campos por ID · valores ausentes visíveis.</p><figure><img src="interface-completude.png" alt="Captura real da visão Radar da versão atual. A matriz D3 e sua legenda mostram o significado dos dados; a tabela expansível oferece leitura alternativa." width="1440" height="1000"><figcaption>Captura real da visão Radar da versão atual. A matriz D3 e sua legenda mostram o significado dos dados; a tabela expansível oferece leitura alternativa.</figcaption></figure>
+      <p class="meta"><a href="https://vinsan-page.vercel.app/cases/python-operacional/registro-navegador.txt">Ler a saída desta execução em texto</a></p></section>
+<section class="chapter execution"><p class="eyebrow">EXECUÇÃO LOCAL / REGISTRO DA DEMONSTRAÇÃO</p><h2>03 / Prévia tabular antes de confirmar</h2>
+      <p>O formulário atual exibe a diferença entre Antes e Depois em uma tabela. A ação fictícia de iniciar foi validada e cancelada após a captura, preservando o estado da tarefa.</p><p class="meta">Prévia PRONTA → EM_ANDAMENTO em uma tarefa sintética. Esta rodada não confirmou gravações nem gerou novamente os derivados.</p><p class="result">Prévia conferida · dados preservados · nenhuma ação confirmada.</p><figure><img src="interface-previa.png" alt="Captura nativa da interface atual, com formulário e tabela de alterações. A confirmação continua sendo uma etapa explícita, posterior à revisão." width="1440" height="1000"><figcaption>Captura nativa da interface atual, com formulário e tabela de alterações. A confirmação continua sendo uma etapa explícita, posterior à revisão.</figcaption></figure>
+      <p class="meta"><a href="https://vinsan-page.vercel.app/cases/python-operacional/registro-navegador.txt">Ler a saída desta execução em texto</a></p></section>
+<section class="chapter execution"><p class="eyebrow">EXECUÇÃO LOCAL / REGISTRO DA DEMONSTRAÇÃO</p><h2>04 / Pipeline operacional · registro anterior</h2>
+      <p>O pipeline valida dados, gera análises SQL, importa e seleciona uma oportunidade fictícia. Em seguida, exercita a prévia sem gravação, a confirmação, a recusa de uma versão antiga e a atualização dos derivados.</p><p class="meta">7 etapas sobre 5 CSVs. A seleção leva o ERP de 9 a 10 registros; 2 ações aplicadas geram eventos. O lock demonstrado é sintético e a central real não é regenerada. Execução anterior: 11/10/2026, 15:38 UTC.</p><p class="result">7 etapas concluídas · conflito recusado · registro salvo com painel pendente · ODS atualizado depois.</p><figure><img src="terminal-pipeline.png" alt="Captura nativa do terminal durante execução real. A saída resume verificações do processo e dos artefatos; os dados são fictícios e os pixels não foram editados." width="1600" height="1100"><figcaption>Captura nativa do terminal durante execução real. A saída resume verificações do processo e dos artefatos; os dados são fictícios e os pixels não foram editados.</figcaption></figure>
+      <p class="meta"><a href="https://vinsan-page.vercel.app/cases/python-operacional/terminal-pipeline.txt">Ler a saída desta execução em texto</a></p></section>
+<section class="chapter execution"><p class="eyebrow">EXECUÇÃO LOCAL / REGISTRO DA DEMONSTRAÇÃO</p><h2>05 / Testes · registro anterior</h2>
+      <p>Registro preservado da execução anterior das suítes do núcleo ERP, integração, operações, handler HTTP, diagnóstico e Radar. Os cenários abrangem recusas, conflitos e recuperação em arquivos temporários.</p><p class="meta">13 testes do núcleo + 59 de integração, domínio, HTTP e terminal + 5 de diagnóstico + 17 do Radar. Há cenários herdados e repetidos. Os testes de handler usam streams; o navegador tem registro separado.</p><p class="result">94 de 94 execuções aprovadas · 0 falhas · 0 erros · 0 testes ignorados.</p><figure><img src="terminal-testes.png" alt="Captura nativa registrada em 11/10/2026 às 15:38 UTC. Os 94 resultados pertencem àquela versão e não foram atribuídos às visualizações D3 atuais." width="1600" height="1100"><figcaption>Captura nativa registrada em 11/10/2026 às 15:38 UTC. Os 94 resultados pertencem àquela versão e não foram atribuídos às visualizações D3 atuais.</figcaption></figure>
+      <p class="meta"><a href="https://vinsan-page.vercel.app/cases/python-operacional/terminal-testes.txt">Ler a saída desta execução em texto</a></p></section>
+  <section class="chapter"><p class="eyebrow">04 / RESULTADO</p><h2>Processar os dados.<br>Preservar o significado.</h2>
+    <p class="lead">O projeto reúne engenharia de dados, análise descritiva, automação e observabilidade operacional em uma ferramenta de uso local. Demonstra como transformo controles dispersos em rotinas Python que outra pessoa consegue operar, conferir e manter.</p>
+    <figure><img src="integridade.svg" width="1200" height="810" alt="Prévia e versão conferidas levam à confirmação, backup e gravação. Conflitos exigem revisão; falhas posteriores são informadas como evento ou derivado pendente."><figcaption>Uma versão divergente interrompe a alteração. Após salvar a fonte, a confirmação do evento e a geração dos derivados têm estados próprios. PREPARADO sozinho não comprova aplicação; não há transação global entre arquivos.</figcaption></figure>
+  </section>
+  <section class="chapter"><p class="eyebrow">05 / LIMITES E MATERIAIS</p><h2>Escopo e materiais para consulta.</h2>
+    <div class="limits"><ul><li>Projeto próprio, demonstrado com dados sintéticos. Não há medição de produtividade, receita ou resultado comercial atribuída ao case.</li><li>Observabilidade local por eventos, diagnósticos e indicadores; não há monitoramento contínuo, tracing distribuído ou alertas de produção neste recorte.</li><li>A análise é descritiva. Não inclui modelo preditivo, experimento causal ou treinamento de machine learning.</li><li>O serviço HTTP é local, iniciado manualmente. A sessão não representa autenticação individual nem validação de operação multiusuário.</li><li>Não há transação global entre CSV, evento e derivados. Backups locais e controle de edição não substituem a coordenação de acesso aos arquivos.</li><li>Os testes não comprovam autenticidade de documentos, conciliação bancária ou integração externa. ODS e central permanecem visões derivadas; editar a planilha não atualiza a fonte.</li><li>A interface atual foi conferida em desktop. Em 390 px, Início, Qualidade e Tarefas não apresentaram overflow da página; a visão Radar chegou a 489 px e ainda requer ajuste no projeto de origem.</li></ul></div><p class="meta">As três telas atuais foram capturadas em 11/10/2026 às 17:42 UTC, sem editar pixels. Os dois terminais preservam as execuções anteriores às 15:38 UTC. Todas as amostras são fictícias.</p>
+    <h3 class="downloads-title">Arquivos da demonstração</h3><ul class="downloads" aria-label="Arquivos da demonstração"><li><a href="https://vinsan-page.vercel.app/cases/python-operacional/resumo-demo.json" download>Resumo inicial do núcleo em JSON<span>9 registros fictícios antes da seleção.</span></a></li><li><a href="https://vinsan-page.vercel.app/cases/python-operacional/indicadores-demo.json" download>Indicadores da demonstração em JSON<span>Snapshot histórico do pipeline às 15:38 UTC.</span></a></li><li><a href="https://vinsan-page.vercel.app/cases/python-operacional/indicadores-interface.json" download>Indicadores da interface atual em JSON<span>Snapshot das novas capturas, sem confirmação de gravações.</span></a></li><li><a href="https://vinsan-page.vercel.app/cases/python-operacional/painel-demo.ods" download>Painel de demonstração em ODS<span>7 abas após a seleção; 10 registros ERP e 9 tarefas.</span></a></li><li><a href="https://vinsan-page.vercel.app/cases/python-operacional/execucoes.json" download>Registro das execuções em JSON<span>Escopos, resultados e hashes dos arquivos publicados.</span></a></li></ul>
+    <footer class="endnote"><span>Vinicius Sanches · Desenvolvimento de software</span><a href="https://vinsan-page.vercel.app/">vinsan-page.vercel.app</a></footer>
+  </section>
+</main></body></html>

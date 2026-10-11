@@ -1,0 +1,27 @@
+LOCAL TERMINAL CAPTURE
+Step: Fluxo operacional com dados fictícios
+
+VINSAN / PYTHON / REFORMA OPERACIONAL
+Execução real; todos os dados são fictícios.
+Fontes preservadas; ambiente isolado sem rede externa.
+Data UTC: 2026-10-11T15:38:28+00:00
+
+[1/7] Validar CSVs e gerar resumo SQL
+  5 CSVs; 9 registros; 1 orçamento desconhecido preservado.
+[2/7] Importar, reconhecer repetição e selecionar
+  1 captura na triagem; seleção explícita; 10 registros no ERP.
+[3/7] Validar prévia sem gravar; exigir confirmação
+  Fonte intacta após prévia; confirmação incorreta recusada.
+[4/7] Confirmar tarefa; preservar registro se ODS bloqueado
+  Tarefa salva; conflito de versão recusado; ODS pendente explícito.
+[5/7] Atualizar ODS após liberar lock sintético
+  ODS atualizado; central preservada pelo modo de demonstração.
+[6/7] Revisar oportunidade e validar faixa de esforço
+  Faixa invertida recusada; revisão válida persistida com evento.
+[7/7] Conferir indicadores, eventos e estrutura OpenDocument
+  9 tarefas; 1 captura; 2 eventos aplicados; 7 abas e 7 filtros.
+
+Código de saída real: 0
+Dados fictícios; nenhuma ação comercial ou financeira real.
+
+Exit status: 0

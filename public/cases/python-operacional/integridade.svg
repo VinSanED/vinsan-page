@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="810" viewBox="0 0 1200 810" role="img" aria-labelledby="title description">
+<title id="title">Confirmar a mudança e distinguir os resultados</title><desc id="description">Prévia e versão conferidas levam à confirmação, backup e gravação. Conflitos exigem revisão; falhas posteriores são informadas como evento ou derivado pendente.</desc>
+<defs><marker id="arrow" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0 0 7 3.5 0 7" fill="none" stroke="#a5bea1" stroke-width="1.3"/></marker></defs>
+<rect width="1200" height="810" rx="20" fill="#e9ede2"/>
+<g font-family="Arial, Helvetica, sans-serif">
+  <text x="52" y="47" font-size="13" fill="#426153" letter-spacing="1.7">INTEGRIDADE / CONFIRMAÇÃO E PERSISTÊNCIA</text>
+  <text x="52" y="103" font-size="37" fill="#173f36" font-weight="600">Cada etapa tem um resultado próprio.</text>
+  <g><rect x="52" y="164" width="248" height="158" rx="12" fill="#f5f6f2" stroke="#b9c8ae"/>
+      <text x="70" y="208" font-size="26" fill="#173f36" font-weight="600">Prévia</text>
+      <text x="70" y="255" font-size="17" fill="#53665b">Antes e depois</text>
+      <text x="70" y="286" font-size="17" fill="#53665b">Versão + hash da prévia</text>
+      <path d="M307 243H325V243" fill="none" stroke="#a5bea1" stroke-width="2" marker-end="url(#arrow)"/></g><g><rect x="332" y="164" width="248" height="158" rx="12" fill="#f5f6f2" stroke="#b9c8ae"/>
+      <text x="350" y="208" font-size="26" fill="#173f36" font-weight="600">Confirmar</text>
+      <text x="350" y="255" font-size="17" fill="#53665b">Reler versão e regras</text>
+      <text x="350" y="286" font-size="17" fill="#53665b">Conferir hash recebido</text>
+      <path d="M587 243H605V243" fill="none" stroke="#a5bea1" stroke-width="2" marker-end="url(#arrow)"/></g><g><rect x="612" y="164" width="248" height="158" rx="12" fill="#f5f6f2" stroke="#b9c8ae"/>
+      <text x="630" y="208" font-size="26" fill="#173f36" font-weight="600">Preparar</text>
+      <text x="630" y="255" font-size="17" fill="#53665b">Evento PREPARADO</text>
+      <text x="630" y="286" font-size="17" fill="#53665b">Backup antes de gravar</text>
+      <path d="M867 243H885V243" fill="none" stroke="#a5bea1" stroke-width="2" marker-end="url(#arrow)"/></g><g><rect x="892" y="164" width="248" height="158" rx="12" fill="#f5f6f2" stroke="#b9c8ae"/>
+      <text x="910" y="208" font-size="26" fill="#173f36" font-weight="600">Salvar fonte</text>
+      <text x="910" y="255" font-size="17" fill="#53665b">Troca atômica por arquivo</text>
+      <text x="910" y="286" font-size="17" fill="#53665b">Lock local durante ação</text>
+      </g>
+  <path d="M456 332H456V413" fill="none" stroke="#a5bea1" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="70" y="378" font-size="17" fill="#6d5845">Versão divergente ou regra inválida</text>
+  <rect x="52" y="426" width="528" height="112" rx="12" fill="#f4ece0" stroke="#cfbfa8"/>
+  <text x="74" y="465" font-size="25" fill="#694e37" font-weight="600">Revisar e gerar nova prévia</text>
+  <text x="74" y="505" font-size="19" fill="#6d5845">A fonte não é gravada.</text>
+  <path d="M1016 332H1016V413" fill="none" stroke="#a5bea1" stroke-width="2" marker-end="url(#arrow)"/>
+  <rect x="640" y="426" width="508" height="112" rx="12" fill="#17483e"/>
+  <text x="663" y="465" font-size="27" fill="#f5f6f2" font-weight="600">Fonte salva</text>
+  <text x="663" y="505" font-size="19" fill="#d8e6da">Evento e derivados seguem separados.</text>
+  <path d="M894 538v38H316v31M894 576v31" fill="none" stroke="#a5bea1" stroke-width="2" marker-end="url(#arrow)"/>
+  <path d="M316 594v13" fill="none" stroke="#a5bea1" stroke-width="2" marker-end="url(#arrow)"/>
+  <rect x="52" y="620" width="528" height="118" rx="12" fill="#f5f6f2" stroke="#b9c8ae"/>
+  <text x="74" y="660" font-size="25" fill="#173f36" font-weight="600">Confirmar evento</text>
+  <text x="74" y="702" font-size="20" fill="#53665b">APLICADO ou confirmação pendente</text>
+  <rect x="640" y="620" width="508" height="118" rx="12" fill="#f5f6f2" stroke="#b9c8ae"/>
+  <text x="663" y="660" font-size="25" fill="#173f36" font-weight="600">Atualizar derivados</text>
+  <text x="663" y="702" font-size="19" fill="#53665b">ODS / central: atualização ou pendência</text>
+  <text x="52" y="785" font-size="17" fill="#53665b">PREPARADO não comprova gravação. Não há transação global entre arquivos.</text>
+</g></svg>

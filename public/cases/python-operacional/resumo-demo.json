@@ -1,0 +1,50 @@
+{
+  "natureza": "EXEMPLO FICTÍCIO — NÃO É MÉTRICA REAL",
+  "contagens": {
+    "oportunidades": 2,
+    "propostas": 1,
+    "projetos": 1,
+    "entregas": 1,
+    "financeiro": 4
+  },
+  "analise": {
+    "oportunidades_por_prioridade": [
+      [
+        "REVISAR",
+        2
+      ]
+    ],
+    "financeiro_por_moeda_tipo_centavos": [
+      [
+        "BRL",
+        "CUSTO",
+        10000,
+        null,
+        0
+      ],
+      [
+        "BRL",
+        "RECEITA",
+        120000,
+        60000,
+        1
+      ],
+      [
+        "BRL",
+        "TAXA",
+        6000,
+        6000,
+        1
+      ]
+    ],
+    "orcamentos_desconhecidos": 1
+  },
+  "entrada_sha256": {
+    "entregas.csv": "bf3c5c2f5082d7ecdadcbbad6974d1d004c15f2ccc33f2a1e770d7501ce849db",
+    "financeiro.csv": "2873c899628284b4bcb130d156940cf2ac834b7512b83fbf9a4b0dad81dfabd2",
+    "oportunidades.csv": "2a5cc8ca8d353c7523c152d069ed325faf99ae09b97660f748bb4b8b35e3dbe0",
+    "projetos.csv": "793a0ea8cac049ec6206d6e34fad7e4d64dd68cd9aa75b91376b217e67382cd5",
+    "propostas.csv": "a594059db5154ce415f826d3ecc227de1f343271d10ee06eee34395b5639f6eb"
+  },
+  "codigo_sha256": "b9801728008d100dc9d28188bc051928cc69e74f3215d20cd041dd86b4389d85"
+}
