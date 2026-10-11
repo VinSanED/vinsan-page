@@ -1,0 +1,250 @@
+{
+  "record": "MAN-06",
+  "verified_at_utc": "2026-10-11T18:05:13.422735+00:00",
+  "branch": "manu",
+  "baseline_commit": "5d47c1bcda42a37a5e7412dea07895dc90178815",
+  "implementation_commit": "4e58d7cf1157e4ceabe4b2045c87c4c2d9fabe36",
+  "scope": "Consolidação local da manutenção do portfólio e conferência das capturas Python atuais. Sem push, merge ou deploy.",
+  "commits": [
+    {
+      "id": "MAN-01",
+      "commit": "6a177382f1ca041ac236a4a59dee29e5028334bf",
+      "subject": "chore(build): separar fontes dos artefatos gerados",
+      "files": 158
+    },
+    {
+      "id": "MAN-02",
+      "commit": "58624193f5ddecaa3ca6e748aa1c92735b39d6e3",
+      "subject": "feat(perfil): renovar cartao, foto e materiais profissionais",
+      "files": 9
+    },
+    {
+      "id": "MAN-03",
+      "commit": "07447fd864cda4aed3d116ff193cbd8d236d093e",
+      "subject": "feat(case): documentar autenticacao com evidencias anonimizadas",
+      "files": 15
+    },
+    {
+      "id": "MAN-04",
+      "commit": "4fbf738f71792e87e89c0fff834f46516875396f",
+      "subject": "feat(case-python): registrar operacao e capturas atuais do workspace",
+      "files": 20
+    },
+    {
+      "id": "MAN-05",
+      "commit": "4e58d7cf1157e4ceabe4b2045c87c4c2d9fabe36",
+      "subject": "feat(site): integrar cases e refinar apresentacao e navegacao",
+      "files": 18
+    }
+  ],
+  "workspace_source_comparison": {
+    "matched": 52,
+    "changed": [],
+    "scope": "Código selecionado na captura de 17:42 UTC comparado novamente às fontes atuais; registros reais não copiados.",
+    "visual_files": [
+      {
+        "name": "app.js",
+        "sha256": "7dab593867bb6e8d5092a4fe924499d4af58d34f8d59ba24ed57562a76924c97"
+      },
+      {
+        "name": "index.html",
+        "sha256": "300f6ddf75e9d855c256324970528ed0093eae6c2ec19e96e6743aa1353cb468"
+      },
+      {
+        "name": "style.css",
+        "sha256": "15dbb33d36a8dd3cd101804d49a14475a96466ae2aa3bb1e31b1088f5eab4a15"
+      },
+      {
+        "name": "d3.min.js",
+        "sha256": "f2094bbf6141b359722c4fe454eb6c4b0f0e42cc10cc7af921fc158fceb86539"
+      },
+      {
+        "name": "observabilidade.js",
+        "sha256": "6d7497649fea6c4610489f0582fe94b13db8024d4ca740927f6f3cb34aa7ff8a"
+      },
+      {
+        "name": "theme.css",
+        "sha256": "34ea706cd73adc2d76332ac8aafb7de01cf1050d1a517856434d435dc4fae0e2"
+      }
+    ]
+  },
+  "current_browser_verification": {
+    "verified_at_utc": "2026-10-11T18:01:58.173477+00:00",
+    "base_url": "http://127.0.0.1:3003",
+    "passed": 8,
+    "failed": 0,
+    "checks": [
+      {
+        "test": "Current figure loaded 1",
+        "passed": true,
+        "details": {
+          "alt": "01 / Centro de comando e matriz de tarefas: Tema escuro · D3 local · matriz interativa · 9 tarefas fictícias.",
+          "complete": true,
+          "height": 763,
+          "src": "http://127.0.0.1:3003/_next/image?url=%2Fcases%2Fpython-operacional%2Finterface-indicadores.png&w=1200&q=75",
+          "width": 1100
+        }
+      },
+      {
+        "test": "Current figure loaded 2",
+        "passed": true,
+        "details": {
+          "alt": "02 / Completude sem esconder o desconhecido: 3 oportunidades · 5 campos por ID · valores ausentes visíveis.",
+          "complete": true,
+          "height": 763,
+          "src": "http://127.0.0.1:3003/_next/image?url=%2Fcases%2Fpython-operacional%2Finterface-completude.png&w=1200&q=75",
+          "width": 1100
+        }
+      },
+      {
+        "test": "Current figure loaded 3",
+        "passed": true,
+        "details": {
+          "alt": "03 / Prévia tabular antes de confirmar: Prévia conferida · dados preservados · nenhuma ação confirmada.",
+          "complete": true,
+          "height": 763,
+          "src": "http://127.0.0.1:3003/_next/image?url=%2Fcases%2Fpython-operacional%2Finterface-previa.png&w=1200&q=75",
+          "width": 1100
+        }
+      },
+      {
+        "test": "Served original verified interface-indicadores.png",
+        "passed": true,
+        "details": {
+          "sha256": "55da31080771a64f79742c6205d06ddb8683a4460e056f369f1c2be20c35231d",
+          "bytes": 121304
+        }
+      },
+      {
+        "test": "Served original verified interface-completude.png",
+        "passed": true,
+        "details": {
+          "sha256": "5c1545cfc7185cfc55183405bff358cf60c73819ef43933633728d2fb37e9d1c",
+          "bytes": 138543
+        }
+      },
+      {
+        "test": "Served original verified interface-previa.png",
+        "passed": true,
+        "details": {
+          "sha256": "c0b511b9e5ab08e0ee0440ddca2c78e908c9b4750410b9726030c087368efb08",
+          "bytes": 101507
+        }
+      },
+      {
+        "test": "Home current Python thumbnail",
+        "passed": true,
+        "details": {
+          "alt": "Centro de comando Python atual, em tema escuro, com contagens e matriz D3 sobre tarefas fictícias.",
+          "complete": true,
+          "src": "http://127.0.0.1:3003/_next/image?url=%2Fcases%2Fpython-operacional%2Finterface-indicadores.png&w=1200&q=75",
+          "width": 520
+        }
+      },
+      {
+        "test": "No runtime errors",
+        "passed": true,
+        "details": []
+      }
+    ]
+  },
+  "previous_site_verification": {
+    "date_utc": "2026-10-11T17:52Z",
+    "passed": 28,
+    "failed": 0,
+    "scope": "Layout em 1440, 390 e 320 px, texto a 200%, figuras, downloads, mesmo item Python e console.",
+    "react_source_unchanged": true
+  },
+  "build": {
+    "commit": "4e58d7cf1157e4ceabe4b2045c87c4c2d9fabe36",
+    "source": "git archive HEAD; somente arquivos versionados; node_modules local reutilizado",
+    "command": "CIRCLE_NODE_TOTAL=3 npm run build",
+    "exit_code": 0,
+    "static_pages": 6,
+    "routes": [
+      "/",
+      "/cardPage",
+      "/cases/autenticacao",
+      "/cases/python-operacional"
+    ],
+    "warning": "Base caniuse-lite/Browserslist desatualizada; compilação concluída."
+  },
+  "python_artifacts": [
+    {
+      "file": "public/cases/python-operacional/interface-indicadores.png",
+      "sha256": "55da31080771a64f79742c6205d06ddb8683a4460e056f369f1c2be20c35231d",
+      "bytes": 121304
+    },
+    {
+      "file": "public/cases/python-operacional/interface-completude.png",
+      "sha256": "5c1545cfc7185cfc55183405bff358cf60c73819ef43933633728d2fb37e9d1c",
+      "bytes": 138543
+    },
+    {
+      "file": "public/cases/python-operacional/interface-previa.png",
+      "sha256": "c0b511b9e5ab08e0ee0440ddca2c78e908c9b4750410b9726030c087368efb08",
+      "bytes": 101507
+    },
+    {
+      "file": "public/cases/python-operacional/case-tecnico.pdf",
+      "sha256": "972ed0fc3ad37eea10ef3e1a7eedfff8b6ced3c06a3951a6a3a20649b5208cff",
+      "bytes": 682209
+    },
+    {
+      "file": "public/cases/python-operacional/execucoes.json",
+      "sha256": "fa42209e1425e5a9ce0d4ff77b79c1f109dbdfa5ec9cc2209ab0d1065aa2885a",
+      "bytes": 8202
+    },
+    {
+      "file": "public/cases/python-operacional/registro-navegador.txt",
+      "sha256": "21d65436d93363b5b23dbb75ec7f46c4a8105b9b89bd46b2c5be95cbab8bed0c",
+      "bytes": 2592
+    }
+  ],
+  "pdf_pages": 12,
+  "evidence_scopes": {
+    "current_ui_capture": "2026-10-11T17:42Z",
+    "historical_pipeline_and_tests": "2026-10-11T15:38Z",
+    "historical_python_tests": 94,
+    "python_tests_rerun_for_this_commit": false,
+    "current_workspace_capture_checks": {
+      "passed": 92,
+      "caveats": 1
+    },
+    "caveat": "Interface de origem: Radar chegou a 489 px em viewport de 390 px. Pendência documentada; não é overflow da página do portfólio."
+  },
+  "local_previews": [
+    {
+      "port": 3000,
+      "error": "<urlopen error [Errno 111] Connection refused>"
+    },
+    {
+      "port": 3001,
+      "status": 200,
+      "current_titles": false,
+      "current_capture_time": false,
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "port": 3002,
+      "error": "<urlopen error [Errno 111] Connection refused>"
+    },
+    {
+      "port": 3003,
+      "status": 200,
+      "current_titles": true,
+      "current_capture_time": true,
+      "served_png_matches_current": true
+    }
+  ],
+  "repository_hygiene": {
+    "generated_files_untracked": 156,
+    "local_generated_files_preserved": true,
+    "unrelated_editor_screenshot_committed": false
+  },
+  "notes": [
+    "Os hashes identificam os PNGs originais; Next/Image entrega versões otimizadas, também carregadas e inspecionadas no navegador.",
+    "Correção de espaços em branco no gerador e em fluxo.svg, sem mudança visual. PDF e PNGs permaneceram byte a byte iguais.",
+    "A conferência local não representa atualização do site publicado ou aceite oficial do workspace."
+  ]
+}
