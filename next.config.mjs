@@ -7,31 +7,32 @@ import {
 
 const nextConfig = {
   reactStrictMode: true,
-  webpack(config){
+  webpack(config) {
     config.module.rules.push({
-      test:/\.svg$/i,
-      use:[
+      test: /\.svg$/i,
+      use: [
         {
           loader: "@svgr/webpack",
           options: {
-            svgo: true
-          }
-        }
-      ]
+            svgo: true,
+          },
+        },
+      ],
     });
     config.module.rules.push({
       test: /\.pdf$/i,
       type: "asset/resource",
     });
-    return config
-  }
-}
+    return config;
+  },
+};
 const nextConfigFunction = async (phase) => {
   if (phase === PHASE_DEVELOPMENT_SERVER || phase === PHASE_PRODUCTION_BUILD) {
     const withPWA = (await import("next-pwa")).default({
       dest: "public",
       register: true,
-      sw: "service-worker.js"
+      disable: phase === PHASE_DEVELOPMENT_SERVER,
+      sw: "service-worker.js",
     });
     return withPWA(nextConfig);
   }
